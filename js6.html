@@ -1,0 +1,37 @@
+<!--
+
+Ejercicio 6 JS IF
+Pide al usuario un número, comprueba que es un número y usando un solo  if() pinta en pantalla si el numero es menor a 0 o mayor a 99999999
+
+-->
+
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 6 if</title>
+        <script type="text/javascript">
+
+            var numero = parseInt(prompt("Introduce un numero"));
+                if(isNaN(numero)){
+                    document.write(numero + "No es un numero <br/>");
+                }else{
+                document.write(numero + " es un numero <br/>");
+                    if(numero <0 ){
+                        document.write( numero + " es numero menor a cero");
+                    }
+                    else if( numero > 99999999){
+                        document.write( numero + " el numero es mayor a 99999999");
+                    }
+                    else{
+                        document.write( numero + " esta entre 1 y 99999999");
+                    }
+            }       
+        </script>
+    </head>
+    
+    <body>
+       <p> Esta pagina muestra un numero</p>
+           
+
+    </body> 
+</html>

@@ -1,0 +1,46 @@
+<!--
+Ejercicio 9 JS function
+Crea una función llamada "info" que nos diga si el texto introducido esta en mayúsculas, minúsculas o una mezcla de ambas.
+Usa los siguientes alert como texto de entrada:
+alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
+alert(info("En un lugar de la mancha..."));
+
+-->
+
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 9 funcion </title>
+        <script type="text/javascript">
+
+function info(texto) {
+
+            var total = texto
+
+			if (texto == texto.toUpperCase()) {
+
+				total += " el texto esta en mayusculas";
+			}
+
+            else if (texto == texto.toLowerCase()) {
+                total +=" el texto esta en minusculas";
+                
+            }
+			else {
+				total += " es una mezcla";
+			}
+            return total;
+        }
+
+        alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
+        alert(info("ovni = objeto volador no identificado"));
+        alert(info("En un lugar de la mancha..."));
+       
+
+        </script>
+    </head>
+    
+    <body>
+
+    </body> 
+</html>

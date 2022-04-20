@@ -1,0 +1,40 @@
+<!--
+Con el siguiente código podemos solicitar al usuario un número y comprobar que este es un número.
+var numero = prompt("Introduce un número");
+if(isNaN(numero)){
+	document.write(numero + " is not a number <br/>");
+}else{
+	document.write(numero + " is a number <br/>");
+}
+Solicita otro numero al usuario, haz la comprobación de que es un numero, pinta la operación y muestra el resultado
+ej: 3+6=9
+
+-->
+<!DOCTYPE html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 3</title>
+        <script type="text/javascript">
+                  var numero = prompt("Introduce un número");
+            if(isNaN(numero)){
+	            document.write(numero + " is not a number <br/>");
+            }else{
+	        document.write(numero + " is a number <br/>");
+            }
+
+            var numero1 = prompt("Introduce un número");
+            if(isNaN(numero1)){
+	            document.write(numero1 + " is not a number <br/>");
+            }else{
+	        document.write(numero1 + " is a number <br/>");
+            }
+            var suma= parseInt(numero) + parseInt(numero1);
+            document.write((numero)+ "+"+(numero1)+"=" +suma);
+
+        </script>
+    </head>
+    
+    <body>
+        <p>esta pagina muestra una suma de numeros</p>
+    </body> 
+</html>
