@@ -10,7 +10,12 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
         <title>Ejercicio 4 </title>
         <script type="text/javascript">
              var texto =prompt("Introduce un texto:)")
-         document.write(texto.toUpperCase());
+             if(!isNaN(texto)){
+	            document.write(texto + " Error!! Introducir valores NO númericos <br/>".toUpperCase());
+            }else{
+	        document.write( " texto correcto <br/>".toUpperCase() + texto.toUpperCase());
+            }
+       
 
         </script>
     </head>

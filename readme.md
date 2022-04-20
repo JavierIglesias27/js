@@ -1,10 +1,22 @@
 # Repositorio de JS
 
-`alert()`
+## Acceder a otro link-carpetas-subcarpetas
 
-la funcion `prompt()` sirve para solicitar datos al usuario
+Crear links/carpetas/subcarpetas y acceder directamente
 
-# Console
+[JS](./js1.html)
+[bienvenido a google](https://www.google.es/)
+
+
+
+## Ejemplo de lista/tablas en Markdown
+
+[ejemplosmarkdown](https://markdownlivepreview.com/)
+
+
+
+
+## Console
 
 Para lanzar las comprobaciones, contenido del div, variables q contengan texto...
 
@@ -16,13 +28,15 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 `console.warn("WARNNNNNNN")`
 
-# Acceder a otro link-carpetas-subcarpetas
+`document.write()`para imprimir en pantalla
 
-Crear links/carpetas/subcarpetas y acceder directamente
+## Funciones 
 
-[asd](./asd.md)
-[bienvenido a google](https://www.google.es/)
+`alert()`-->mostrar mensaje
 
-# Ejemplo de lista/tablas en Markdown
+la funcion `prompt()` sirve para solicitar datos al usuario
 
-[ejemplosmarkdown](https://markdownlivepreview.com/)
+`parseint()` para convertir a string y coge el primer integro
+`toUpperCase` para poner texto en mayusculas
+
+`toLowerCase`  para poner texto en minusculas 
