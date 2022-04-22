@@ -6,27 +6,27 @@ Solicita un número, pinta el número y si es par o no
 
 <!DOCTYPE html>
     <head>
+        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Ejercicio 8 </title>
         <script type="text/javascript">
             
-            var numero = parseInt( prompt("Introduce un numero"));
+            var numero = prompt("Introduce un numero:");
             if(isNaN(numero)){
-	            document.write(numero + " No es un numero <br/>");
+	            document.write(numero + ":   introducir valor númerico!!!! <br/>".toUpperCase());
             }else{
-	        document.write(numero + " Es un numero<br/>");
+                numero= parseInt(numero);
+	            document.write(numero + ":   es un numero <br/>");
                 if(numero %2==0 ){
-                    document.write(numero + " es un numero par");
+                    document.write(numero + ":   es un numero par");
                 }
                  else {
-                    document.write(numero + " es un numero impar");
+                    document.write(numero + ":   es un numero impar");
                 }
             }
-
         </script>
     </head>
     
     <body>
-        <p>Esta pagina muestra si es par o impar</p>
     </body> 
 </html>
