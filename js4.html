@@ -6,12 +6,13 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
 
 <!DOCTYPE html>
     <head>
+        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Ejercicio 4 </title>
         <script type="text/javascript">
-             var texto =prompt("Introduce un texto:)")
+             var texto =prompt("Introduce un texto:")
              if(!isNaN(texto)){
-	            document.write(texto + " Error!! Introducir valores NO númericos <br/>".toUpperCase());
+	            document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
             }else{
 	        document.write( " texto correcto <br/>".toUpperCase() + texto.toUpperCase());
             }
@@ -21,6 +22,6 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
     </head>
     
     <body>
-      <p> esta apgina muestra un texto en mayusculas</p>
+      <p> esta pagina muestra un texto en mayusculas</p>
     </body> 
 </html>
