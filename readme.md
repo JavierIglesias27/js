@@ -7,14 +7,9 @@ Crear links/carpetas/subcarpetas y acceder directamente
 [JS](./js1.html)
 [bienvenido a google](https://www.google.es/)
 
-
-
 ## Ejemplo de lista/tablas en Markdown
 
 [ejemplosmarkdown](https://markdownlivepreview.com/)
-
-
-
 
 ## Console
 
@@ -28,15 +23,20 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 `console.warn("WARNNNNNNN")`
 
-`document.write()`para imprimir en pantalla
-
-## Funciones 
+## Funciones
 
 `alert()`-->mostrar mensaje
 
-la funcion `prompt()` sirve para solicitar datos al usuario
+`document.write()`para imprimir en pantalla
+
+`prompt()` sirve para solicitar datos al usuario
 
 `parseint()` para convertir a string y coge el primer integro
-`toUpperCase` para poner texto en mayusculas
 
-`toLowerCase`  para poner texto en minusculas 
+`toUpperCase()` para poner texto en mayúsculas
+
+`toLowerCase()` para poner texto en minúsculas
+
+`if(%2==0){} ` para indicar numeros pares
+
+`if(%2==1){} ` para indicar numeros impares
