@@ -1,10 +1,10 @@
 # Repositorio de
 
-# JS EN HEAD
+## JS EN HEAD
 
 `<script>XA IMPORTAR ALGUN DOCUMENTO </script> `
 
-# JS EN BODY
+## JS EN BODY
 
 `<script> XA CODIGO INTERNO DEL ACHIVO </SCRIPT>`
 
