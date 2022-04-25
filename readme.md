@@ -1,4 +1,12 @@
-# Repositorio de JS
+# Repositorio de
+
+# JS EN HEAD
+
+`<script>XA IMPORTAR ALGUN DOCUMENTO </script> `
+
+# JS EN BODY
+
+`<script> XA CODIGO INTERNO DEL ACHIVO </SCRIPT>`
 
 ## Acceder a otro link-carpetas-subcarpetas
 
@@ -176,7 +184,30 @@ console.log($varasd);
 # orden de operadores matemáticos
 
 `() y []`
+
 `* y /`
+
 `+ y -`
+
 `&&`
+
 `||`
+
+# otros operadores
+
+`&` AND
+
+`|` OR
+
+`~`NOT
+
+`^`XOR
+
+`<<` LEFT
+
+`>>` RIGHT
+
+`>>>` UNSIGNED RIGHT SHIFT
+
+console.log (0101 >>> 1); Para hacer comparaciones en codigo en binario
+console.log (5 >>> 1); el 0101 es el valor 5 en binario y te dice la posicion q ocupa
