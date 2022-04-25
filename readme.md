@@ -150,15 +150,15 @@ if(3==5) {console.log("asd");
 
 `if (3==3 && 5==3){console.log("asd"}` esto NO se cumpliaria nunca
 
-`if (3==3 &||5==3){console.log("asd"}` esta se cumpliria uno o otro
+`if (3==3 ||5==3){console.log("asd"}` esta se cumpliria uno o otro
 
 # operadores 2 grado
 
 `=` let var=8;
 
-`+=` let var+=3; resultad 3+3=6
+`+=` let var+=3; resultad 8+3=11
 
-`-=`
+`-=` let var-=3; resultad 8-3=5
 
 `*=` 5*=5 es igual 5*5*5*5\*5=3125
 
@@ -166,9 +166,17 @@ if(3==5) {console.log("asd");
 
 `%=` modulos p.e 2%2 devuelve 0
 
-moduloe p.e 3%2 devuelve 1
+modulo p.e 3 % 2 devuelve 1
 let $var=2;
-$varasd %=3;
-console.log($varasd)
+$varasd %= 3;
+console.log($varasd);
 
 `**=` exponencial
+
+# orden de operadores matemáticos
+
+`() y []`
+`* y /`
+`+ y -`
+`&&`
+`||`
