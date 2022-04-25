@@ -12,11 +12,11 @@ Pide al usuario un número, comprueba que es un número y usando un solo  if() p
         <title>Ejercicio 6 if</title>
         <script type="text/javascript">
 
-                var numero = prompt("Introduce un número");
+                let numero = prompt("Introduce un número");
                 if(isNaN(numero)){
                     document.write(numero + ":  introduce un valor númerico <br/>");
                 }else{
-                    numero=parseInt(numero);
+                    let numero=parseInt(numero);
                     document.write(numero + ": es un número <br/>");
                     if(numero < 0 ){
                         document.write( numero + ": es número menor a cero");

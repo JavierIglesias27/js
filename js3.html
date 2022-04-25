@@ -15,21 +15,22 @@ ej: 3+6=9
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Ejercicio 3</title>
         <script type="text/javascript">
-                  var numero = prompt("Introduce un número");
+                  let numero = prompt("Introduce un número");
             if(isNaN(numero)){
 	            document.write(numero + " is not a number <br/>");
             }else{
 	        document.write(numero + " is a number <br/>");
             }
 
-            var numero1 = prompt("Introduce un número");
+            let numero1 = prompt("Introduce un número");
             if(isNaN(numero1)){
 	            document.write(numero1 + " is not a number <br/>");
             }else{
 	        document.write(numero1 + " is a number <br/>");
             }
-            var suma= parseInt(numero) + parseInt(numero1);
+            let suma= parseInt(numero) + parseInt(numero1);
             document.write((numero)+ "+"+(numero1)+"=" +suma);
+            /*document.write(numero + numero1=(numero+numero1));*/
 
         </script>
     </head>

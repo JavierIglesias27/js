@@ -11,11 +11,11 @@ Solicita un número, pinta el número y si es par o no
         <title>Ejercicio 8 </title>
         <script type="text/javascript">
             
-            var numero = prompt("Introduce un numero:");
+            let numero = prompt("Introduce un numero:");
             if(isNaN(numero)){
 	            document.write(numero + ":   introducir valor númerico!!!! <br/>".toUpperCase());
             }else{
-                numero= parseInt(numero);
+                let numero= parseInt(numero);
 	            document.write(numero + ":   es un numero <br/>");
                 if(numero %2==0 ){
                     document.write(numero + ":   es un numero par");
