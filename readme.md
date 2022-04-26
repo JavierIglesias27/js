@@ -1,4 +1,24 @@
-# REPOSITORIO JS
+# REPOSITORIO
+
+# IMPORTAR ARCHIVOS DESDE JS(SIEMPRE DENTRO HEAD)
+
+`NOTA: SE DEBERA HACER UN SCRIPT PARA HTML, CSS...`
+
+<head>
+    <script defer src="./file.js"></script>
+</head>
+
+<body>
+    <p id="nombre"> texto escrito en negrita</p>
+<body>
+
+### atributos que se pueden añadir al importa JS
+
+` <script src="./file.js"> tal y como llegue el documento se ejecutara`
+
+`<script async src="./file.js"> slipear(se queda en stand by) toda la cargar hasta q el BODY se ha cargado--> PROBLEMA: si p.e hay una imagen q no se ejecuta nunca NO se CARGARA NUNCA`
+
+`<script defer src="./file.js"> IGUAL Q EL ASIGN xo permite que todo lo demas se vaya cargando y lo ultimo es el script`
 
 ## JS EN HEAD
 
@@ -211,3 +231,65 @@ console.log($varasd);
 
 console.log (0101 >>> 1); Para hacer comparaciones en codigo en binario
 console.log (5 >>> 1); el 0101 es el valor 5 en binario y te dice la posicion q ocupa
+
+# forma de llamar a JS por parte del usuario( cuando el usuario haga click se llamara)
+
+<button onclick="alert();"> al clickar en el en boton
+
+<button onblue=>
+
+# NOTA PROBLEMA JS
+
+let var1= 1 + 5 +"texto" --> aqui suma 1+5 y concatena texto
+console.log("var1")
+
+let var1= "texto" + 1 + 5 +--> aqui detecta texto y no suma
+console.log("var1")
+
+# DIFERENCIA LET Y VAR
+
+let $var1= 1; 
+$var1=2;
+
+`CREAMOS FUNCION`
+function cosa1(){ $var1=2}
+cosa1(); --> llamo a la funcion sin pasar parametro y resultado=2
+console.log(var1);
+
+var $var2= 1; $var2=2;
+
+`CREAMOS FUNCION`
+function cosa2(){ $var2=5}
+cosa2();--> llamo a la funcion sin pasar parametro y resultado=2
+console.log(var1);
+
+`variable total`--> NO SE PUEDE REDEFINIR UNA VARIABLE CONSTANTE`
+
+const_PI =3.1416
+`_PI=2;`
+`console.log(_PI);`
+
+### IMPORTANTE A LA HORA DE DECLARAR LA VARIABLE
+
+`Dentro de la funcion UTILIZAR SIEMPRE let /var me afecta solo dentro de la funcion`
+
+`Y FUERA puedes usar $ , LET, VAR Y CONST _`
+
+## EJEMPLO LET /VAR
+
+function run() {
+var foo ="foo"
+let bar ="Bar"
+console.log (foo, bar);
+` FUNCION NO DECLARADA:esto de aqui es una funcion que no hace falta definirla xq se va a ejecutar siempre`
+` VAR se extralimita se puede llamar fuera de la funcion NO declaradas`
+`LET solo se puede llamar dentro de la funcion NO declarada y es BUENO XQ SOLO AFECTA ALA FUNCION DECLARADA xq solo se ejecuta una vez`
+{
+var moo ="Mooo"
+let baz ="Bazz"
+console.log (moo, baz);
+}
+console.log(moo);
+console.log(baz);error!!!
+}
+run();
