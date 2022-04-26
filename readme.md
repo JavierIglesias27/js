@@ -40,13 +40,17 @@
 
 # COMO SELECCIONAR ID, Class, all DESDE JS
 
+`archivo file.js`
+
 `document hace referencia a todo lo q hay en body`
 
-`document.getElementById("nombre")--> selecionamos todos los ID del HTML`
+`document.getElementById("nombre")--> seleccionamos todos los ID del HTML`
 
-`document.getElementByClassName("asd")--> selecionamos todos las class del HTML`
+`document.getElementByClassName("asd")--> seleccionamos todos las class del HTML`
 
-`document.getElementByName ("juan")--> selecionamos todos los name del HTML `
+`document.getElementByName ("juan")--> seleccionamos todos los name del HTML `
+
+`document.getElementByTagName ("h1")--> seleccionamos directamente etiquetas del HTML `
 
 `<p id ="nombre" class="asd" name="juan"> holaaaaaaaque tal</p>`
 
@@ -54,7 +58,8 @@
 
 `document.getElementById("nombre").innerHTML += "asd"; añade ASD al holaaa qtal`
 
-<script> document.get 
+<script>
+    document.get 
 </script>
 
 ## Acceder a otro link-carpetas-subcarpetas
@@ -119,6 +124,10 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 `if(%2==0){} ` para indicar numeros pares(modulo)
 
 `if(%2==1){} ` para indicar numeros impares(modulo)
+
+## Propiedades
+
+`lenght`para saber el numero de elementos que tiene un array p.e.
 
 # Tipos de variables
 
@@ -322,3 +331,46 @@ console.log(moo);
 console.log(baz);error!!!
 }
 run();
+
+## CREAR BUTTON
+
+### al tocar el boton la etiqueta h2 se cmabiaran de UNA SOLA VEZ!!
+
+<body>
+<button onclick="cosas()"></button>
+<p> pppppppppppppp</p> 
+<h2> pppppppppppppp</h2>
+
+<script>
+    function cosas(){
+        document.getElementByTagName("p")[0].classList.add = "rojo";
+        document.getElementByTagName("h2")[1].classList.add = "rojo";
+        /*cambio la h2 de rojo a azul */
+        document.getElementByTagName("h2")[1].classList.replace("rojo", "azul");
+    }
+</script>
+</body>
+
+# SI QUEREMOS Q CAMBIE CADA VEZ Q OCAS EL BUTTON
+
+<body>
+<button onclick="replacecolor()"></button>
+<p> pppppppppppppp</p> 
+<h2> pppppppppppppp</h2>
+
+<script>
+    let $a=0;
+    let $text = document.GetElementsByTagname("p")[3];
+    function replacecolor(){
+        $a++;
+        if($a % 2== 0){
+            $text.classList.replace ("rojo","azul");
+
+        }else {
+            $text.classList.replace ("azul","rojo");
+        }
+    }
+        
+    
+</script>
+</body>
