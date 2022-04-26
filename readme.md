@@ -351,13 +351,13 @@ run();
 </script>
 </body>
 
-# SI QUEREMOS Q CAMBIE CADA VEZ Q OCAS EL BUTTON
+# SI QUEREMOS Q CAMBIE CADA VEZ Q TOCAS EL BUTTON
 
 <body>
-<button onclick="replacecolor()"></button>
+
 <p> pppppppppppppp</p> 
 <h2> pppppppppppppp</h2>
-
+<button onclick="replacecolor()"></button>
 <script>
     let $a=0;
     let $text = document.GetElementsByTagname("p")[3];
@@ -370,7 +370,47 @@ run();
             $text.classList.replace ("azul","rojo");
         }
     }
-        
-    
+
 </script>
 </body>
+
+# crear un panel de colores y al tocar el boton enviar te de el valor del panel de control
+
+<input type="color" id="color">
+<button onclick ="replacecolor2(document.getElementByTagName('color').value)">sendcolor</button>
+
+function replacecolor2(color) {
+consol.log(color);
+}
+
+# SOLUCION MAS CORRECTA
+
+<input type="color" id="color">
+<button  onclick ="replacecolor3(document.getElementByTagName('color').value, this)">sendcolor</button>
+
+<script>
+function replacecolor2(color, button) {
+consol.log(color);
+button.style.backgroundcolor=color;
+}
+<script>
+# al tocar el button se cambie el color del boton y coincida con el panel
+
+<input type="color" id="color">
+<button onclick ="replacecolor3(document.getElementByTagName('color').value)">sendcolor</button>
+
+function replacecolor2(color) {
+consol.log(color);
+document.getElementByTagName('button')[0].style.backgroundcolor= color;
+}
+
+# CON ID al tocar el button se cambie el color del boton y coincida con el panel
+
+<input type="color" id="color">
+<button  id ="boton" onclick ="replacecolor3(document.getElementByTagName('color').value)">sendcolor</button>
+<script>
+function replacecolor2(color) {
+consol.log(color);
+document.getElementById('boton').style.backgroundcolor= color;
+}
+<script>
