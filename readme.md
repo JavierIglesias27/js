@@ -20,6 +20,8 @@
 
 `<script defer src="./file.js"> IGUAL Q EL ASIGN xo permite que todo lo demas se vaya cargando y lo ultimo es el script`
 
+`<script async defer src="./file.js"> primero hace el asign y luego el defer`
+
 ## JS EN HEAD
 
 `<script>XA IMPORTAR ALGUN DOCUMENTO </script> `
