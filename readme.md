@@ -1,5 +1,13 @@
 # REPOSITORIO
 
+## JS EN HEAD
+
+`<script>XA IMPORTAR ALGUN DOCUMENTO </script> `
+
+## JS EN BODY
+
+`<script> XA CODIGO INTERNO DEL ACHIVO </SCRIPT>`
+
 # IMPORTAR ARCHIVOS DESDE JS(SIEMPRE DENTRO HEAD)
 
 `NOTA: SE DEBERA HACER UN SCRIPT PARA HTML, CSS...`
@@ -10,25 +18,44 @@
 
 <body>
     <p id="nombre"> texto escrito en negrita</p>
+    <script>
+        //SOLO XA PRUEBAS
+        //si voy a ejecutar esto puedo hacerlo directamente AQUI!!!
+        //console.log /warm/error...
+        //alert
+        //document.write
+    </script>
+
 <body>
 
 ### atributos que se pueden añadir al importa JS
 
 ` <script src="./file.js"> tal y como llegue el documento se ejecutara`
 
-`<script async src="./file.js"> slipear(se queda en stand by) toda la cargar hasta q el BODY se ha cargado--> PROBLEMA: si p.e hay una imagen q no se ejecuta nunca NO se CARGARA NUNCA`
+`<script async src="./file.js"> slipear(se queda en stand by) es decir espera a tener el script y luego empieza a cargar el body--> PROBLEMA: si p.e hay una imagen q no se ejecuta NO se CARGARA NUNCA`
 
-`<script defer src="./file.js"> IGUAL Q EL ASIGN xo permite que todo lo demas se vaya cargando y lo ultimo es el script`
+`<script defer src="./file.js"> IGUAL Q EL ASYNC xo permite que todo lo demas se vaya cargando y lo ultimo es el script`
 
 `<script async defer src="./file.js"> primero hace el asign y luego el defer`
 
-## JS EN HEAD
+# COMO SELECCIONAR ID, Class, all DESDE JS
 
-`<script>XA IMPORTAR ALGUN DOCUMENTO </script> `
+`document hace referencia a todo lo q hay en body`
 
-## JS EN BODY
+`document.getElementById("nombre")--> selecionamos todos los ID del HTML`
 
-`<script> XA CODIGO INTERNO DEL ACHIVO </SCRIPT>`
+`document.getElementByClassName("asd")--> selecionamos todos las class del HTML`
+
+`document.getElementByName ("juan")--> selecionamos todos los name del HTML `
+
+`<p id ="nombre" class="asd" name="juan"> holaaaaaaaque tal</p>`
+
+`document.getElementById("nombre").innerHTML = "asd"; --> cambia el contenido p x ASD`
+
+`document.getElementById("nombre").innerHTML += "asd"; añade ASD al holaaa qtal`
+
+<script> document.get 
+</script>
 
 ## Acceder a otro link-carpetas-subcarpetas
 
