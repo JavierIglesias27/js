@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        .rojo{
+            background-color: red;
+        }
+        .azul{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+        .orange {
+            background-color: orange;
+        }
+        fieldset{
+            width:50%;
+            border: 2px solid black;
+        }
+      
+        button {
+            width: 100px;
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+  <h1>getElementById</h1>
+
+    <p id="nombre"> PRIMER TEXTO</p> 
+    <p id="nombre1">SEGUNDO TEXTO</p>
+    <p id="nombre2">TERCER TEXTO</p>
+    <p id="nombre3">CUARTO TEXTO</p>
+
+    <script>
+
+      document.getElementById("nombre").style.backgroundColor="red";
+
+      document.getElementById("nombre1").style.backgroundColor="red";
+
+      document.getElementById("nombre2").style.backgroundColor="blue";
+
+      document.getElementById("nombre3").style.backgroundColor="blue";
+   
+</script>
+
+<h1>GetElementsByTagsName</h1>
+
+<p>PRIMER TEXTO</p> 
+<p>SEGUNDO TEXTO</p>
+<p>TERCER TEXTO</p>
+<p>CUARTO TEXTO</p>
+
+<script>
+    
+document.getElementsByTagName("p")[4].classList.add ("orange");
+document.getElementsByTagName("p")[5].classList.add ("green");
+document.getElementsByTagName("p")[6].classList.add ("green");
+document.getElementsByTagName("p")[7].classList.add ("orange");
+
+
+
+</script>
+
+<h1>Funcion poner colores al hacer click</h1>
+
+<p>PRIMER TEXTO</p> 
+<p>SEGUNDO TEXTO</p>
+<p>TERCER TEXTO</p>
+<p>CUARTO TEXTO</p>
+
+<script>
+    function cosas(){
+        document.getElementsByTagName("p")[8].classList.add ( "rojo");
+        document.getElementsByTagName("p")[9].classList.add ( "azul");
+        document.getElementsByTagName("p")[10].classList.add ( "green");
+        document.getElementsByTagName("p")[11].classList.add ( "orange");
+    }
+</script>
+
+<button onclick="cosas()">click xa color</button>
+
+
+
+<h1>REPLACE [1] de rojo a verde</h1>
+
+<p>PRIMER TEXTO</p> 
+<p>SEGUNDO TEXTO</p>
+
+<script>
+    function cosas1(){
+        document.getElementsByTagName("p")[12].classList.add ( "rojo");
+        document.getElementsByTagName("p")[13].classList.add ( "rojo"); // lo pone primero rojo (aunque no se vea)
+        document.getElementsByTagName("p")[13].classList.replace("rojo", "green"); //(Luego lo cambia a verde)
+    }
+</script>
+<button onclick="cosas1()"> replace red to green</button>
+
+<h1>ERROR!!!que cambie cada vez q tocas el boton</h1>
+
+<p> PRIMER TEXTO</p> 
+<p> SEGUNDO TEXTO</p>
+
+<script>
+       
+    let $a=0;
+    let $text = document.GetElementsByTagname("p")[0];
+    function replacecolor(){
+        $a++;
+        if($a % 2== 0){
+            $text.classList.replace ("rojo","azul");
+
+        }else {
+            $text.classList.replace ("azul","rojo");
+        }
+    }
+
+</script>
+<button onclick="replacecolor()">REPLACE AL CLICK</button>
+
+
+
+<h1>Panel de color y al tocar el boton enviar value</h1>
+
+<form action="#" method="get" target="_blank">
+    <fieldset>
+
+    <input type="color"  name="color">
+
+    <button onclick ="replacecolor2(document.getElementsByTagName('color').value)">sendcolor</button>
+            <script>
+                function replacecolor2(color) {
+                consol.log(color);
+            }
+            </script>
+    </fieldset>
+</form>
+
+<h1>NO SE PONE EN ROJO que se ponga el button rojo</h1>
+<form action="#" method="get" target="_blank">
+    <fieldset>
+
+        <input type="color" name="color">
+        <button  onclick ="replacecolor3(document.getElementByTagName('color').value, this)">sendcolor</button>
+        
+        <script>
+        function replacecolor2(color, button) {
+        consol.log(color);
+        button.style.backgroundcolor=color;
+        }
+        </script>
+    </fieldset>
+</form>
+
+
+    
+    
+</body>
+</html>

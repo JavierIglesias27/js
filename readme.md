@@ -385,7 +385,7 @@ consol.log(color);
 
 # SOLUCION MAS CORRECTA
 
-<input type="color" id="color">
+<input type="color" name="color">
 <button  onclick ="replacecolor3(document.getElementByTagName('color').value, this)">sendcolor</button>
 
 <script>
@@ -396,7 +396,7 @@ button.style.backgroundcolor=color;
 <script>
 # al tocar el button se cambie el color del boton y coincida con el panel
 
-<input type="color" id="color">
+<input type="color" name="color">
 <button onclick ="replacecolor3(document.getElementByTagName('color').value)">sendcolor</button>
 
 function replacecolor2(color) {
@@ -406,7 +406,7 @@ document.getElementByTagName('button')[0].style.backgroundcolor= color;
 
 # CON ID al tocar el button se cambie el color del boton y coincida con el panel
 
-<input type="color" id="color">
+<input type="color" id="color" value = "color">
 <button  id ="boton" onclick ="replacecolor3(document.getElementByTagName('color').value)">sendcolor</button>
 <script>
 function replacecolor2(color) {
