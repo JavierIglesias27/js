@@ -368,6 +368,27 @@ run();
 
 `ACCEDER 2 : document.write($car["type"]);`
 
+# TIPOS DE FUNCIONES
+
+## FOR(){}
+
+```let $cantidad = $car.matriculas.length;
+			document.write("NUMERO ELEMENTOS ARRAY:   " + $cantidad);
+			document.write("<br />");
+			for (let $i = 0; $i < $cantidad; $i++) {
+				document.write($car.matriculas[$i] + "<br />");
+			}
+```
+
+## WHILE
+
+```
+let $cantidad1 = $car.matriculas.length; let i = 0; while (i < $cantidad1) { document.write($car.matriculas[i] + "<br />"); i++; }
+```
+
+`ÈN EL BUCLE FO PUEDES PONER`
+document.write($car.matriculas[++] + "<br />");
+
 ## CREAR BUTTON
 
 ### al tocar el boton la etiqueta h2 se cmabiaran de UNA SOLA VEZ!!
