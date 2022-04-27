@@ -8,10 +8,10 @@
 
 `<script> XA CODIGO INTERNO DEL ACHIVO </SCRIPT>`
 
-# IMPORTAR ARCHIVOS DESDE JS(SIEMPRE DENTRO HEAD)
+## IMPORTAR ARCHIVOS DESDE JS(SIEMPRE DENTRO HEAD)
 
 `NOTA: SE DEBERA HACER UN SCRIPT PARA HTML, CSS...`
-
+```
 <head>
     <script defer src="./file.js"></script>
 </head>
@@ -26,48 +26,42 @@
         //document.write
     </script>
 
-<body>
+</body>
+```
 
-### atributos que se pueden añadir al importa JS
+# Atributos que se pueden añadir al importa JS
 
-` <script src="./file.js"> tal y como llegue el documento se ejecutara`
+* `<script src="./file.js">` tal y como llegue el documento se ejecutara.
 
-`<script async src="./file.js"> slipear(se queda en stand by) es decir espera a tener el script y luego empieza a cargar el body--> PROBLEMA: si p.e hay una imagen q no se ejecuta NO se CARGARA NUNCA`
+* `<script async src="./file.js">` slipear(se queda en stand by) es decir espera a tener el script y luego empieza a cargar el body--> PROBLEMA: si p.e hay una imagen q no se ejecuta NO se CARGARA NUNCA.
 
-`<script defer src="./file.js"> IGUAL Q EL ASYNC xo permite que todo lo demas se vaya cargando y lo ultimo es el script`
+* `<script defer src="./file.js">` IGUAL Q EL ASYNC xo permite que todo lo demas se vaya cargando y lo ultimo es el script.
 
-`<script async defer src="./file.js"> primero hace el asign y luego el defer`
+* `<script async defer src="./file.js">` primero hace el asign y luego el defer.
 
 # COMO SELECCIONAR ID, Class, all DESDE JS
 
-`archivo file.js`
+* `document` hace referencia a todo lo q hay en body`
 
-`document hace referencia a todo lo q hay en body`
+`document.getElementById("nombre")`--> seleccionamos los ID del HTML.
 
-`document.getElementById("nombre")--> seleccionamos todos los ID del HTML`
+* `document.getElementByClassName("asd")`--> seleccionamos los class del HTML.
 
-`document.getElementByClassName("asd")--> seleccionamos todos las class del HTML`
+* `document.getElementByName ("juan")`--> seleccionamos los name del HTML.
 
-`document.getElementByName ("juan")--> seleccionamos todos los name del HTML `
+* `document.getElementByTagName ("h1")`--> seleccionamos directamente etiquetas del HTML.
 
-`document.getElementByTagName ("h1")--> seleccionamos directamente etiquetas del HTML `
+* `document.getElementById("nombre").innerHTML = "asd";` --> cambia el contenido  etiqueta "p" x escribe ASD.
 
-`<p id ="nombre" class="asd" name="juan"> holaaaaaaaque tal</p>`
-
-`document.getElementById("nombre").innerHTML = "asd"; --> cambia el contenido p x ASD`
-
-`document.getElementById("nombre").innerHTML += "asd"; añade ASD al holaaa qtal`
-
-<script>
-    document.get 
-</script>
+`document.getElementById("nombre").innerHTML += "asd";` añade ASD al contenido de la etiqueta "p".
 
 ## Acceder a otro link-carpetas-subcarpetas
 
 Crear links/carpetas/subcarpetas y acceder directamente
 
-[JS](./js1.html)
-[bienvenido a google](https://www.google.es/)
+* [JS](./js1.html)
+
+* [bienvenido a google](https://www.google.es/)
 
 ## Ejemplo de lista/tablas en Markdown
 
@@ -77,243 +71,288 @@ Crear links/carpetas/subcarpetas y acceder directamente
 
 Para lanzar las comprobaciones, contenido del div, variables q contengan texto...
 
-`console.log("xxxxx");`
+* `console.log("xxxxx");`
 
-`console.error("fallooooooo");`
+* `console.error("fallooooooo");`
 
-`console.info("INFOOOO");`
+* `console.info("INFOOOO");`
 
-`console.warn("WARNNNNNNN");`
+* `console.warn("WARNNNNNNN");`
 
-`\n salto de linea(carro) `
+* `\n salto de linea(carro) `
 
-`\t son tabulaciones `
+* `\t son tabulaciones `
 
-`\v crea un tab vertical`
+* `\v crea un tab vertical`
 
-`\r es otra manera de hacer salto de linea y tmb xa que se coloque al principio de linea`
+* `\r es otra manera de hacer salto de linea y tmb xa que se 		coloque al principio de linea`
 
-`\b crea un espacio`
+* `\b crea un espacio`
 
-`\f crea un avance en el form`
+* `\f crea un avance en el form`
 
-` \``escape para que printee `
+* `\` `escape para que printee `
 
-` `\\`escape pra que printee `
+* ` `\\`escape pra que printee `
 
-`console.log(typeof(var1)); es el equivalente al vardump del php xa saber que tipo de salidas tiene la vfuncion typeof= number, string, float, undefined, NaN, boolean,infinito, matrices[1,8,7,], objetos{}`
+* `console.log(typeof(var1);` es el equivalente al vardump del php xa saber que tipo de salidas tiene la funciÓn typeof= number, string, float, undefined, NaN, boolean,infinito, matrices[1,8,7,], objetos{}
 
-` tipos de objetos mas comunesJSON{}`
-
-`write.document(typeof(var1));`
 
 ## Funciones
 
+* `alert()` Mostrar mensaje
+
+* `document.write()`Imprimir en pantalla
+
+* `prompt()` Solicitar datos al usuario
+
+* `parseint()` Convertir a string y coge el primer integro
+
+* `parseFloat`Convertir texto a numero sdecimales
+
+* `toUpperCase()` Transformar texto en mayúsculas
+
+* `toLowerCase()`transformar texto en minúsculas
+
+* `if(%2==0){} ` Indicar numeros pares(módulo)
+
+* `if(%2==1){} ` Indicar numeros impares(módulo)
+
+* `toPrecision(2) `Redondear a dos/tres decimales..
+
+* `typeof()` función para saber el tipo de variable--> string, float...
+
+* `valueOf()` función para saber el tipo de variable--> string, 	float...
+
 `IMPORTANTE!!!Las funciones distinguen entre mayúsculas y minúsculas`
-
-`alert()`-->mostrar mensaje
-
-`document.write()`para imprimir en pantalla
-
-`prompt()` sirve para solicitar datos al usuario
-
-`parseint()` para convertir a string y coge el primer integro
-
-`parseFloat`para convertir texto a numero sdecimales
-
-`toUpperCase()` para poner texto en mayúsculas
-
-`toLowerCase()` para poner texto en minúsculas
-
-`if(%2==0){} ` para indicar numeros pares(modulo)
-
-`if(%2==1){} ` para indicar numeros impares(modulo)
-
-`toPrecision(2) `para redondear a dos decimales /tres decimales...
-
-`typeof()` funcionn para saber el tipo de variable--> string, float...
-
-`valueOf()` funcionn para saber el tipo de variable--> string, float...
 
 ## Propiedades
 
-`lenght`para saber el numero de elementos que tiene un array p.e.
+* `lenght`para saber el numero de elementos que tiene un array p.e.
 
-`1e1` RECORDAR que "e" es un número
+* `1e1` RECORDAR que "e" es un número
 
-`MAX_VALUE` Valor maximo
+* `MAX_VALUE` Valor maximo
 
-`MIN_VALUE` Valor minimo
+* `MIN_VALUE` Valor minimo
 
-`POSITIVE_INFINITY` Solo valores positivos
+* `POSITIVE_INFINITY` Solo valores positivos
 
-`NEGATIVE_INFINITY` solo valores negativos
+* `NEGATIVE_INFINITY` solo valores negativos
 
-# Tipos de variables
+# Tipos de Variables
 
-`PRIMITIVAS: int(numeros enteros), float( numeros con decimales),string(texto) , boolean(True/false)`
+	1. PRIMITIVAS:
 
-`NUEVAS VARIABLES: tienen las primera letra en mayusculas, NO las usaremos de momentos `
-`Int, String, Boolean, Float`
+		1.1 int (Números Enteros)
 
-`let var7=25 TODAS LAS VARIABLES EN JS SON DEL TIPO LET Y SE PONE SOLO AL CREARLAS`
+		1.2 float (Números con decimales)
 
-`_var2 = global_var2 _variables globales : son las que emepiezan por _`
+		1.3 string (Texto) 
 
-` _var2 = const_var2 es lo mismo variables global`
+		1.4 boolean (True/False: 1/0)
 
-`_PI = 3,1416...ejemplo de variable global`
+	2. NUEVAS VARIABLES(La primera letra en mayúsculas)
 
-`_RA = variable parecida a PI`
+		2.1 Int
 
-`IMPORTANTE!!!Las variables distinguen entre mayúsculas y minúsculas`
+		2.2 String
 
-`new Number("6")` transforma el texto en numero es equivalente al parseInt
+		2.3 Boolean
 
-`new String`tranformar a texto
+		2.4 Float
 
-`new Date("2020-01-16")` para calcular la fecha de hoy
+	3. GLOBALES/CONSTANTES 
 
-# operadores basicos
+		3.1 _var2 ~ const_var2 ()  empiezan por _nombre
 
-`+ sirve para concatenar y sumar`
+		3.2 _PI = 3.141615
 
-`- restar`
+		3.3 _RA = Número semejante a PI
 
-`/ dividir`
+		3.4 new Number : Transforma el texto en número es equivalente a la funcion parseInt.
 
-`* multiplicar`
+		3.5 new String: Transforma el contenido a texto.
 
-`++ sirve para sumar uno a la variable var++= var +1`
+		3.6 new Date("2020-01-16"): Para calcular la fecha de hoy
 
-`-- sirve para restar uno a la variable var--= var - 1`
+`NOTA: Las variables distinguen entre mayúsculas y minúsculas`
 
-`** sirve para hacer exponente`
+# Operadores Básicos
 
-`let var= 8 ** 2;`
+* `+ sirve para concatenar y sumar`
 
-`console.log($var7);`
+* `- restar`
 
-`% es un modulo`
+* `/ dividir`
 
-# bucles
+* `* multiplicar`
+
+* `++ sirve para sumar uno a la variable var++= var +1`
+
+* `-- sirve para restar uno a la variable var--= var - 1`
+
+* `** sirve para hacer exponente`
+
+* `let var= 8 ** 2;`
+
+* `console.log($var7);`
+
+* `% es un modulo`
+
+# Bucles
 
 `if(condiciones){ejecucion}`
+```
+let $cantidad=(7, 8 , 98, 456 )
+if($i=0; $i<=$cantidad;i++){
+	document.write("lista <br />" + $cantidad)
+}
+```
 
 `fuction cosa(parametro){ejecucuion}`
 
 `array []`
+```
+let coches= ["BMW","Ferrari","Audi"]
+```
+
+` for(condicion){ejecución}`
+
+```
+let $cantidad = $car.matriculas.length;
+document.write("NUMERO ELEMENTOS ARRAY: " + $cantidad);
+document.write("<br />");
+
+	for (let $i = 0; $i < $cantidad; $i++) {
+	document.write($car.matriculas[$i] + "<br />");
+			}
+```
+
+`WHILE`
+
+```
+let $cantidad1 = $car.matriculas.length;
+let i = 0; 
+while (i < $cantidad1) 
+{ document.write($car.matriculas[i] + "<br />"); i++; }
+
+```
+
 
 # tipos de condiciones de los bucles
 
-`= le asigna un valor especificos 1=1`
+* `=` le asigna un valor especificos 1=1
 
-`1==1 compara que uno sea igual al otro`
+* `1==1` compara que uno sea igual al otro
 
-`1!=1 dice que sean diferentes`
+* `1!=1` dice que sean diferentes
 
-` 3 >=1 mayor o igual`
+* `3 >=1`mayor o igual
 
-` 1 <=3 mayor o igual`
+* `*1 <=3` mayor o igual
 
-`3 > 2 estrictamente mayor`
+* `3 > 2` estrictamente mayor
 
-` 1 < 3 estrictamente menor`
+* ` 1 < 3` estrictamente menor
 
-`1 === 1 estrictamente igual le haces q 1 tome el valor de 1 y no de true`
-`es importante al comparar bite a bite 0000100 `
+* `1 === 1` estrictamente igual le haces q 1 tome el valor 	de 1 y 	no de true-->es importante al comparar bite a bite 0000100 
 
-`1==1 te pondria 00true00 y seria una ERROR!`
+* `1==1´ te pondria 00true00 y seria una ERROR!
 
-`1!=== 1 es estrictamente diferentes`
+* `1!=== 1` es estrictamente diferentes
 
-`1 ? 1 operador ternario sirve xa hacer un if mas concentrado`
-`esto es IF + ELSE`
+* `1 ? 1` operador ternario sirve xa hacer un if mas 		concentrado --> esto es IF + ELSE
 
-if(3==5) {console.log("asd")} else {console.log("jkf")}
+* `if(3==5)` {console.log("asd")} else {console.log("jkf")}
 
-3==5?consoloe.log("asd"): consoloe.log("jkl");
+* `3==5?consoloe.log("asd"): consoloe.log("jkl");`
 
-`este es IF solo`
+* `if(3==5) {console.log("asd");`
 
-if(3==5) {console.log("asd");
+* `3==5?consoloe.log("asd");`
 
-3==5?consoloe.log("asd");
+* `if(!3==3){console.log("asd")}`--> esto NUNCA se cumpliria
 
-`if(!3==3){console.log("asd")}`esto no se cumpliria
+* `if (3==3 && 5==3){console.log("asd"}`--> esto NUNCA se 		cumpliarÍa.
 
-`if (3==3 && 5==3){console.log("asd"}` esto NO se cumpliaria nunca
-
-`if (3==3 ||5==3){console.log("asd"}` esta se cumpliria uno o otro
+* `if (3==3 ||5==3){console.log("asd"}`--> esta se 			cumplirÍa uno o otro`
 
 # operadores 2 grado
 
-`=` let var=8;
+* `=` --> `let var=8;`
 
-`+=` let var+=3; resultad 8+3=11
+* `+=` --> `let var+=3; resultad 8+3=11`
 
-`-=` let var-=3; resultad 8-3=5
+* `-=` --> `let var-=3; resultad 8-3=5`
 
-`*=` 5*=5 es igual 5*5*5*5\*5=3125
+* `*=` --> `5*=5 es igual 5*5*5*5\*5=3125`
 
-`/=`
+* `/=`
 
-`%=` modulos p.e 2%2 devuelve 0
+*  `%` --> `modulos p.e 2%2 devuelve 0`
 
-modulo p.e 3 % 2 devuelve 1
-let $var=2;
-$varasd %= 3;
-console.log($varasd);
+```ejemplo:
+			3 % 2 devuelve 1
+			let $var=2;
+			$varasd %= 3;
+			console.log($varasd);
+```
 
-`**=` exponencial
+* `**=` --> `exponencial`
 
-# orden de operadores matemáticos
+# Orden de Lógico de los operadores matemáticos
 
-`() y []`
+1.  `() y []`
 
-`* y /`
+2.  `* y /`
 
-`+ y -`
+3.  `+ y -`
 
-`&&`
+4.  `&&`
 
-`||`
+5.  `||`
 
-# otros operadores
+# Otros operadores
 
-`&` AND
+* `&` AND
 
-`|` OR
+* `|` OR
 
-`~`NOT
+* `~`NOT
 
-`^`XOR
+* `^`XOR
 
-`<<` LEFT
+* `<<` LEFT
 
-`>>` RIGHT
+* `>>` RIGHT
 
-`>>>` UNSIGNED RIGHT SHIFT
+* `>>>` UNSIGNED RIGHT SHIFT
+ ```
+		console.log (0101 >>> 1); Comparaciones en código en binario.
+		console.log (5 >>> 1); el 0101 es el valor 5 en binario y te dice la posición q ocupa.
 
-console.log (0101 >>> 1); Para hacer comparaciones en codigo en binario
-console.log (5 >>> 1); el 0101 es el valor 5 en binario y te dice la posicion q ocupa
-
+```
 # forma de llamar a JS por parte del usuario( cuando el usuario haga click se llamara)
 
-<button onclick="alert();"> al clickar en el en boton
-
-<button onblue=>
+* <button onclick="alert();"> click boton</button>
+* <button onblue=>
 
 # NOTA PROBLEMA JS
-
-let var1= 1 + 5 +"texto" --> aqui suma 1+5 y concatena texto
-console.log("var1")
-
-let var1= "texto" + 1 + 5 +--> aqui detecta texto y no suma
-console.log("var1")
+` PRIMER PROBLEMA`
+``` 
+		let var1= 1 + 5 +"texto" --> aqui suma 1+5 y concatena texto
+		console.log("var1")
+```
+`SEGUNDO PROBLEMA`
+```
+	let var1= "texto" + 1 + 5 +--> aqui detecta texto y no suma
+	console.log("var1")
+```
 
 # DIFERENCIA LET Y VAR
-
+## Ejemplo LET 
+```
 let $var1= 1; 
 $var1=2;
 
@@ -321,35 +360,33 @@ $var1=2;
 function cosa1(){ $var1=2}
 cosa1(); --> llamo a la funcion sin pasar parametro y resultado=2
 console.log(var1);
-
+```
+## Ejemplo VAR
+```
 var $var2= 1; $var2=2;
 
 `CREAMOS FUNCION`
 function cosa2(){ $var2=5}
 cosa2();--> llamo a la funcion sin pasar parametro y resultado=2
 console.log(var1);
-
-`variable total`--> NO SE PUEDE REDEFINIR UNA VARIABLE CONSTANTE`
-
-const_PI =3.1416
-`_PI=2;`
-`console.log(_PI);`
-
-### IMPORTANTE A LA HORA DE DECLARAR LA VARIABLE
+```
+### OJO!! Al declarar la función
 
 `Dentro de la funcion UTILIZAR SIEMPRE let /var me afecta solo dentro de la funcion`
 
 `Y FUERA puedes usar $ , LET, VAR Y CONST _`
 
-## EJEMPLO LET /VAR
+` VAR se extralimita se puede llamar fuera de la funcion declarada/NOdeclarada`
 
+`LET solo se puede llamar dentro de la funcion declarada/ NO declarada y es BUENO XQ SOLO AFECTA ALA FUNCION que se ejecuta.`
+
+## EJEMPLO LET /VAR
+```
 function run() {
 var foo ="foo"
 let bar ="Bar"
 console.log (foo, bar);
-` FUNCION NO DECLARADA:esto de aqui es una funcion que no hace falta definirla xq se va a ejecutar siempre`
-` VAR se extralimita se puede llamar fuera de la funcion NO declaradas`
-`LET solo se puede llamar dentro de la funcion NO declarada y es BUENO XQ SOLO AFECTA ALA FUNCION DECLARADA xq solo se ejecuta una vez`
+
 {
 var moo ="Mooo"
 let baz ="Bazz"
@@ -359,65 +396,76 @@ console.log(moo);
 console.log(baz);error!!!
 }
 run();
+```
+# DIFENCIA ENTRE:
+1. ` FUNCION NO DECLARADA: es una funcion que no hace falta definirla xq se va a ejecutar siempre.` 
+2. ` FUNCION NDECLARADA:  hace falta definirla/llamarla xa que se ejecute.`
+
 
 # OBJETOS
 
 ### claudator {} indica q son objetos
 
-`ACCEEDER : document.write($car.type);`
+1. `ACCEEDER : document.write($car.type);`
 
-`ACCEDER 2 : document.write($car["type"]);`
+2. `ACCEDER 2 : document.write($car["type"]);`
 
-# TIPOS DE FUNCIONES
+### TIPOS DE OBJETOS
 
-## FOR(){}
+` tipos de objetos mas comunesJSON{}`
 
-```let $cantidad = $car.matriculas.length;
-			document.write("NUMERO ELEMENTOS ARRAY:   " + $cantidad);
-			document.write("<br />");
-			for (let $i = 0; $i < $cantidad; $i++) {
-				document.write($car.matriculas[$i] + "<br />");
-			}
+# CREAR BUTTON
+
+# Tocar el boton la etiqueta/s "p" se cambiar de color UNA SOLA VEZ!!
 ```
-
-## WHILE
-
-```
-let $cantidad1 = $car.matriculas.length; let i = 0; while (i < $cantidad1) { document.write($car.matriculas[i] + "<br />"); i++; }
-```
-
-`ÈN EL BUCLE NO PUEDES PONER`
-document.write($car.matriculas[++] + "<br />");
-
-## CREAR BUTTON
-
-### al tocar el boton la etiqueta h2 se cmabiaran de UNA SOLA VEZ!!
-
+<head>
+<style>
+	.rojo{
+		backgroundcolor:red;
+	}
+	.green {
+		backgroundcolor:green;
+	}
+</style>
+</head>
 <body>
-<h1>REPLACE [1] de rojo a verde</h1>
+<h5>REPLACE [1] de rojo a verde</h5>
 
-		<p>PRIMER TEXTO</p>
-		<p>SEGUNDO TEXTO</p>
+<p>PRIMER TEXTO</p>
+<p>SEGUNDO TEXTO</p>
 
-		<script>
-			function cosas1() {
-				document.getElementsByTagName("p")[12].classList.add("rojo");
-				document.getElementsByTagName("p")[13].classList.add("rojo"); // lo pone primero rojo (aunque no se vea)
-				document
-					.getElementsByTagName("p")[13]
-					.classList.replace("rojo", "green"); //(Luego lo cambia a verde)
-			}
-		</script>
-		<button onclick="cosas1()">replace red to green</button>
+<script>
+	function cosas1() {
+		document.getElementsByTagName("p")[12].classList.add("rojo");
+		document.getElementsByTagName("p")[13].classList.add("rojo"); // lo pone primero rojo (aunque no se vea)
+		document
+			.getElementsByTagName("p")[13]
+			.classList.replace("rojo", "green"); //(Luego lo cambia a verde)
+	}
+</script>
+<button onclick="cosas1()">replace red to green</button>
 
 </body>
+```
 
 # SI QUEREMOS Q CAMBIE CADA VEZ Q TOCAS EL BUTTON
 
-<body>
+```
+<head>
+	<style>
+	.rojo{
+		backgroundcolor:red;
+	}
+	.azul{
+		backgroundcolor:azul;
+	}
 
+	</style>
+</head>
+
+<body>
 	<p>PRIMER TEXTO</p>
-		<p>SEGUNDO TEXTO</p>
+	<p>SEGUNDO TEXTO</p>
 
 		<script>
 			document.getElementsByTagName("p")[0].classList.add("rojo");
@@ -439,39 +487,44 @@ document.write($car.matriculas[++] + "<br />");
 		</script>
 		<button onclick="replacecolor()">REPLACE AL CLICK</button>
 </body>
+```
 
-# crear un panel de colores y al tocar el boton enviar te de el valor del panel de control
-
+# Panel de colores y al tocar el boton enviar te de el valor del panel de control(SOLUCIÓN 1)
+```
 <h1>Panel de color y al tocar el boton enviar value</h1>
-		<form action="#" method="get" target="_blank">
-			<fieldset>
-				<input type="color" name="color" />
+	<form action="#" method="get" target="_blank">
+		<fieldset>
+			<input type="color" name="color" />
 
-				<button
-					onclick="replacecolor2(document.getElementsByTagName('color').value)"
-				>
-					sendcolor
-				</button>
-				<script>
-					function replacecolor2(color) {
-						consol.log(color);
-					}
-				</script>
-			</fieldset>
-		</form>
+			<button
+				onclick="replacecolor2(document.getElementsByTagName('color').value)"
+			>
+				sendcolor
+			</button>
+			<script>
+				function replacecolor2(color) {
+					consol.log(color);
+				}
+			</script>
+		</fieldset>
+	</form>
+```
 
-# SOLUCION MAS CORRECTA
+# Panel de color + enviar valor (SOLUCIÓN 2 + CORRECTA)
+```
 
 <input type="color" name="color">
 <button  onclick ="replacecolor3(document.getElementByTagName('color').value, this)">sendcolor</button>
 
 <script>
-function replacecolor2(color, button) {
+function replacecolor3(color, button) {
 consol.log(color);
 button.style.backgroundcolor=color;
 }
 <script>
-# al tocar el button se cambie el color del boton y coincida con el panel
+```
+# tocar el button se cambie el color del boton y coincida con el panel de color.
+```
 <h1>que se ponga el button rojo</h1>
 		<form action="#" method="#" target="#">
 			<fieldset>
@@ -492,5 +545,6 @@ button.style.backgroundcolor=color;
 		</form>
 	</body>
 </html>
+```
 
 
