@@ -16,19 +16,18 @@ Solicita un número, pinta el número y si es par o no
 	            document.write(numero + ":   introducir valor númerico!!!! <br/>".toUpperCase());
             }else{
                 numero= new Number(numero);
-
-	            document.write(numero + ":   es un número <br/>");
-                if(numero %2==0 && numero > 0 ){
-                    document.write(numero + ":   es un número positivo y par");
+	            document.write(numero + ":   es un numero <br/>");
+                if(numero %2==0 && numero > 0){
+                    document.write(numero + ":   es un numero par y positivo");
                 }
-                else if (numero %2==0 && numero < 0){
-                    document.write(numero + ":   es un número negativo y par");
+                else if (numero % 2==0 && numero <0){
+                    document.write(numero + ":   es un numero par y negativo");
                 }
-                else if (numero %2==1 && numero < 0){
-                    document.write(numero + ":   es un número negativo y impar");
+                else if (numero % 2==1 && numero >0){
+                    document.write(numero + ":   es un numero impar y positivo");
                 }
-                 else {
-                    document.write(numero + ":   es un número positivo e impar");
+                 else{
+                    document.write(numero + ":   es un numero impar y negativo");
                 }
             }
         </script>
