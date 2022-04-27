@@ -17,12 +17,18 @@ Solicita un número, pinta el número y si es par o no
             }else{
                 numero= new Number(numero);
 
-	            document.write(numero + ":   es un numero <br/>");
-                if(numero %2==0){
-                    document.write(numero + ":   es un numero par");
+	            document.write(numero + ":   es un número <br/>");
+                if(numero %2==0 && numero > 0 ){
+                    document.write(numero + ":   es un número positivo y par");
+                }
+                else if (numero %2==0 && numero < 0){
+                    document.write(numero + ":   es un número negativo y par");
+                }
+                else if (numero %2==1 && numero < 0){
+                    document.write(numero + ":   es un número negativo y impar");
                 }
                  else {
-                    document.write(numero + ":   es un numero impar");
+                    document.write(numero + ":   es un número positivo e impar");
                 }
             }
         </script>
