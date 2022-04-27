@@ -109,6 +109,8 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 ## Funciones
 
+`IMPORTANTE!!!Las funciones distinguen entre mayúsculas y minúsculas`
+
 `alert()`-->mostrar mensaje
 
 `document.write()`para imprimir en pantalla
@@ -116,6 +118,8 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 `prompt()` sirve para solicitar datos al usuario
 
 `parseint()` para convertir a string y coge el primer integro
+
+`parseFloat`para convertir texto a numero sdecimales
 
 `toUpperCase()` para poner texto en mayúsculas
 
@@ -125,9 +129,25 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 `if(%2==1){} ` para indicar numeros impares(modulo)
 
+`toPrecision(2) `para redondear a dos decimales /tres decimales...
+
+`typeof()` funcionn para saber el tipo de variable--> string, float...
+
+`valueOf()` funcionn para saber el tipo de variable--> string, float...
+
 ## Propiedades
 
 `lenght`para saber el numero de elementos que tiene un array p.e.
+
+`1e1` RECORDAR que "e" es un número
+
+`MAX_VALUE` Valor maximo
+
+`MIN_VALUE` Valor minimo
+
+`POSITIVE_INFINITY` Solo valores positivos
+
+`NEGATIVE_INFINITY` solo valores negativos
 
 # Tipos de variables
 
@@ -145,6 +165,14 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 `_PI = 3,1416...ejemplo de variable global`
 
 `_RA = variable parecida a PI`
+
+`IMPORTANTE!!!Las variables distinguen entre mayúsculas y minúsculas`
+
+`new Number("6")` transforma el texto en numero es equivalente al parseInt
+
+`new String`tranformar a texto
+
+`new Date("2020-01-16")` para calcular la fecha de hoy
 
 # operadores basicos
 
@@ -164,7 +192,7 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 `let var= 8 ** 2;`
 
-`console.log($var7);'
+`console.log($var7);`
 
 `% es un modulo`
 
@@ -331,6 +359,14 @@ console.log(moo);
 console.log(baz);error!!!
 }
 run();
+
+# OBJETOS
+
+### claudator {} indica q son objetos
+
+`ACCEEDER : document.write($car.type);`
+
+`ACCEDER 2 : document.write($car["type"]);`
 
 ## CREAR BUTTON
 

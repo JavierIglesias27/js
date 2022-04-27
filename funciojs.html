@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>funciones varias</title>
+		<script defer src="#"></script>
+	</head>
+	<body>
+		<h1>FUNCION toPrecision()</h1>
+		<script>
+			let number = 985.12345;
+			document.write(number.toPrecision(3));
+			document.write("<br />");
+			document.write(number.toPrecision(1));
+			document.write("<br />");
+			document.write(1e1);
+			document.write("<br />");
+			/*Objeto/variable Number*/
+			let variable1 = "6";
+			let numero = Number(variable1);
+			document.write("<br />");
+			document.write(numero);
+			document.write("<br />");
+			document.write(numero + 3);
+			document.write("<br />");
+			/*funcion parseInt*/
+			let variable2 = "15";
+			let numero2 = parseInt(variable2);
+			document.write(variable2);
+			document.write("<br />");
+			document.write(parseInt("5") + parseInt("6"));
+			/*parseFloat*/
+			document.write("<br />");
+			document.write(
+				"AÑADIMOS TEXTO OJO LOS PARSEFLOAT " +
+					(parseFloat("5.58") + parseFloat("6.456"))
+			);
+			/* PROPIEDADES ASOCIADA AL NUMBER*/
+
+			document.write("<br />");
+			document.write("VALOR MAXIMO:    " + Number.MAX_VALUE);
+			/*Si pones una valor superior al numero max te dara +infinito*/
+			document.write("<br />");
+			document.write("VALOR MINIMO:    " + Number.MIN_VALUE);
+			/* si resta x debajo del numero que te da infinito en negativo*/
+			document.write("<br />");
+			document.write(
+				"SOLO NUMEROS POSITIVOS:      " + Number.POSITIVE_INFINITY
+			);
+			document.write("<br />");
+			document.write("SOLO NUMEROS NEGATIVOS:     " + Number.NEGATIVE_INFINITY);
+			document.write("<br />");
+			document.write("CUANDO HAY ERRORES:     " + Number.NaN);
+			/*Number con Date*/
+			/*obtener la fecha actual*/
+
+			document.write("<br />");
+			document.write(Number(new Date("1970-01-01")));
+			document.write("<br />");
+			document.write(Number(new Date("1970-01-02")));
+			document.write("<br />");
+			hoy = Number(new Date("2022-04-27"));
+			document.write(hoy);
+			document.write("<br />");
+			ayer = hoy - 86400000;
+			document.write(new Date(ayer));
+			document.write("<br />");
+			/*dia actual de hoy*/
+			document.write(new Date());
+
+			/*calcular un mes atras*/
+			document.write("<br />");
+			let $mesanterior = hoy - 86400000 * 31;
+			document.write(new Date($mesanterior));
+
+			/*objetos*/
+			document.write("<br /> <br />");
+			let $car = {
+				type: "BMW",
+				model: "E30",
+				color: "rojo",
+				age: 20,
+				matriculas: ["2021JGF", "4568ADE", "7895YUT"],
+				repetir: function () {
+					return this.type + "" + this.model;
+				},
+			};
+			document.write("<br />");
+			document.write($car.type);
+			document.write("<br />");
+			document.write($car["type"]);
+			document.write("<br />");
+			document.write($car["model"]);
+			document.write("<br />");
+			document.write($car["color"]);
+			document.write("<br />");
+			document.write($car["age"]);
+			document.write("<br />");
+			document.write($car["matriculas"]);
+			document.write("<br />");
+			document.write($car.repetir());
+		</script>
+	</body>
+</html>
