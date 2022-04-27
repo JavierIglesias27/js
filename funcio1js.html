@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FUNCION1JS</title>
+	</head>
+	<body onload="fun4()">
+		<p id="p_1">P_1</p>
+		<p id="p_2">P_2</p>
+		<p id="p_3">P_3</p>
+		<p id="p_4">P_4</p>
+
+		<button onclick="fun1()">1</button>
+
+		<button onmouseover="fun2()">2</button>
+
+		<button onmouseout="fun3()">3</button>
+
+		<!--se pueden unir dos botones a la vezjhjh 
+            <button onmouseover="fun2()">2</button onmouseover="fun3()">2</button>
+        -->
+		<button>4</button>
+		<br />
+		<br />
+		<br />
+		<form action="#" method="GET" onsubmit="validation()">
+			<input type="text" id="name" />
+			<input type="submit" value="submit" />
+		</form>
+
+		<script>
+			function fun1() {
+				document.getElementById("p_1").style.backgroundColor = "red";
+			}
+
+			function fun2() {
+				document.getElementById("p_2").style.backgroundColor = "green";
+			}
+
+			function fun3() {
+				document.getElementById("p_3").style.backgroundColor = "yellow";
+			}
+
+			function fun4() {
+				document.getElementById("p_4").style.backgroundColor = "violet";
+			}
+			function validation() {
+				let texto = document.getElementById(`name`).innerHTML;
+				alert();
+				return true;
+			}
+		</script>
+	</body>
+</html>
