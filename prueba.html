@@ -30,7 +30,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>getElementById</h1>
+		<!-- <h1>getElementById</h1>
 
 		<p id="nombre">PRIMER TEXTO</p>
 		<p id="nombre1">SEGUNDO TEXTO</p>
@@ -93,22 +93,28 @@
 					.classList.replace("rojo", "green"); //(Luego lo cambia a verde)
 			}
 		</script>
-		<button onclick="cosas1()">replace red to green</button>
+		<button onclick="cosas1()">replace red to green</button> -->
 
-		<h1>ERROR!!!que cambie cada vez q tocas el boton</h1>
+		<h1>Cambia cada vez q tocas el boton</h1>
 
 		<p>PRIMER TEXTO</p>
 		<p>SEGUNDO TEXTO</p>
 
 		<script>
+			document.getElementsByTagName("p")[0].classList.add("rojo");
+			document.getElementsByTagName("p")[1].classList.add("rojo");
 			let $a = 0;
-			let $text = document.getElementsByTagName("p")[15];
+			let $text = document.getElementsByTagName("p")[0];
+			let $text1 = document.getElementsByTagName("p")[1];
 			function replacecolor() {
 				$a++;
 				if ($a % 2 == 0) {
 					$text.classList.replace("rojo", "azul");
+					$text1.classList.replace("rojo", "azul");
+
 				} else {
 					$text.classList.replace("azul", "rojo");
+					$text1.classList.replace("azul", "rojo");
 				}
 			}
 		</script>

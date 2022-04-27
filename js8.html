@@ -15,9 +15,10 @@ Solicita un número, pinta el número y si es par o no
             if(isNaN(numero)){
 	            document.write(numero + ":   introducir valor númerico!!!! <br/>".toUpperCase());
             }else{
-                let numero= parseInt(numero);
+                numero= new Number(numero);
+
 	            document.write(numero + ":   es un numero <br/>");
-                if(numero %2==0 ){
+                if(numero %2==0){
                     document.write(numero + ":   es un numero par");
                 }
                  else {

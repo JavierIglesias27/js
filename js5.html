@@ -10,17 +10,19 @@ Pide al usuario un número, comprueba que es un número y usando un  if() pinta 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <title>Ejercicio 5</title>
         <script type="text/javascript">
-              let numero = prompt("Introduce un número");
+
+            let numero = prompt("Introduce un número");
+
             if(isNaN(numero)){
-	           document.write( " Introducir un valor númerico <br/>".toUpperCase());
+	           document.write("ERROR!!!! Introducir un valor númerico <br/>".toUpperCase());
             }else{
-               let numero = parseInt(numero)
-	            document.write(numero + ": correcto, es un valor númerico <br/>".toUpperCase());
-                if (numero>=10){
-                   document.write(numero + " es un número mayor o igual a 10".toUpperCase());
+                numero = new Number(numero);
+	            document.write(numero +  ": valor númerico <br/>".toUpperCase());
+                if (numero >=10 ){
+                   document.write(numero + ": es un número mayor o igual a 10".toUpperCase());
                 }
                 else {
-                    document.write (numero +" es un número menor a 10".toUpperCase());
+                    document.write (numero +": es un número menor a 10".toUpperCase());
                 }
             }
         </script>

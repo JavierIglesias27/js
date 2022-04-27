@@ -416,23 +416,28 @@ document.write($car.matriculas[++] + "<br />");
 
 <body>
 
-<p> pppppppppppppp</p> 
-<h2> pppppppppppppp</h2>
-<button onclick="replacecolor()"></button>
-<script>
-    let $a=0;
-    let $text = document.GetElementsByTagname("p")[3];
-    function replacecolor(){
-        $a++;
-        if($a % 2== 0){
-            $text.classList.replace ("rojo","azul");
+	<p>PRIMER TEXTO</p>
+		<p>SEGUNDO TEXTO</p>
 
-        }else {
-            $text.classList.replace ("azul","rojo");
-        }
-    }
+		<script>
+			document.getElementsByTagName("p")[0].classList.add("rojo");
+			document.getElementsByTagName("p")[1].classList.add("rojo");
+			let $a = 0;
+			let $text = document.getElementsByTagName("p")[0];
+			let $text1 = document.getElementsByTagName("p")[1];
+			function replacecolor() {
+				$a++;
+				if ($a % 2 == 0) {
+					$text.classList.replace("rojo", "azul");
+					$text1.classList.replace("rojo", "azul");
 
-</script>
+				} else {
+					$text.classList.replace("azul", "rojo");
+					$text1.classList.replace("azul", "rojo");
+				}
+			}
+		</script>
+		<button onclick="replacecolor()">REPLACE AL CLICK</button>
 </body>
 
 # crear un panel de colores y al tocar el boton enviar te de el valor del panel de control
