@@ -2,38 +2,41 @@
 
 - `windows.print()`imprimir directamente a impresora
 
-`$text.slice(2 , 8)` es para acotar entre los numeros 2,3,4,5,6,7,8 y admás puedes aplicar números negativos
+- `$text.slice(2 , 8)` es para acotar entre los numeros 2,3,4,5,6,7,8 y admás puedes aplicar números negativos
 
-`txt.substring(2,8)` igual al slice pero no aceota negativos y e smenos costoso informaticamente
+- `txt.substring(2,8)` igual al slice pero no aceota negativos y e smenos costoso informaticamente
 
-`text.replace("texto1", "texto2)` para cambiar texto porotro pero deben ser identicos
+- `text.replace("texto1", "texto2)` para cambiar texto porotro pero deben ser identicos
 
-`text.concat("X X, txt)` para concatenar
+- `text.concat("X X, txt)` para concatenar
 
-`var1.trim()` limpia espacios por delnate y detras de la
+- `var1.trim()` limpia espacios por delnate y detras de la
 
-`$var.padStart`para insertar letras delante de todo
-`$var.pasEnd` para insertar letra al final
-`$var1.charAt(2)` selecionas una posicion enconcreto
-`$var1.charCodeAt(2)` posicion concreta en la lista UTF-8
-`texto.split(" ")` te divide en texto por palabras p.e
+- `$var.padStart`para insertar letras delante de todo
 
-`texto.split(" ")[1]` muestra la palabra ubicada en esa posicion
+- `$var.pasEnd` para insertar letra al final
 
-`texto.indexOf("p")` te da la posicion que ocupa
+- `$var1.charAt(2)` selecionas una posicion enconcreto
 
-`texto.lastIndexOf("p")`igual q el anterior desde el final
+- `$var1.charCodeAt(2)` posicion concreta en la lista UTF-8
 
-`texto.match(" ")`es si existe la palabra en la y te la printea
+- `texto.split(" ")` te divide en texto por palabras p.e
 
-`texto.includes("juan")` devuele true si existe o false en caso contrario
+- `texto.split(" ")[1]` muestra la palabra ubicada en esa posicion
 
-`texto,starstWith("the")` devuelve true en consola si existe o flase en caso contrario
+- `texto.indexOf("p")` te da la posicion que ocupa
 
-`texto.toString(10)`
-recorta la cadena al número que le indicas
+- `texto.lastIndexOf("p")`igual q el anterior desde el final
 
-`$texto4.trim().toLocaleLowerCase().startsWith("the");` lo conviertes a minusculas y te lo encuentra siempre
+- `texto.match(" ")`es si existe la palabra en la y te la printea
+
+- `texto.includes("juan")` devuele true si existe o false en caso contrario
+
+- `texto,starstWith("the")` devuelve true en consola si existe o flase en caso contrario
+
+- `texto.toString(10)` recorta la cadena al número que le indicas
+
+- `$texto4.trim().toLocaleLowerCase().startsWith("the");` lo conviertes a minusculas y te lo encuentra siempre
 
 # atributos para llamar a JS(lista de eventos)
 
