@@ -1,0 +1,67 @@
+<!--
+Sabiendo que "document.bgColor=color" es capaz de cambiar el color de fondo del documento. y que la función "OnMouseOver()" 
+sirve para detectar cuando el raton esta encima:
+
+Realiza una página que muestre cinco cuadrados de diferentes colores.
+Cuando el raton pase por encima de alguno de ellos el color de 
+fondo será del color de relleno del cuadrado.
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 10 BIS</title>
+    <style>
+        button{
+            width:10%;
+            height: 50px;
+            margin-top: 100px;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+<body>
+        <button id="boton1" onmouseover="fun1() ">Click 1</button>
+
+		<button id="boton2" onmouseover="fun2()">Click 2</button>
+
+		<button id="boton3" onmouseover="fun3()">Click 3</button>
+
+        <button id="boton4" onmouseover="fun4()">Click 4</button>
+
+        <button id="boton5" onmouseover="fun5()">Click 5</button>
+
+        <script>
+            function fun1() {
+				document.getElementById("boton1").style.backgroundColor = "orange";
+                document.bgColor= "orange";
+			}
+
+			function fun2() {
+				document.getElementById("boton2").style.backgroundColor = "green";
+                document.bgColor= "green";
+			}
+
+			function fun3() {
+				document.getElementById("boton3").style.backgroundColor = "yellow";
+                document.bgColor= "yellow";
+			}
+
+			function fun4() {
+				document.getElementById("boton4").style.backgroundColor = "blue";
+                document.bgColor= "blue";
+			}
+            function fun5() {
+				document.getElementById("boton5").style.backgroundColor = "red";
+                document.bgColor= "red";
+			}
+        </script>
+
+    
+</body>
+</html>
