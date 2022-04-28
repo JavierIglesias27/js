@@ -1,5 +1,6 @@
 <!--Usa este array y haz que aparezca cada uno de los meses (los 12) en un alert() diferente cada vez. Usa las llaves de ARRAY
-var meses = ["Enero", "Febrero"];-->
+var meses = ["Enero", "Febrero"];
+meses.forEach(element => alert(element));-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +27,9 @@ var meses = ["Enero", "Febrero"];-->
 				"Diciembre",
 			];
 
-			// for (let $i = 0; $i < $meses.length; $i++) {
-			// 	console.log($meses[$i]);
-			// 	alert($meses[$i]);
-			// }
-			// Mediante foreach + facil
-			// $meses.forEach((element) => {
-			// 	document.write(element);
-			// });
+			$meses.forEach((element) => {
+			alert(element);
+			});
 		</script>
 	</body>
 </html>
