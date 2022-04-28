@@ -19,16 +19,23 @@
 		<button onmouseout="fun3()">3</button>
 
 		<!--se pueden unir dos botones a la vezjhjh 
-            <button onmouseover="fun2()">2</button onmouseover="fun3()">2</button>
+            <button onmouseover="fun2()" onmouseover="fun3()">2</button>
         -->
 		<button>4</button>
 		<br />
 		<br />
 		<br />
-		<form action="#" method="GET" onsubmit="validation()">
-			<input type="text" id="name" />
-			<input type="submit" value="submit" />
+		<form name=" myForm" action="a.html" method="post">
+			<label>Name:</label>
+			<input
+				type="text"
+				name="fname"
+				onmouseout="validationForm()"
+				onkeyup="validationForm()"
+			/>
+			<input type="submit" id="submit" value="submit" disabled />
 		</form>
+		<button onclick="window.print()">imprimir esta pagina</button>
 
 		<script>
 			function fun1() {
@@ -47,10 +54,148 @@
 				document.getElementById("p_4").style.backgroundColor = "violet";
 			}
 			function validation() {
-				let texto = document.getElementById(`name`).innerHTML;
-				alert();
-				return true;
+				console.log("cosas");
+				let x = document.forms["myForm"]["fname"].value;
+				if (x == "") {
+					//alert("Name must be filled out");
+					document.getElementById("submit").disabled = true;
+				} else {
+					document.getElementById("submit").disabled = false;
+					//document.myForm.submit();
+				}
 			}
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+			/*funciones*/
+
+			$text = "ABCDEFGHIJKLMNOPQRSTXYZ";
+			document.write($text.lenght);
+			document.write($text.slice(2, 8));
+
+			document.write($text.substring(2, 8));
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			let $text1 = "asddedde quesequite MICROSOFT dfsd";
+			document.write($text1);
+			document.write("<br />");
+			document.write("texto cambiado a:     <br/></br>");
+			document.write($text1.replace("quesequite", "que se pone <br/><br/>"));
+			document.write("<br />");
+			document.write(
+				"Cambiarmicrosoft simpre que se a IDENTICOA:    <br/><br/> "
+			);
+			document.write($text1.replace(/MICROSOFT/i, "www3shoole<br/></br>"));
+			document.write(
+				"CambiarmicrosofT SIN DISTINGUIR MAYUS/MINUS:     <br/><br/>"
+			);
+			document.write($text1.replace(/Microsoft/g, "www3shoole"));
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			let $var1 = "HOLA";
+			let $var2 = "ADIOS";
+
+			document.write($var1.concat("X      X", $var2));
+			document.write("<br />");
+			document.write($var1.concat($var2));
+			document.write("<br />");
+			document.write($var1.trim()); // limpia espacios delante y detras de la palabras
+			document.write("<br />");
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			document.write($var1.padStart(5, "$"));
+			document.write("<br />");
+			document.write($var1.padStart(8, "ASD"));
+			document.write("<br />");
+			document.write($var1.padEnd(5, "$"));
+			document.write("<br />");
+			document.write($var1.padEnd(8, "ASD"));
+			document.write("<br />");
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			document.write(
+				"me devuelve el caracter de la posicion2 :  ",
+				$var1.charAt(2)
+			);
+			document.write("<br />");
+
+			document.write(
+				"me devuelve el caracter de la posicion2 :  ",
+				$var1.charCodeAt(2)
+			);
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			let $texto3 = "HELLO WORLD HIII";
+			document.write($texto3);
+			document.write("<br />");
+			document.write(
+				$texto3[1]
+			); /*TE DA SOLO LA LETRA QUE OCUPA ESTA POSICION*/
+			document.write("<br />");
+			document.write($texto3.split(" "));
+			document.write("<br />"); /* divide el texto3 en cada palabra*/
+			document.write(
+				$texto3.split(" ")[0]
+			); /*te la palabra q ocupala posicion 0*/
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+
+			document.write(
+				$texto3.indexOf("O")
+			); /*te da la posicion q ocupa es la 4*/
+			document.write("<br />");
+			document.write(
+				$texto3.indexOf("o")
+			); /*la o minuscula no existe y x tanto deda valor negativo*/
+			document.write("<br />");
+			document.write("<br />");
+			document.write(
+				$texto3.indexOf("O", 6)
+			); /*empieza a contar a parti de la posicion 5 y te devuelve la 7 xq es la primera O q se encuentra*/
+			document.write("<br />");
+			document.write("<br />");
+
+			document.write($texto3.lastIndexOf("O")); /*igual xo empieza desde final*/
+			document.write("<br />");
+			document.write("<br />");
+
+			let $texto4 =
+				"The rain un spanish rain a lot rain very trees in the rain";
+			document.write($texto4);
+			document.write("<br />");
+			document.write(
+				$texto4.match(/ain/)
+			); /* mira si existe ain en toda la frase*/
+			document.write("<br />");
+			document.write("<br />");
+			document.write(
+				$texto4.includes(/rain/)
+			); /* te devuelve true si existe--en consola no en pantalla*/
+			document.write("<br />");
+			document.write(
+				$texto4.includes(juan)
+			); /* te devuelve false si no existe--en consola no en pantalla*/
+			document.write("<br />");
+			document.write(
+				$texto4.startsWith("the")
+			); /* te devuelve true si empieza por the--en consola no en pantalla*/
+			document.write("<br />");
 		</script>
 	</body>
 </html>

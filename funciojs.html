@@ -73,6 +73,18 @@
 			let $mesanterior = hoy - 86400000 * 31;
 			document.write(new Date($mesanterior));
 
+			/*errores matematicos con JS en number*/
+			/**tipo int*/
+			let $x = 9999999999999999999999;
+			document.write($x);
+			/*tipo int*/
+			let $y = 99999999999999999999999999;
+			document.write($y);
+			/*tipo Number*/
+			document.write(Number, MAX_VALUE);
+			document.write(0.2 + 0.3); /*da mucho decimales*/
+			document.write((0.2 + 0.3).toPrecision(1)); /*da mucho decimales*/
+
 			/*objetos*/
 			document.write("<br /> <br />");
 			let $car = {
