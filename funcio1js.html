@@ -196,6 +196,12 @@
 				$texto4.startsWith("the")
 			); /* te devuelve true si empieza por the--en consola no en pantalla*/
 			document.write("<br />");
+
+			document.write($texto4.toString(10));
+
+			/**lo mejor en cn¡onvertirlo a minsuculas y lo buscara siempre*/
+			document.write($texto4.trim().toLocaleLowerCase().startsWith("the"));
+			/*TRUE si existe esa palabra o false en caso contrario*/
 		</script>
 	</body>
 </html>

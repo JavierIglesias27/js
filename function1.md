@@ -1,4 +1,4 @@
-# FUNCIONES BÁSICAS
+# FUNCIONES BÁSICAS TEXTO/NUM
 
 - `windows.print()`imprimir directamente a impresora
 
@@ -29,6 +29,11 @@
 `texto.includes("juan")` devuele true si existe o false en caso contrario
 
 `texto,starstWith("the")` devuelve true en consola si existe o flase en caso contrario
+
+`texto.toString(10)`
+recorta la cadena al número que le indicas
+
+`$texto4.trim().toLocaleLowerCase().startsWith("the");` lo conviertes a minusculas y te lo encuentra siempre
 
 # atributos para llamar a JS(lista de eventos)
 
