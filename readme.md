@@ -242,6 +242,15 @@ while (i < $cantidad1)
 
 ```
 
+`DO WHILE `
+`se ejecuta una vez y hasta q no se cumpla no pasa`
+let numero ;
+do{
+numero= prompt("Introduce un número");
+}
+while(isNaN(numero))
+document.write(nume
+
 # tipos de condiciones de los bucles
 
 - `=` le asigna un valor especificos 1=1
