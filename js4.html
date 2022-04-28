@@ -12,14 +12,23 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
     </head>
     <body>
         <script type="text/javascript">
-
             let texto =prompt("Introduce un texto:")
 
             if(!isNaN(texto)){
                document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
            }else{
-           document.write("texto correcto <br/>".toUpperCase() + texto.toUpperCase());
+           document.write("texto correcto:   ".toUpperCase() + texto.toUpperCase());
            }
+
+        // let $texto;
+        // do {
+        //     texto =prompt("Introduce un texto:")  
+        // }
+        // while(!isNaN(texto));
+        // document.write("texto correcto: ".toUpperCase() +texto.toUpperCase() );
+
+
+
        </script>
     </body> 
 </html>
