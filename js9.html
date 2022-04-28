@@ -1,0 +1,38 @@
+
+<!--
+Crea una función llamada "info" que nos diga si el texto introducido esta en mayúsculas, minúsculas o una mezcla de ambas.
+Usa los siguientes alert como texto de entrada:
+alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
+alert(info("En un lugar de la mancha..."));
+
+--> 
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 9</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function info($texto){
+
+                let $final = $texto;  
+                
+                if($texto == $texto.toUpperCase()){
+                   $final = "TEXTO EN MAYUSCULAS: " + $final ;
+                }
+                else if ($texto == $texto.toLowerCase()){
+                   $final = "Texto en minúsculas" + $final;
+                }
+                else{
+                   $final = "Es una mezcla de Mayúsculas y minúsculas: " + $final;
+                }
+                return $final;
+            }
+            alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
+            alert(info("En un lugar de la mancha..."));
+            alert(info("soy pequeño porque no creo en..."));
+    </script>
+    </body> 
+</html>
