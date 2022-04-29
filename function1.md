@@ -51,3 +51,8 @@
 - `onkeyup` te cuenta cada vez q tocas la letra y levanta.
   p.e "abc" te contaría 12 para la a 34 para la b y 56 para c
   p.e si"aaaaa" sin soltar el boton serían solo 2
+
+# ARRAYS
+
+- `let array = new Array();` este MEJOR es el nuevo--> se redimensiona solo Y SUMA ENTRE +1 Y +16
+- `let array1 = ["", ""];` este es primitivo--problema esta limitado a maximo de filas y te puedes quedar sin espacio en MEMORIA RAM Y TE MULTIPLICA \* 2
