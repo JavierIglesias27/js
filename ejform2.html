@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <script defer src="./sdkfng"></script> -->
+		<script></script>
+	</head>
+	<body>
+		<form
+			id="miFormulario"
+			method="GET"
+			action="javascript:informar('sitio.html')"
+		>
+			<input type="num" name="number" />
+			<input type="submit" />
+		</form>
+		<script>
+			function informar(url) {
+				let number = document.getElementsByName("number")[0].value;
+				//alert(number != "");
+				if (number == "" || isNaN(number)) {
+					alert("Number please!");
+				} else {
+					let form = document.getElementById("miFormulario");
+					// form.method = "GET";
+					form.action = url;
+					form.submit();
+				}
+			}
+		</script>
+	</body>
+</html>
