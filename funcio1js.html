@@ -67,11 +67,19 @@
 			document.write("<br />");
 			document.write("<br />");
 			document.write("<br />");
+			/*ERRORES MATEMATICOS DE JS*/
+			let x = 999999999999999;
+			console.log(x);
+			let y = 9999999999999999;
+			console.log(y);
+			console.log(Number.MAX_VALUE);
+			console.log((0.2 + 0.1).toPrecision(1));
+
 			/*funciones*/
 
-			$text = "ABCDEFGHIJKLMNOPQRSTXYZ";
+			$text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			document.write($text.lenght);
-			document.write($text.slice(2, 8));
+			document.write($text.slice(2, 8)); //EXTRAE UNA PARTE
 
 			document.write($text.substring(2, 8));
 

@@ -7,24 +7,23 @@ Usando ".split("");" separa el texto y píntalo junto al numero.
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 10</title>
-</head>
-<body>
-    <script>
-        let $texto1 = prompt("Introducir primer Texto:");
-       let $texto2 = prompt("Introducir segundo Texto:");
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio 10</title>
+	</head>
+	<body>
+		<script>
+			let $texto1 = prompt("Introducir primer Texto:");
+			let $texto2 = prompt("Introducir segundo Texto:");
 
-        let $unir= document.write(($texto1.replace(/ /g, "").concat($texto2.replace(/ /g, ""))).toLowerCase());
-        let $numLetras= document.write((($texto1.replace(/ /g, "").concat($texto2.replace(/ /g, ""))).toLowerCase()).length);
-        let total= document.write($unir.split("")[$numLetras] + $numLetras);
-        
-         //let total= document.write(($texto1.replace(/ /g, "").concat($texto2.replace(/ /g, ""))).toLowerCase()) + document.write((($texto1.replace(/ /g, "").concat($texto2.replace(/ /g, ""))).toLowerCase()).length);
-       
-        
-    </script>
-</body>
+			let $unir =
+				$texto1.replace(/ /g, "") + $texto2.replace(/ /g, "").toLowerCase();
+
+			let $numLetras = $unir.length;
+			let $splitt = $unir + " " + $numLetras;
+			document.write($splitt.split(" ")[0] + ";" + $splitt.split(" ")[1]);
+		</script>
+	</body>
 </html>
