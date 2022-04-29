@@ -1,0 +1,65 @@
+<!--
+Usando el siguiente código, debes de solicitar un número, comprueba que sea un número 
+no sea más pequeño que 0 ni más grande 99999999,
+guárdalo en la variable "numero" y
+ fíjate que si el numero introducido es un DNI es capaz de calcularle la letra.
+
+var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+var numero=
+alert(letras[numero % 23]);
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ejercicio</title>
+	</head>
+	<body>
+		<script>
+			var letras = [
+				"T",
+				"R",
+				"W",
+				"A",
+				"G",
+				"M",
+				"Y",
+				"F",
+				"P",
+				"D",
+				"X",
+				"B",
+				"N",
+				"J",
+				"Z",
+				"S",
+				"Q",
+				"V",
+				"H",
+				"L",
+				"C",
+				"K",
+				"E",
+				"T",
+			];
+			let $numero = prompt("Introducir un numero");
+			if (isNaN($numero)) {
+				document.write("ERROR!!!!Introducir valor númerico :    " + $numero);
+			} else {
+				if ($numero < 0 || $numero > 99999999) {
+					document.write(
+						"ERROR: Introducir un valor positivo entre 0 y 99999999 :  " +
+							$numero
+					);
+				} else {
+					document.write(
+						"Su dni es:   " + $numero + "-" + letras[$numero % 23]
+					);
+				}
+			}
+		</script>
+	</body>
+</html>
