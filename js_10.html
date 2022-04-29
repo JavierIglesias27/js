@@ -19,11 +19,13 @@ Usando ".split("");" separa el texto y píntalo junto al numero.
 			let $texto2 = prompt("Introducir segundo Texto:");
 
 			let $unir =
-				$texto1.replace(/ /g, "") + $texto2.replace(/ /g, "").toLowerCase();
+				$texto1.replace(/ /g, "").toLowerCase() +
+				";" +
+				$texto2.replace(/ /g, "").toLowerCase();
 
 			let $numLetras = $unir.length;
 			let $splitt = $unir + " " + $numLetras;
-			document.write($splitt.split(" ")[0] + ";" + $splitt.split(" ")[1]);
+			document.write($splitt.split(" ")[0] + "  =  " + $splitt.split(" ")[1]);
 		</script>
 	</body>
 </html>
