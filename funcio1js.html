@@ -80,8 +80,12 @@
 			$text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			document.write($text.lenght);
 			document.write($text.slice(2, 8)); //EXTRAE UNA PARTE
+			console.log($txt.slice(-12));
+			document.write($txt.slice(6));
+			document.write($txt.slice(6, txt.length - 6));
 
-			document.write($text.substring(2, 8));
+			document.write(txt.substring(2, 8)); //lo mismo, no negativos
+			document.write(txt.substring(2));
 
 			document.write("<br />");
 			document.write("<br />");
@@ -104,6 +108,12 @@
 
 			document.write("<br />");
 			document.write("<br />");
+
+			document.write("Texto en mayúsculas " + $text1.toUpperCase());
+			document.write("Texto en mayúsculas " + $text1.toLowerCase());
+
+			document.write("<br />");
+			document.write("<br />");
 			document.write("<br />");
 
 			let $var1 = "HOLA";
@@ -115,73 +125,82 @@
 			document.write("<br />");
 			document.write($var1.trim()); // limpia espacios delante y detras de la palabras
 			document.write("<br />");
+			document.write(txt1.concat(" X  X ", txt2).trim()); //limpia espacios
 
 			document.write("<br />");
 			document.write("<br />");
 			document.write("<br />");
 
-			document.write($var1.padStart(5, "$"));
+			let var3 = "ABC       DEF";
+
+			console.log($var3);
+			write.document($var3.replace(/^\s+|\s+$/gm, "")); //regex
+
+			document.write($var3.padStart(10, "$"));
 			document.write("<br />");
-			document.write($var1.padStart(8, "ASD"));
+			document.write($var3.padStart(10, "ASD"));
 			document.write("<br />");
-			document.write($var1.padEnd(5, "$"));
+			document.write($var3.padEnd(10, "$"));
 			document.write("<br />");
-			document.write($var1.padEnd(8, "ASD"));
+			document.write($var3.padEnd(10, "ASD"));
 			document.write("<br />");
 
 			document.write("<br />");
 			document.write("<br />");
+			document.write("<br />");
+
+			let $var4 = "holaquetal";
+
+			document.write(
+				"me devuelve el caracter de la posicion2 :  " + $var4.charAt(2)
+			);
+			document.write($var4.charAt(1));
+			document.write($var4.charAt(0));
 			document.write("<br />");
 
 			document.write(
-				"me devuelve el caracter de la posicion2 :  ",
-				$var1.charAt(2)
+				"me devuelve el caracter de la posicion2 :  " + $var1.charCodeAt(2)
 			);
+			document.write($var4.charAt(1));
+			document.write($var4.charAt(0));
+
+			document.write("<br />");
+			document.write("<br />");
+			document.write("<br />");
+			document.write($var4.charCodeAt(2));
+			document.write($var4.charCodeAt(1));
+			document.write($var4.charCodeAt(0));
+
+			document.write("<br />");
+			document.write("<br />");
 			document.write("<br />");
 
-			document.write(
-				"me devuelve el caracter de la posicion2 :  ",
-				$var1.charCodeAt(2)
-			);
-			document.write("<br />");
-			document.write("<br />");
-			document.write("<br />");
-
-			let $texto3 = "HELLO WORLD HIII";
+			let $texto3 = "HELLO WORLD BOB";
 			document.write($texto3);
 			document.write("<br />");
-			document.write(
-				$texto3[1]
-			); /*TE DA SOLO LA LETRA QUE OCUPA ESTA POSICION*/
+			document.write($texto3[0]);
 			document.write("<br />");
-			document.write($texto3.split(" "));
-			document.write("<br />"); /* divide el texto3 en cada palabra*/
-			document.write(
-				$texto3.split(" ")[0]
-			); /*te la palabra q ocupala posicion 0*/
+			document.write($texto3[1]);
+			/*TE DA SOLO LA LETRA QUE OCUPA ESTA POSICION*/
+			document.write("<br />");
+			document.write($texto3.split(" ")); /* divide el texto3 en cada palabra*/
+			document.write("<br />");
+			document.write($texto3.split(" ")[0]);
+			document.write("<br />");
+			document.write($texto3.split(" ")[1]);
+
+			/*te la palabra q ocupala posicion 0*/
 
 			document.write("<br />");
 			document.write("<br />");
 			document.write("<br />");
 
-			document.write(
-				$texto3.indexOf("O")
-			); /*te da la posicion q ocupa es la 4*/
-			document.write("<br />");
-			document.write(
-				$texto3.indexOf("o")
-			); /*la o minuscula no existe y x tanto deda valor negativo*/
-			document.write("<br />");
-			document.write("<br />");
-			document.write(
-				$texto3.indexOf("O", 6)
-			); /*empieza a contar a parti de la posicion 5 y te devuelve la 7 xq es la primera O q se encuentra*/
-			document.write("<br />");
-			document.write("<br />");
-
-			document.write($texto3.lastIndexOf("O")); /*igual xo empieza desde final*/
-			document.write("<br />");
-			document.write("<br />");
+			document.write(text3.indexOf("J")); //la o minuscula no existe y x tanto deda valor negativo -1
+			document.write(text3.indexOf("o")); //-1
+			document.write(text3.indexOf("O")); // *te da la posicion q ocupa es la4
+			document.write(text3.indexOf("O", 5)); // empieza a contar a parti de la posicion 5 y te devuelve la 7 xq es la primera O q se encuentra en el 7
+			document.write(text3.lastIndexOf("O")); //13
+			document.write(text3.lastIndexOf("O", 5)); //4
 
 			let $texto4 =
 				"The rain un spanish rain a lot rain very trees in the rain";
@@ -210,6 +229,26 @@
 			/**lo mejor en cn¡onvertirlo a minsuculas y lo buscara siempre*/
 			document.write($texto4.trim().toLocaleLowerCase().startsWith("the"));
 			/*TRUE si existe esa palabra o false en caso contrario*/
+
+			<h1> PROBLEMAS MATEMATICOS JS</h1>;
+			let calc = "5+2*3"; //11
+			console.log(eval(calc));
+			let calc1 = "(5+2)*3"; //21
+			console.log(eval(calc1));
+			console.log(isFinite(eval(calc1)));
+
+			let uri = "my test.asp?name=ståle&car=saab";
+			console.log(uri);
+			let encoded = encodeURI(uri);
+			console.log(encoded);
+			let decoded = decodeURI(encoded);
+			console.log(decoded);
+
+			console.log(decodeURIComponent("http://www.testing.com/"));
+			console.log(decodeURIComponent("http%3A%2F%2Fwww.testing.com%2F"));
+
+			console.log(encodeURI("http://www.testing.com/"));
+			console.log(encodeURI("http%3A%2F%2Fwww.testing.com%2F"));
 		</script>
 	</body>
 </html>
