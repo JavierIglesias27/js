@@ -1,0 +1,79 @@
+<!--Debes conseguir que te muestre la fecha y horas actuales, también debe de actualizarse en vivo:-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js fecha(hora)</title>
+    <style>
+        .blue{
+            color:blue;
+        }
+    </style>
+    
+</head>
+<body onload="startclock()">
+    
+    <script>
+        var hoy = new Date();
+    dia = hoy.getDate();
+    mes = hoy.getMonth();
+    anyo = hoy.getYear();
+    if (mes == "0") convertir_mes = "Enero";
+    else if (mes == "1") convertir_mes = "Febrero";
+    else if (mes == "2") convertir_mes = "Marzo";
+    else if (mes == "3") convertir_mes = "Abril";
+    else if (mes == "4") convertir_mes = "Mayo";
+    else if (mes == "5") convertir_mes = "Junio";
+    else if (mes == "6") convertir_mes = "Julio";
+    else if (mes == "7") convertir_mes = "Agosto";
+    else if (mes == "8") convertir_mes = "Septiembre";
+    else if (mes == "9") convertir_mes = "Octubre";
+    else if (mes == "10") convertir_mes = "Noviembre";
+    else convertir_mes = "Diciembre";
+    document.write("<H3> Fecha de hoy <br/><H3/> ");
+    document.getElementsByTagName("H3")[0].classList.add("blue");
+
+    document.write ("<H3>" + "Hoy es "+ dia + " de " + convertir_mes + " de " + anyo + "</H3>");
+    
+    document.write("<H3> Visualización de la hora actual <br/><H3/> ");
+    document.getElementsByTagName("H3")[3].classList.add("blue");
+    var timerID = null;
+var timerRunning = false;
+var id,pause=0,position=0;
+function stopclock ()
+{
+        if(timerRunning)
+                clearTimeout(timerID);
+        timerRunning = false;
+}
+function showtime () 
+{
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds()
+        var timeValue = "" + ((hours >12) ? hours -12 :hours)
+        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+        timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+        timeValue += (hours >= 12) ? " P.M." : " A.M."
+        document.clock.reloj.value = timeValue;
+        timerID = setTimeout("showtime()",1000);
+        timerRunning = true;
+}
+function startclock () 
+{
+        stopclock();
+        showtime();
+}
+
+
+    </script>
+      <form name="clock"> <!--CLOCK es el nombre q tiene el reloj dentro de la funcion showtime document.clock-->
+        <input type="text" name="reloj" size="10">
+    </form>
+    
+
+</body>
+</html>

@@ -14,11 +14,13 @@ Pide al usuario un número, comprueba que es un número y usando un solo  if() p
     <body>
         <script type="text/javascript">
 
-            let numero = prompt("Introduce un número");
-            if(!isNaN (numero) && numero >= 0 &&  numero < 99999999 ){
-                document.write(numero + ": NUMERO CORRECTO ");
+            let $numero = prompt("Introduce un número menor a 0 y mayor a 99999999");
+
+            if(!isNaN($numero) && $numero < 0 || $numero > 99999999){
+               
+                document.write("Número menor a 0 o mayor a 99999999: " + $numero );
             }else{
-                document.write(numero + ":  ERRORS!!!Introducir un numero entre 0 y 99999999 ");
+                document.write( "ERROR!!!!Vuelve a introducir otro valor  " + $numero);
         }       
     </script>
     </body> 
