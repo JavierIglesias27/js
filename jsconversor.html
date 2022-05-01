@@ -1,39 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONVERSOR PTAS/€</title>
-    <style>
-        fieldset{
-            width:50%;
-            margin:auto;
-            margin-top:50px;
-            text-align: center;
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conversor €-ptas</title>
+       
+    <script language="javascript">
+        function oculta_capa1()
+        {
+        capa1.style.visibility="hidden"
+        oculta1.style.visibility="visible"
         }
-        
+        function muestra_capa1()
+        {
+        capa1.style.visibility="visible"
+        oculta1.style.visibility="hidden"
+        }
+        function oculta_capa2()
+        {
+        capa2.style.visibility="hidden"
+        oculta2.style.visibility="visible"
+        }
+        function muestra_capa2()
+        {
+        capa2.style.visibility="visible"
+        oculta2.style.visibility="hidden"
+        }
+        function pesetas_euros()
+        {
+        var n=1/166.386
+        form.caja2.value=n * form.caja1.value
+        }
+        function euros_pesetas()
+        {
+        var n=166.386
+        form.caja2.value=n * form.caja1.value
+        }
+    </script>
+     <style>
+        fieldset{
+            width: 80%;
+        }
         legend{
             text-align: center;
         }
+        
+        
+        #capa1{
+            font-size: 10pt;
+            Left: 50%;
+            width: 10%;
+            font-family: arial,verdana,helvetica;
+            position: absolute;
+            TOP: 80px;
+            height: 35px;
+            visibility: visible;
+            background-color: #008000;
+            border:2px solid black
+        }
+        #capa2{
+            font-size: 10pt;
+            Left: 30%;
+            width:10%;
+            color: black;
+            font-family: arial,verdana,helvetica;
+            position: absolute;
+            TOP: 80px;
+            height: 35px;
+            visibility: visible;
+            background-color: #008000;
+            border:2px solid black;
+        }
+        #oculta1{
+            font-size: 10pt;
+            font-weight: bold;
+            Left: 50%;
+            width: 10%;
+            color: black;
+            font-family: arial,verdana,helvetica;
+            position: absolute;
+            TOP: 80px;
+            height: 35px;
+            visibility: hidden;
+            background-color: red;
+            border:2px solid black;
+        }
+        #oculta2{
+            font-size: 10pt;
+            font-weight: bold;
+            Left: 30%;
+            width: 10%;
+            color:black;
+            font-family: arial,verdana,helvetica;
+            position: absolute;
+            TOP: 80px;
+            height: 35px;
+            visibility: hidden;
+            background-color: red;
+            border:2px solid black;
+        }
     </style>
-
 </head>
 <body>
-    <form id="conversor" action="#" target="_blank">
+
+
+    <form name="form" action="#" method="get" target="_blank">
         <fieldset>
-           <legend>Conversor de moneda</legend> 
-        <label name="numero_euros"> Cantidad en €</label>
-        <input type="num" name="numero_euros" />
+        <legend>Conversión de €-ptas y ptas-€</legend>
 
-        <label name="numero_ptas">Cantidad en ptas</label>
-        <input type="num" name="numero_ptas" />
-
-        <input type="submit" />
-    </fieldset>
-    </form>
-    <script>
+            <label>Introduzca Cantidad:</label> 
+            <input type="text" name="caja1"><B>
         
-    </script> 
+
+            <div id="capa1" onmouseover=oculta_capa1() onmouseout=muestra_capa1()> Pesetas a euros</div>
+
+            <div id=capa2 onmouseover=oculta_capa2() onmouseout=muestra_capa2()> Euros a pesetas </div>
+
+            <div id=oculta1 onmouseover=oculta_capa1() onmouseout=muestra_capa1() onclick=pesetas_euros()> Convertir </div>
+
+            <div id=oculta2 onmouseover=oculta_capa2() onmouseout=muestra_capa2() onclick=euros_pesetas()> Convertir </div>
+
+            <BR><BR><BR><BR><BR>
+                
+            <label>Resultado:</label>
+            <input TYPE="text" name="caja2">
+
+        </fieldset>
+    </form>
 </body>
 </html>
