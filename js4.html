@@ -11,14 +11,49 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
         <title>Ejercicio 4 </title>
     </head>
     <body>
+        <p id="texto"></p>
+    <button   button onclick="pedirNumero(document.getElementById('texto'))">pedir numero</button>
+    </body> 
+  
         <script type="text/javascript">
-            let texto =prompt("Introduce un texto:")
 
-            if(!isNaN(texto)){
-               document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
-           }else{
-           document.write("texto correcto:   ".toUpperCase() + texto.toUpperCase());
-           }
+        function pedirNumero(p_texto){
+                $prompt_numero = prompt("Introduce un texto");
+                if(test1($prompt_numero)!=false){
+                    p_texto.innerHTML += "<br />"+ $prompt_numero;
+                } 
+                else p_texto.innerHTML += "<br /> ERRORRRRRR";
+       }
+
+        function test1($prompt_numero){
+
+            if(
+                $prompt_numero != "" && !(isNaN($prompt_numero)) && ($prompt_numero < 0 || $prompt_numero > 99999999 )
+            ){
+                return $prompt_numero;
+            }
+            else{
+                return false;
+            }
+        }
+        console.assert(test1("")== false, "");
+        console.assert(test1("a")== false, "");
+        console.assert(test1(-1)== -1, "");
+        console.assert(test1(1)== false, "");
+        console.assert(test1(999999999)== 999999999, "");
+       
+
+
+
+
+
+        //     let texto =prompt("Introduce un texto:")
+
+        //     if(!isNaN(texto)){
+        //        document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
+        //    }else{
+        //    document.write("texto correcto:   ".toUpperCase() + texto.toUpperCase());
+        //    }
 
         // let $texto;
         // do {
@@ -26,9 +61,9 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
         // }
         // while(!isNaN(texto));
         // document.write("texto correcto: ".toUpperCase() +texto.toUpperCase() );
+            </script>
 
 
-
-       </script>
+      
     </body> 
 </html>
