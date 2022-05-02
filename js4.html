@@ -12,35 +12,36 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
     </head>
     <body>
         <p id="texto"></p>
-    <button   button onclick="pedirNumero(document.getElementById('texto'))">pedir numero</button>
+        <button   button onclick="pedirTexto(document.getElementById('texto'))">Introducir texto</button>
     </body> 
   
         <script type="text/javascript">
 
-        function pedirNumero(p_texto){
-                $prompt_numero = prompt("Introduce un texto");
-                if(test1($prompt_numero)!=false){
-                    p_texto.innerHTML += "<br />"+ $prompt_numero;
+        function pedirTexto(p_texto){
+                $prompt_texto = prompt("Introduce un texto:");
+                if(test1( $prompt_texto)!=false){
+                    p_texto.innerHTML += "<br />El texto introducido es:  "+  $prompt_texto.toUpperCase();
                 } 
-                else p_texto.innerHTML += "<br /> ERRORRRRRR";
+                else p_texto.innerHTML += "<br /> " + $prompt_texto.toUpperCase() + "    :ERRORRRRRR!! Introducir un texto!!!!";
        }
 
-        function test1($prompt_numero){
+        function test1( $prompt_texto){
 
             if(
-                $prompt_numero != "" && !(isNaN($prompt_numero)) && ($prompt_numero < 0 || $prompt_numero > 99999999 )
+                $prompt_texto != "" && isNaN( $prompt_texto)  
             ){
-                return $prompt_numero;
+                return  $prompt_texto;
             }
             else{
                 return false;
             }
         }
+
         console.assert(test1("")== false, "");
-        console.assert(test1("a")== false, "");
-        console.assert(test1(-1)== -1, "");
-        console.assert(test1(1)== false, "");
-        console.assert(test1(999999999)== 999999999, "");
+        console.assert(test1("a")== true, "");
+        console.assert(test1(-1)== false, "");
+        
+        
        
 
 
