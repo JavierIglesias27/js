@@ -9,59 +9,62 @@ pinta en pantalla si el numero es mayor a 10 o no
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Ejercicio 5 JS</title>
+		<title>Ejercicio 6 JS IF</title>
 		<script>
 			/**
 			 * ! pedirNumero()
 			 * ! Función que usa un prompt para solicitar un número
-			 * ! cuando lo obtenga enviará la información a la función "checkNumber()"
-			 * ! segun el return que tenga pintará en pantalla el número o no
+			 * ! cuando lo obtenga enviara la información a la función "checkNumber()"
+			 * ! segun el return que tenga pintara en pantalla el número o no
 			 * return: text
 			 **/
-
 			function pedirNumero($p_texto) {
-				let $prompt_number = prompt("Introducir Número: ");
-				if (checkNumber($prompt_number) != false) {
-					return $prompt_number + "mayor";
+				let prompt_number = prompt("Introducir un número:");
+				if (checkNumber(prompt_number) != false) {
+					
+					return " Número mayor a 10:  <b>" +`"`+  prompt_number+ `"` + "</b><br>";
 				} else {
-					return (
-						'<b>"' +
-						$prompt_number +
-						'"</b>Error!Introducir valores númericos <br>'
-					);
+				
+					return '<b>"' + prompt_number + '"</b> Error!!!!Introduzca un número correcto<br>';
 				}
 			}
+
 			/**
 			 * ! checkNumber()
 			 * ! Función que revisa el parámetro "prompt_number"
 			 * ! y devolverá el número, en caso de que este sea un número
-			 * ! y delvolverá un número entre mayor a 10 o menor a 10
-			 * return: false
+			 * ! y sea mayor a 10 o menor/igual a 10
 			 * return: number
+			 * return: false (valores introducidos no son válidos) 
 			 **/
 
-			function checkNumber($prompt_number) {
+			function checkNumber(prompt_number) {
 				/**
-			              * ! Zona de logs
-			                 console.log(
-			                     '"' + $prompt_number + '" != "" ==> ' + ($prompt_number != "")
-			                 );
-			                 console.log(
-			                     '!isNaN("' + $prompt_number + '") ==> ' + !isNaN($prompt_number)
-			                 );
-			                 console.warn(
-			                     "All ==> " +
-			                         ($prompt_number != "" &&
-			                             !isNaN($prompt_number)
-			                 ));
-			             **/
-
+                 * ! Zona de logs
+                    console.log(
+                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
+                    );
+                    console.log(
+                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
+                    );
+                    console.log('"' + prompt_number + '" < 10 ==> ' + (prompt_number < 10));
+                    console.log(
+                        '"' + prompt_number + '" > 10 ==> ' + (prompt_number > 10)
+                    );
+                    console.warn(
+                        "All ==> " +
+                            (prompt_number != "" &&
+                                !isNaN(prompt_number) &&
+                                (prompt_number >10  || prompt_number < 10))
+                    );
+                **/
 				if (
-					$prompt_number != "" &&
-					!isNaN($prompt_number) &&
-					$prompt_number > 10
+					prompt_number != "" &&
+					!isNaN(prompt_number) &&
+					(prompt_number > 10)
 				) {
-					return $prompt_number;
+					
+					return prompt_number;
 				} else {
 					return false;
 				}
@@ -72,11 +75,11 @@ pinta en pantalla si el numero es mayor a 10 o no
 			 * ! Test de que la funcion realiza la tarea requerida
 			 **/
 			console.assert(checkNumber("") == false, "");
-			console.assert(checkNumber(15) == 15, "");
-			console.assert(checkNumber(10) == 10, "");
+			console.assert(checkNumber("a") == false, "");
 			console.assert(checkNumber(-1) == -1, "");
-			console.assert(checkNumber("25ab") == "25a", "");
-			console.assert(checkNumber("aa") == false, "");
+			console.assert(checkNumber(-4) == -4, "");
+			console.assert(checkNumber(8) == 8, "");
+			console.assert(checkNumber(50) == 50, "");
 		</script>
 	</head>
 
@@ -87,3 +90,4 @@ pinta en pantalla si el numero es mayor a 10 o no
 		</button>
 	</body>
 </html>
+
