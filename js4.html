@@ -4,67 +4,98 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
 
 -->
 
-<!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>Ejercicio 4 </title>
-    </head>
-    <body>
-        <p id="texto"></p>
-        <button   button onclick="pedirTexto(document.getElementById('texto'))">Introducir texto</button>
-    </body> 
-  
-        <script type="text/javascript">
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 4 JS</title>
+		<script>
+			/**
+			 * ! pedirTexto()
+			 * ! Función que usa un prompt para solicitar un texto
+			 * ! cuando lo obtenga enviará la información a la función "checkTexto()"
+			 * ! segun el return que tenga pintará en pantalla SI el texto es correcto o no
+			 * return: texto
+			 **/
+			function pedirTexto($p_texto) {
+				let $prompt_texto = prompt("Introducir Texto: ");
+				if (checkTexto($prompt_texto) != false) {
+					//$p_texto.innerHTML += prompt_texto + "<br>";
+					return (
+						"El texto introducido es:  " +
+						$prompt_texto.toLocaleUpperCase() +
+						"<br>"
+					);
+				} else {
+					//$p_texto.innerHTML += "No es un numero valido<br>";
+					return '<b>"' + $prompt_texto + '"</b> No es un texto válido<br>';
+				}
+			}
 
-        function pedirTexto(p_texto){
-                $prompt_texto = prompt("Introduce un texto:");
-                if(test1( $prompt_texto)!=false){
-                    p_texto.innerHTML += "<br />El texto introducido es:  "+  $prompt_texto.toUpperCase();
-                } 
-                else p_texto.innerHTML += "<br /> " + $prompt_texto.toUpperCase() + "    :ERRORRRRRR!! Introducir un texto!!!!";
-       }
+			/**
+			 * ! checkTexto()
+			 * ! Función que revisa el parámetro "prompt_texto"
+			 * ! y devolverá el texto, en caso de que este sea un texto
+			 * ! en caso contrario te comunica error
+			 * return: texto
+			 * return: false
+			 **/
 
-        function test1( $prompt_texto){
+			function checkTexto($prompt_texto) {
+				/**
+			              * ! Zona de logs
+			                 console.log(
+			                     '"' + prompt_texto + '" != "" ==> ' + (prompt_texto != "")
+			                 );
+			                 console.log(
+			                     '!isNaN("' + prompt_texto + '") ==> ' + isNaN(prompt_texto)
+			                 );
+			                 console.warn(
+			                     "All ==> " +
+			                         (prompt_texto != "" &&
+			                             isNaN(prompt_texto)
+			                 );
+			             **/
+				if ($prompt_texto != "" && isNaN($prompt_texto)) {
+					// si es diferente  a vacio devuelve el return
+					//solo texto y devuelve true
+					return $prompt_texto;
+				} else {
+					return false;
+				}
+			}
 
-            if(
-                $prompt_texto != "" && isNaN( $prompt_texto)  
-            ){
-                return  $prompt_texto;
-            }
-            else{
-                return false;
-            }
-        }
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkTexto("") == false, "");
+			console.assert(checkTexto("a") == "a", "");
+			console.assert(checkTexto("a45b") == "a45b", "");
+			console.assert(checkTexto(-4) == false, "");
+			console.assert(checkTexto(10) == false, "");
 
-        console.assert(test1("")== false, "");
-        console.assert(test1("a")== true, "");
-        console.assert(test1(-1)== false, "");
-        
-        
-       
+			//     let texto =prompt("Introduce un texto:")
 
+			//     if(!isNaN(texto)){
+			//        document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
+			//    }else{
+			//    document.write("texto correcto:   ".toUpperCase() + texto.toUpperCase());
+			//    }
 
+			// let $texto;
+			// do {
+			//     texto =prompt("Introduce un texto:")
+			// }
+			// while(!isNaN(texto));
+			// document.write("texto correcto: ".toUpperCase() +texto.toUpperCase() );
+		</script>
+	</head>
 
-
-
-        //     let texto =prompt("Introduce un texto:")
-
-        //     if(!isNaN(texto)){
-        //        document.write(texto.toUpperCase() + ":Error!! Introducir valores NO númericos <br/>".toUpperCase());
-        //    }else{
-        //    document.write("texto correcto:   ".toUpperCase() + texto.toUpperCase());
-        //    }
-
-        // let $texto;
-        // do {
-        //     texto =prompt("Introduce un texto:")  
-        // }
-        // while(!isNaN(texto));
-        // document.write("texto correcto: ".toUpperCase() +texto.toUpperCase() );
-            </script>
-
-
-      
-    </body> 
+	<body>
+		<p id="texto"></p>
+		<button onclick="document.getElementById('texto').innerHTML+=pedirTexto()">
+			Pedir texto
+		</button>
+	</body>
 </html>
