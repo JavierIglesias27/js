@@ -44,18 +44,17 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
 			function checkTexto($prompt_texto) {
 				/**
 			              * ! Zona de logs
-			                 console.log(
-			                     '"' + prompt_texto + '" != "" ==> ' + (prompt_texto != "")
-			                 );
-			                 console.log(
-			                     '!isNaN("' + prompt_texto + '") ==> ' + isNaN(prompt_texto)
-			                 );
-			                 console.warn(
-			                     "All ==> " +
-			                         (prompt_texto != "" &&
-			                             isNaN(prompt_texto)
-			                 );
-			             **/
+                        console.log(
+                            '"' + $prompt_texto + '" != "" ==> ' + ($prompt_texto != "")
+                        );
+                        console.log(
+                            'isNaN("' + $prompt_texto + '") ==> ' + isNaN($prompt_texto)
+                        );
+                        console.warn(
+                            "All ==> " + ($prompt_texto != "" && isNaN($prompt_texto))
+                        );
+                                **/
+
 				if ($prompt_texto != "" && isNaN($prompt_texto)) {
 					// si es diferente  a vacio devuelve el return
 					//solo texto y devuelve true

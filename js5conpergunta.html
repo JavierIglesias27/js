@@ -1,0 +1,129 @@
+<!--
+
+Pide al usuario un número, comprueba que es un número y usando un  if() pinta en pantalla si el numero es mayor a 10 o no
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 5</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			// let numero = prompt("Introduce un número");
+
+			// if (isNaN(numero)) {
+			// 	document.write(
+			// 		"ERROR!!!! Introducir un valor númerico <br/>".toUpperCase()
+			// 	);
+			// } else {
+			// 	numero = new Number(numero);
+			// 	document.write(numero + ": valor númerico <br/>".toUpperCase());
+			// 	if (numero >= 10) {
+			// 		document.write(
+			// 			numero + ": es un número mayor o igual a 10".toUpperCase()
+			// 		);
+			// 	} else {
+			// 		document.write(numero + ": es un número menor a 10".toUpperCase());
+			// 	}
+			// }
+
+			// aqui lo pido x DO WHILE ANINADO
+
+			// let $correcto1, $numero12;
+
+			// do {
+			// 	do {
+			// 		$numero12 = prompt("Introduce un número: ");
+			// 	} while (isNaN($numero12));
+			// 	$correcto1 = prompt("are you sure?(Y/N)");
+			// 	alert($correcto1 + " A " + !($correcto1.toUpperCase() == "Y"));
+			// } while (!($correcto1.toUpperCase() == "Y"));
+			// //while (confirm("Are you sure?")== True)
+			// if ($numero12 > 10) {
+			// 	document.write("el numero es" + $numero12);
+			// } else {
+			// 	document.write("numero erroneo ");
+			// }
+			//EJEMPLO DE COMO HACER UNA PREGUNTA ANTES DE PASAR HACIA ADELANTE
+			// let number;
+			// do {
+			// 	do {
+			// 		number = prompt("Introduce numero");
+			// 	} while (number == "" || isNaN(number));
+			// } while (
+			// 	!(confirm("estas seguro  que quieres el numero  :" + number) == true)
+			// );
+			// document.write("OK" + number);
+			// throw new Error();
+			// throw "Fin decódigo";
+			// AHORA QUEREMOS AÑADIR MAS INPUTS Y PREGUNTAS--hay q sacar throw error
+			//aqui da dos vueltas
+			// for (let i = 0; i <= 2; i++) {
+			// 	let number;
+			// 	do {
+			// 		do {
+			// 			number = prompt("Introduce numero");
+			// 		} while (number == "" || isNaN(number));
+			// 	} while (
+			// 		!(confirm("estas seguro  que quieres el numero  :" + number) == true)
+			// 	);
+			// 	document.write("OK" + number);
+			// }
+			// throw new Error();
+			// throw "Fin decódigo";
+
+			//SI QUIERES Q VUELTAS AUTOMATICAS
+
+			// let vueltas;
+			// do {
+			// 	vueltas = prompt("cuantos numeros quieres solicitar?;");
+			// } while (vueltas == "" || isNaN(vueltas));
+
+			// for (let i = 0; i <= vueltas; i++) {
+			// 	let number;
+			// 	do {
+			// 		do {
+			// 			number = prompt("Introduce numero");
+			// 		} while (number == "" || isNaN(number));
+			// 	} while (
+			// 		!(confirm("estas seguro  que quieres el numero  :" + number) == true)
+			// 	);
+			// 	document.write("OK" + number);
+			// }
+			// throw new Error();
+			// throw "Fin decódigo";
+
+			// guardarlo en ARRAY xa poder llevarnoslo
+
+			let vueltas;
+			do {
+				vueltas = prompt("cuantos numeros quieres solicitar?;");
+			} while (vueltas == "" || isNaN(vueltas));
+
+			let arrayOld = [];
+			let promedio = 0;
+			for (let i = 0; i <= vueltas; i++) {
+				let number;
+				do {
+					do {
+						number = prompt("Introduce numero");
+					} while (number == "" || isNaN(number));
+				} while (
+					!(confirm("estas seguro  que quieres el numero  :" + number) == true)
+				);
+				arrayOld.push(number);
+				promedio += parseInt(number);
+				// document.write("OK" + number);
+			}
+			document.write(arrayOld + "promedio" + promedio / arrayOld.length);
+
+			//throw new Error();
+			//throw "Fin decódigo";
+		</script>
+	</body>
+</html>

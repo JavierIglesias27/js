@@ -1,129 +1,83 @@
 <!--
 
-Pide al usuario un número, comprueba que es un número y usando un  if() pinta en pantalla si el numero es mayor a 10 o no
+Pide al usuario un número, comprueba que es un número y usando un  if() 
+
+pinta en pantalla si el numero es mayor a 10 o no
 
 -->
-
-<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Ejercicio 5</title>
+		<title>Ejercicio 5 JS</title>
+		<script>
+			/**
+			 * ! pedirNumero()
+			 * ! Función que usa un prompt para solicitar un número
+			 * ! cuando lo obtenga enviará la información a la función "checkNumber()"
+			 * ! segun el return que tenga pintará en pantalla el número o no
+			 * return: text
+			 **/
+			function pedirNumero($p_texto) {
+				let $prompt_number = prompt("Introducir Número: ");
+				if (checkNumber($prompt_number) != false) {
+					if ($prompt_number > 10) {
+						return `<b>"` + $prompt_number + `" </b>  Numero mayor a 10 <br/>`;
+					} else if ($prompt_number < 10) {
+						return `<b>"` + $prompt_number + `" </b>  Numero menor  a 10<br/>`;
+					} else {
+						return `<b>"` + $prompt_number + `" </b>  Numero igual a 10<br/>`;
+					}
+				} else {
+					return (
+						'<b>"' +
+						$prompt_number +
+						'"</b>Error!Introducir valores númericos <br>'
+					);
+				}
+			}
+			/**
+			 * ! checkNumber()
+			 * ! Función que revisa el parámetro "prompt_number"
+			 * ! y devolverá el número, en caso de que este sea un número
+			 * ! y delvolverá un número entre mayor a 10 o menor a 10
+			 * return: false
+			 * return: number
+			 **/
+
+			function checkNumber($prompt_number) {
+				/**
+			              * ! Zona de logs
+			                 console.log(
+			                     '"' + $prompt_number + '" != "" ==> ' + ($prompt_number != "")
+			                 );
+			                 console.log(
+			                     '!isNaN("' + $prompt_number + '") ==> ' + !isNaN($prompt_number)
+			                 );
+			                 console.warn(
+			                     "All ==> " +
+			                         ($prompt_number != "" &&
+			                             !isNaN($prompt_number)
+			                 ));
+			             **/
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkNumber("") == false, "");
+			console.assert(checkNumber(5) == 5, "");
+			console.assert(checkNumber(-1) == -1, "");
+			console.assert(checkNumber(-4) == -4, "");
+			console.assert(checkNumber("aa") == false, "");
+		</script>
 	</head>
 
 	<body>
-		<script type="text/javascript">
-			// let numero = prompt("Introduce un número");
-
-			// if (isNaN(numero)) {
-			// 	document.write(
-			// 		"ERROR!!!! Introducir un valor númerico <br/>".toUpperCase()
-			// 	);
-			// } else {
-			// 	numero = new Number(numero);
-			// 	document.write(numero + ": valor númerico <br/>".toUpperCase());
-			// 	if (numero >= 10) {
-			// 		document.write(
-			// 			numero + ": es un número mayor o igual a 10".toUpperCase()
-			// 		);
-			// 	} else {
-			// 		document.write(numero + ": es un número menor a 10".toUpperCase());
-			// 	}
-			// }
-
-			// aqui lo pido x DO WHILE ANINADO
-
-			// let $correcto1, $numero12;
-
-			// do {
-			// 	do {
-			// 		$numero12 = prompt("Introduce un número: ");
-			// 	} while (isNaN($numero12));
-			// 	$correcto1 = prompt("are you sure?(Y/N)");
-			// 	alert($correcto1 + " A " + !($correcto1.toUpperCase() == "Y"));
-			// } while (!($correcto1.toUpperCase() == "Y"));
-			// //while (confirm("Are you sure?")== True)
-			// if ($numero12 > 10) {
-			// 	document.write("el numero es" + $numero12);
-			// } else {
-			// 	document.write("numero erroneo ");
-			// }
-			//EJEMPLO DE COMO HACER UNA PREGUNTA ANTES DE PASAR HACIA ADELANTE
-			// let number;
-			// do {
-			// 	do {
-			// 		number = prompt("Introduce numero");
-			// 	} while (number == "" || isNaN(number));
-			// } while (
-			// 	!(confirm("estas seguro  que quieres el numero  :" + number) == true)
-			// );
-			// document.write("OK" + number);
-			// throw new Error();
-			// throw "Fin decódigo";
-			// AHORA QUEREMOS AÑADIR MAS INPUTS Y PREGUNTAS--hay q sacar throw error
-			//aqui da dos vueltas
-			// for (let i = 0; i <= 2; i++) {
-			// 	let number;
-			// 	do {
-			// 		do {
-			// 			number = prompt("Introduce numero");
-			// 		} while (number == "" || isNaN(number));
-			// 	} while (
-			// 		!(confirm("estas seguro  que quieres el numero  :" + number) == true)
-			// 	);
-			// 	document.write("OK" + number);
-			// }
-			// throw new Error();
-			// throw "Fin decódigo";
-
-			//SI QUIERES Q VUELTAS AUTOMATICAS
-
-			// let vueltas;
-			// do {
-			// 	vueltas = prompt("cuantos numeros quieres solicitar?;");
-			// } while (vueltas == "" || isNaN(vueltas));
-
-			// for (let i = 0; i <= vueltas; i++) {
-			// 	let number;
-			// 	do {
-			// 		do {
-			// 			number = prompt("Introduce numero");
-			// 		} while (number == "" || isNaN(number));
-			// 	} while (
-			// 		!(confirm("estas seguro  que quieres el numero  :" + number) == true)
-			// 	);
-			// 	document.write("OK" + number);
-			// }
-			// throw new Error();
-			// throw "Fin decódigo";
-
-			// guardarlo en ARRAY xa poder llevarnoslo
-
-			let vueltas;
-			do {
-				vueltas = prompt("cuantos numeros quieres solicitar?;");
-			} while (vueltas == "" || isNaN(vueltas));
-
-			let arrayOld = [];
-			let promedio = 0;
-			for (let i = 0; i <= vueltas; i++) {
-				let number;
-				do {
-					do {
-						number = prompt("Introduce numero");
-					} while (number == "" || isNaN(number));
-				} while (
-					!(confirm("estas seguro  que quieres el numero  :" + number) == true)
-				);
-				arrayOld.push(number);
-				promedio += parseInt(number);
-				// document.write("OK" + number);
-			}
-			document.write(arrayOld + "promedio" + promedio / arrayOld.length);
-
-			//throw new Error();
-			//throw "Fin decódigo";
-		</script>
+		<p id="texto"></p>
+		<button onclick="document.getElementById('texto').innerHTML+=pedirNumero()">
+			pedir numero
+		</button>
 	</body>
 </html>
