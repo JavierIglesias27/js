@@ -20,17 +20,118 @@ ej: 3+6=9
     
     <body>
         <script type="text/javascript">
-            let numero = prompt("Introduce un número");
-            let numero1 = prompt("Introduce un número");
 
-            if(isNaN(numero, numero1 )){
-                document.write(numero + ":  ERROR!!!!!!!Introduzca un valor númerico <br/>");
-            }else{
-                document.write("Número correcto:  " + numero +  "<br />");
-                document.write("Número correcto:  " + numero1 + "<br />");
-            }
-            let suma= new Number(numero) + new Number(numero1);
-            document.write( numero + "+" + numero1 + "=" + suma);
+            		/**
+			 * ! pedirNumero()
+			 * ! Función que usa dos prompts para solicitar dos número
+			 * ! cuando obtenga los dos numeros enviará la información  a la función "checkNumber()"
+			 * ! segun el return que tenga pintara en pantalla los números o no
+			 * return: text
+			 **/
+			function pedirNumero($p_texto) {
+				let prompt_number = prompt("Introducir primer número");
+				let prompt_number1 = prompt("Introducir segundo número");
+				let $suma = new Number(prompt_number) + new Number(prompt_number1);
+				if (checkNumber(prompt_number,prompt_number1 ) != false) {
+					return (
+						"Primer numero" +
+						prompt_number +
+						"<br />" +
+						"Segundo numero" +
+						prompt_number1 +
+						"<br />" +
+						+prompt_number +
+						"+" +
+						prompt_number1 +
+						"=" +
+						$suma
+					);
+				} else {
+					return (
+						'<b>"' +
+						prompt_number +
+						prompt_number1 +
+						'"</b> No es un número válido<br>'
+					);
+				}
+			}
+
+			/**
+			 * ! checkNumber()
+			 * ! Función que revisa los parámetros "prompt_number" y "prompt_number1"
+			 * ! y devolverá ambos números, en caso de que estos sean un números
+             * return: prompt_number, prompt_number1
+             * !si es texto da error
+			 * return: false
+			 * 
+			 **/
+
+			function checkNumber(prompt_number, prompt_number1) {
+				/**
+                 * ! Zona de logs
+                    console.log(
+                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
+                    );
+                     console.log(
+                        '"' + prompt_number1 + '" != "" ==> ' + (prompt_number1 != "")
+                    );
+                    console.log(
+                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
+                    );
+                     console.log(
+                        '!isNaN("' + prompt_number1 + '") ==> ' + !isNaN(prompt_number1)
+                    );
+                    
+                    console.warn(
+                        "All ==> " +
+                            (prompt_number,prompt_number1 != "" &&
+                                !isNaN(prompt_number,prompt_number1) &&
+                                
+                    ));
+                **/
+
+				if (
+					(prompt_number,
+					prompt_number1 != "" && !isNaN(prompt_number, prompt_number1))
+				) {
+					//solo numeros
+					return prompt_number, prompt_number1;
+				} else {
+					return false;
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkNumber("","") == false, "");
+			console.assert(checkNumber("a","b") == false, "");
+			console.assert(checkNumber(-1,9) == (-1,9) , "");
+			console.assert(checkNumber(-1,-9) == (-1,-9) , "");
+			console.assert(checkNumber(1,2) == (1,2), "");
+			
+
+             
+  </script>
+
+        <p id="texto"></p>
+        <button onclick="document.getElementById('texto').innerHTML+=pedirNumero()">
+            pedir numero
+        </button>
+    </body> 
+    <script>
+         // let numero = prompt("Introduce un número");
+            // let numero1 = prompt("Introduce un número");
+
+            // if(isNaN(numero, numero1 )){
+            //     document.write(numero + ":  ERROR!!!!!!!Introduzca un valor númerico <br/>");
+            // }else{
+            //     document.write("Número correcto:  " + numero +  "<br />");
+            //     document.write("Número correcto:  " + numero1 + "<br />");
+            // }
+            // let suma= new Number(numero) + new Number(numero1);
+            // document.write( numero + "+" + numero1 + "=" + suma);
            // document.write(numero + numero1 + (numero+numero1));
 
            // el bucle DO-WHILE se ejecuta siempre hasta q se cumple la condicion
@@ -57,9 +158,5 @@ ej: 3+6=9
             //  while(isNaN($numero1));
 
             //  document.write($numero + "+ "+ $numero1+ "=" + (new Number($numero) + new Number($numero1)));
-             
-
-
-  </script>
-    </body> 
+    </script>
 </html>
