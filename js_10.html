@@ -5,27 +5,102 @@ Usando ".split("");" separa el texto y píntalo junto al numero.
 
 -->
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ejercicio 10</title>
-	</head>
-	<body>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 4 JS</title>
 		<script>
-			let $texto1 = prompt("Introducir primer Texto:");
-			let $texto2 = prompt("Introducir segundo Texto:");
+			/**
+			 * ! pedirTexto()
+			 * ! Función que usa un prompt para solicitar dos texto
+			 * ! cuando lo obtenga enviará la información a la función "checkTexto()"
+			 * ! segun el return que tenga pintará en pantalla SI el texto es correcto o no
+			 * ! además unirá AMBOS textos eliminando los espacios, poniendo las letras en minúsculas y los separará por ";"
+			 * ! la función lenght nos indicará el número de elementos que contiene 
+			 * ! con splitt dividimos un objeto de tipo String en un array
+			 * return:  pintaremos el texto obtenido y su número de componentes separados por un "="
+			 * ! en caso de no introducir valores válidos lo indicará mediante ELSE
+			 * 
+			 **/
+			function pedirTexto($p_texto) {
+				let $prompt_texto1 = prompt("Introducir Texto: ");
+                let $prompt_texto2 = prompt("Introducir Texto: ");
+                let $unir =
+                        $prompt_texto1.replace(/ /g, "").toLowerCase() +
+                        ";" +
+                        $prompt_texto2.replace(/ /g, "").toLowerCase();
+                let $numLetras = $unir.length;
+                let $splitt = $unir + " " + $numLetras;
+				if (checkTexto($prompt_texto1,$prompt_texto2) != false) {
+                            $unir;
+                            $numLetras;
+                            $splitt;
+                    
+				return (
+						$splitt.split(" ")[0] + "  =  " + $splitt.split(" ")[1]+"<br/>"
+					);
+				} else {
+					
+					return '<b>"' + $prompt_texto1 + $prompt_texto2+'"</b> No es un texto válido<br/>';
+				}
+			}
 
-			let $unir =
-				$texto1.replace(/ /g, "").toLowerCase() +
-				";" +
-				$texto2.replace(/ /g, "").toLowerCase();
+			/**
+			 * ! checkTexto()
+			 * ! Función que revisa el parámetro "prompt_texto"
+			 * ! y devolverá el texto, en caso de que este sea un texto
+			 * ! en caso contrario te comunica error
+			 * return: $prompt_texto1 y $prompt_texto2
+			 * return: false en caso de error 
+			 **/
 
-			let $numLetras = $unir.length;
-			let $splitt = $unir + " " + $numLetras;
-			document.write($splitt.split(" ")[0] + "  =  " + $splitt.split(" ")[1]);
+			function checkTexto($prompt_texto1,$prompt_texto2) {
+				/**
+                          * ! Zona de logs
+                        console.log(
+                            '"' + $prompt_texto1 + '" != "" ==> ' + ($prompt_texto1 != "")
+                        );
+						 console.log(
+                            '"' + $prompt_texto2 + '" != "" ==> ' + ($prompt_texto2 != "")
+                        );
+                        console.log(
+                            'isNaN("' + $prompt_texto1 + '") ==> ' + isNaN($prompt_texto1)
+                        );
+						 console.log(
+                            'isNaN("' + $prompt_texto2 + '") ==> ' + isNaN($prompt_texto2)
+                        );
+                        console.warn(
+                            "All ==> " + ($prompt_texto1,$prompt_texto2 != "" && isNaN($prompt_texto1,$prompt_texto2))
+                        );
+                                **/	
+
+				if ($prompt_texto1,$prompt_texto2 != "" && isNaN($prompt_texto1,$prompt_texto2)) {
+					return $prompt_texto1+$prompt_texto2;
+				} else {
+					return false;
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkTexto("","") == false, "");
+			console.assert(checkTexto("abc","def") == ("abcdef"), "");
+			console.assert(checkTexto("a45b","3df4") == ("a45b3df4"), "");
+			console.assert(checkTexto(-4,-8) == false, "");
+			console.assert(checkTexto(10,10) == false, "");
+
+			
 		</script>
+	</head>
+
+	<body>
+		<p id="texto"></p>
+		<button onclick="document.getElementById('texto').innerHTML+=pedirTexto()">
+			Pedir texto
+		</button>
 	</body>
 </html>
+
