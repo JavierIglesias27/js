@@ -22,9 +22,7 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
 				if (checkTexto($prompt_texto) != false) {
 					//$p_texto.innerHTML += prompt_texto + "<br>";
 					return (
-						"El texto introducido es:  " +
-						$prompt_texto.toLocaleUpperCase() +
-						"<br>"
+						"El texto introducido es:  " + $prompt_texto.toUpperCase() + "<br>"
 					);
 				} else {
 					//$p_texto.innerHTML += "No es un numero valido<br>";
@@ -43,7 +41,7 @@ Solicita al usuario que introduzca un texto, transfórmalo a mayúsculas usando 
 
 			function checkTexto($prompt_texto) {
 				/**
-			              * ! Zona de logs
+                          * ! Zona de logs
                         console.log(
                             '"' + $prompt_texto + '" != "" ==> ' + ($prompt_texto != "")
                         );

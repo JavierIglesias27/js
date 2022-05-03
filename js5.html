@@ -18,6 +18,7 @@ pinta en pantalla si el numero es mayor a 10 o no
 			 * ! segun el return que tenga pintará en pantalla el número o no
 			 * return: text
 			 **/
+
 			function pedirNumero($p_texto) {
 				let $prompt_number = prompt("Introducir Número: ");
 				if (checkNumber($prompt_number) != false) {
@@ -60,6 +61,13 @@ pinta en pantalla si el numero es mayor a 10 o no
 			                             !isNaN($prompt_number)
 			                 ));
 			             **/
+
+				if ($prompt_number != "" && !isNaN($prompt_number)) {
+					//solo numeros
+					return $prompt_number;
+				} else {
+					return false;
+				}
 			}
 
 			/**
@@ -69,7 +77,7 @@ pinta en pantalla si el numero es mayor a 10 o no
 			console.assert(checkNumber("") == false, "");
 			console.assert(checkNumber(5) == 5, "");
 			console.assert(checkNumber(-1) == -1, "");
-			console.assert(checkNumber(-4) == -4, "");
+			console.assert(checkNumber(10) == 10, "");
 			console.assert(checkNumber("aa") == false, "");
 		</script>
 	</head>
