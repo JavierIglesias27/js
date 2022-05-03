@@ -4,34 +4,108 @@ Ejercicio 8 JS
 Solicita un número, pinta el número y si es par o no
 -->
 
-<!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>Ejercicio 8 </title>
-    </head>
-    <body>
-        <script type="text/javascript">
-            
-            let numero = prompt("Introduce un numero:");
-            if(isNaN(numero)){
-	            document.write(numero + ":   introducir valor númerico!!!! <br/>".toUpperCase());
-            }else{
-                numero= new Number(numero);
-	            document.write(numero + ":   es un numero <br/>");
-                if(numero %2==0 && numero > 0){
-                    document.write(numero + ":   es un numero par y positivo");
-                }
-                else if (numero % 2==0 && numero <0){
-                    document.write(numero + ":   es un numero par y negativo");
-                }
-                else if (numero % 2==1 && numero >0){
-                    document.write(numero + ":   es un numero impar y positivo");
-                }
-                 else{
-                    document.write(numero + ":   es un numero impar y negativo");
-                }
-            }
-        </script>
-    </body> 
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Ejercicio 8 JS</title>
+		<script>
+			/**
+			 * ! pedirNumero()
+			 * ! Función que usa un prompt para solicitar un número
+			 * ! cuando lo obtenga enviará la información a la función "checkNumber()"
+			 * ! segun el return que tenga pintará en pantalla si el número es par/impar y positivo/negativo
+			 * return: text (si valores introducidos NO son númericos) 
+			 **/
+			function pedirNumero($p_texto) {
+				let prompt_number = prompt("Introduce un número:");
+				if (checkNumber(prompt_number) != false) {
+
+                    prompt_number=new Number(prompt_number);
+
+					if(prompt_number %2==0 && prompt_number > 0){
+                         return(prompt_number + ":   es un número par y positivo <br/>");
+
+					}else if (prompt_number % 2==0 && prompt_number <0){
+                    	return(prompt_number + ":   es un número par y negativo <br/>");
+
+                	}else if (prompt_number % 2==1 && prompt_number >0){
+                   		return(prompt_number + ":   es un número impar y positivo <br/>");
+                	}
+					else{
+                    	return(prompt_number + ":   es un número impar y negativo <br/>");
+                	}
+					
+				return prompt_number ;
+				} else {
+					
+					return '<b>"' + prompt_number + '"</b>ERROR!!! CERO o valores no númericos <br>';
+				}
+			}
+
+			/**
+			 * ! checkNumber()
+			 * ! Función que revisa el parámetro "prompt_number"
+			 * ! y devolverá el número, en caso de que este sea un número 
+			 * ! positivo/negativo--- par/impar
+			 * return: number
+			 * ! si es un texto devolvera false
+			 * return: false
+			 * 
+			 **/
+
+			function checkNumber(prompt_number) {
+				/**
+                 * ! Zona de logs
+                    console.log(
+                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
+                    );
+                    console.log(
+                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
+                    );
+                    console.warn(
+                        "All ==> " +
+                            (prompt_number != "" &&
+                                !isNaN(prompt_number)));
+                **/
+				console.log(
+                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
+                    );
+                    console.log(
+                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
+                    );
+                    console.warn(
+                        "All ==> " +
+                            (prompt_number != "" &&
+                                !isNaN(prompt_number)));
+				if (
+					prompt_number != "" &&
+					!isNaN(prompt_number) 
+				) {
+					
+					return prompt_number;
+				} else {
+					return false;
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(checkNumber("") == false, "");
+			console.assert(checkNumber("a") == false, "");
+			console.assert(checkNumber(-1) == -1, "");
+			console.assert(checkNumber(3) == 3, "");
+			console.assert(checkNumber(-4) == -4, "");
+			console.assert(checkNumber(5) == 5, "");
+		</script>
+	</head>
+
+	<body>
+		<p id="texto"></p>
+		<button onclick="document.getElementById('texto').innerHTML+=pedirNumero()">
+			Pedir numero
+		</button>
+	</body>
 </html>
