@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS plantilla DEFINITIVA</title>
+	</head>
+	<body>
+		<script>
+			function funcion1($texto) {
+				if ($texto != "" && isNaN($texto)) {
+					return ($texto + "").toUpperCase() + "<br />";
+				} else {
+					return false + "<br>";
+				}
+			}
+
+			console.assert(funcion1("") == false + "<br>", ""); // ERROR!!
+			console.assert(funcion1("a") == "A<br />", " TEXTO"); // las comillas son xa escribir una nota q tebayude
+			console.assert(funcion1("abc") == "ABC<br />", "");
+			console.assert(funcion1("a45b") == "A45B<br />", "");
+			console.assert(funcion1("4ab5") == "4AB5<br />", "");
+			console.assert(funcion1("AbC") == "ABC<br />", "");
+			console.assert(funcion1("ABC") == "ABC<br />", "");
+			console.assert(funcion1(-4) == false + "<br>", ""); // ERROR!!
+			console.assert(funcion1(4) == false + "<br>", ""); // ERROR!!
+		</script>
+
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir número:`))"
+		>
+			prompt
+		</button>
+	</body>
+</html>

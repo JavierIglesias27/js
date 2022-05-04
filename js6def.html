@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS 6 DEF</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * funcion1()
+			 * @$number  recibe el valor de la variable de la función
+			 * Función que revisa el parámetro "$number"
+			 * devolverá el número menor a 0 o mayor a 99999999
+			 * return: $number
+			 * en caso contrario te comunica error
+			 * return: false
+			 **/
+			function funcion1($number) {
+				if (
+					$number != "" &&
+					!isNaN($number) &&
+					($number < 0 || $number > 99999999)
+				) {
+					return "Número menor a cero/ mayor a 99999999 " + $number + "<br />";
+				} else {
+					return "ERROR!!!<br>";
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(funcion1("") == "ERROR!!!<br>", "");
+			console.assert(funcion1("a") == "ERROR!!!<br>", "");
+			console.assert(
+				funcion1(-1) ==
+					"Número menor a cero/ mayor a 99999999 " + -1 + "<br />",
+				""
+			);
+			console.assert(funcion1(0) == "ERROR!!!<br>", "");
+			console.assert(funcion1(1) == "ERROR!!!<br>", "");
+			console.assert(funcion1(99999998) == "ERROR!!!<br>", "");
+			console.assert(funcion1(99999999) == "ERROR!!!<br>", "");
+			console.assert(
+				funcion1(100000000) ==
+					"Número menor a cero/ mayor a 99999999 " + 100000000 + "<br />",
+				""
+			);
+		</script>
+
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir número:`))"
+		>
+			prompt
+		</button>
+	</body>
+</html>
