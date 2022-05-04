@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js2 Bis Array DEF</title>
+</head>
+<body>
+   
+      <script type="text/javascript">
+          let $meses = [
+				"Enero",
+				"Febrero",
+				"Marzo",
+				"Abril",
+				"Mayo",
+				"Junio",
+				"Julio",
+				"Agosto",
+				"Septiembre",
+				"Octubre",
+				"Noviembre",
+				"Diciembre",
+			];
+            	/**
+			 * funcion alertar()
+			 * @$le pasamos lo  parametros a la función
+			 * y devolverá los meses del año cada vez que hagas click en aceptar
+			 * return: $meses[]
+			 **/
+          function alertar($mensual) {
+         
+            for (let $i = 0; $i < $meses.length; $i++) {
+				console.log($meses[$i]);
+				alert($meses[$i]);
+			}
+          }
+          /**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+
+             //console.assert(alertar($mensual) == "Enero", "");
+      </script>
+
+<button onclick="alertar('click');">
+    click to alert
+  </button>
+</body>
+</html>

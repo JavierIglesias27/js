@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS 6 DEF</title>
+	</head>
+	<body>
+		<script>
+             
+			/**
+			 * funcion1()
+			 * @$number  recibe el valor de la variable de la función
+			 * Función que revisa el parámetro "$number"
+			 * devolverá el número comprendido entre 0 y 99999999 
+			 * return:añadira=  $number + letras [$number % 23]
+			 * en caso contrario te comunica error
+			 * return: false
+			 **/
+			function funcion1($number) {
+                let letras = [
+				"T",
+				"R",
+				"W",
+				"A",
+				"G",
+				"M",
+				"Y",
+				"F",
+				"P",
+				"D",
+				"X",
+				"B",
+				"N",
+				"J",
+				"Z",
+				"S",
+				"Q",
+				"V",
+				"H",
+				"L",
+				"C",
+				"K",
+				"E",
+				"T",
+			];
+				if (
+					$number != "" &&
+					!isNaN($number) &&
+					($number > 0 || $number < 99999999)
+				) {
+                    let $dni= $number +"-"+letras[$number % 23]
+					return  $dni+"<br>";
+				} else {
+					return "ERROR!!!Introducir un valor en 0 y 99999999<br>";
+				}
+			}
+
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(funcion1("") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
+			console.assert(funcion1("a") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
+			console.assert(funcion1("56a") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
+            console.assert(funcion1("-5") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
+            console.assert(funcion1("78965412") == "78965412-H<br>", "");
+            console.assert(funcion1("78965231") == "78965231-K<br>", "");
+			
+		</script>
+
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir número:`))"
+		>
+			prompt
+		</button>
+	</body>
+</html>
