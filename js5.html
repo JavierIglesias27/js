@@ -5,89 +5,56 @@ Pide al usuario un número, comprueba que es un número y usando un  if()
 pinta en pantalla si el numero es mayor a 10 o no
 
 -->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Ejercicio 6 JS IF</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS 3 def</title>
+	</head>
+	<body>
 		<script>
 			/**
-			 * ! pedirNumero()
-			 * ! Función que usa un prompt para solicitar un número
-			 * ! cuando lo obtenga enviara la información a la función "checkNumber()"
-			 * ! segun el return que tenga pintara en pantalla el número o no
-			 * return: text
+			 * funcion1()
+			 * @$number1 son los parametros que se pasan a la función
+			 * Función que revisa el parámetro "$number1" sean numéricos
+			 * y devolverá si es mayor/menor a 10
+			 * return: $number1
+			 * en caso contrario te comunica error
+			 * return: false
 			 **/
-			function pedirNumero($p_texto) {
-				let prompt_number = prompt("Introducir un número:");
-				if (checkNumber(prompt_number) != false) {
-					
-					return " Número mayor a 10:  <b>" +`"`+  prompt_number+ `"` + "</b><br>";
+			function funcion1($number1) {
+				if ($number1 != "" && !isNaN($number1)) {
+					if ($number1 > 10) {
+						return $number1 + " mayor a 10<br/>";
+					}
+					if ($number1 < 10) {
+						return $number1 + " Menor a 10 <br/>";
+					}
+					return $number1 + "Igual a 10 <br/>";
 				} else {
-				
-					return '<b>"' + prompt_number + '"</b> Error!!!!Introduzca un número correcto<br>';
+					return "ERROR!!!<br>";
 				}
 			}
-
-			/**
-			 * ! checkNumber()
-			 * ! Función que revisa el parámetro "prompt_number"
-			 * ! y devolverá el número, en caso de que este sea un número
-			 * ! y sea mayor a 10 o menor/igual a 10
-			 * return: number
-			 * return: false (valores introducidos no son válidos) 
-			 **/
-
-			function checkNumber(prompt_number) {
-				/**
-                 * ! Zona de logs
-                    console.log(
-                        '"' + prompt_number + '" != "" ==> ' + (prompt_number != "")
-                    );
-                    console.log(
-                        '!isNaN("' + prompt_number + '") ==> ' + !isNaN(prompt_number)
-                    );
-                    console.log('"' + prompt_number + '" < 10 ==> ' + (prompt_number < 10));
-                    console.log(
-                        '"' + prompt_number + '" > 10 ==> ' + (prompt_number > 10)
-                    );
-                    console.warn(
-                        "All ==> " +
-                            (prompt_number != "" &&
-                                !isNaN(prompt_number) &&
-                                (prompt_number >10  || prompt_number < 10))
-                    );
-                **/
-				if (
-					prompt_number != "" &&
-					!isNaN(prompt_number) &&
-					(prompt_number > 10)
-				) {
-					
-					return prompt_number;
-				} else {
-					return false;
-				}
-			}
-
 			/**
 			 * ! Zona Assert:
 			 * ! Test de que la funcion realiza la tarea requerida
 			 **/
-			console.assert(checkNumber("") == false, "");
-			console.assert(checkNumber("a") == false, "");
-			console.assert(checkNumber(-1) == -1, "");
-			console.assert(checkNumber(-4) == -4, "");
-			console.assert(checkNumber(8) == 8, "");
-			console.assert(checkNumber(50) == 50, "");
+			console.assert(funcion1("") == "ERROR!!!<br>", "");
+			console.assert(funcion1("f") == "ERROR!!!<br>", "");
+			console.assert(funcion1(-80) == -80 + " Menor a 10 <br/>", "");
+			console.assert(funcion1(8) == 8 + " Menor a 10 <br/>", "");
+			console.assert(funcion1(10) == 10 + "Igual a 10 <br/>", "");
+			console.assert(funcion1(45) == 45 + " mayor a 10<br/>", "");
 		</script>
-	</head>
 
-	<body>
-		<p id="texto"></p>
-		<button onclick="document.getElementById('texto').innerHTML+=pedirNumero()">
-			pedir numero
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir primer parametro:`))"
+		>
+			prompt
 		</button>
 	</body>
 </html>
-

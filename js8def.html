@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS 8 def</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * funcion1()
+			 * @$number1 es el parametro que se pasa a la función
+			 * Revisa que el parámetro "$number1" sea numérico
+			 * y devolverá si es par/impar
+			 * return: $number1
+			 * en caso contrario te comunica error
+			 * return: false
+			 **/
+			function funcion1($number1) {
+				if ($number1 != "" && !isNaN($number1)) {
+					if ($number1 % 2 == 0) {
+						return $number1 + "  Es un número par<br/>";
+					}
+					return $number1 + "  Es un número impar<br/>";
+				} else {
+					return "ERROR!!!<br>";
+				}
+			}
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(funcion1("") == "ERROR!!!<br>", "");
+			console.assert(funcion1("f") == "ERROR!!!<br>", "");
+			console.assert(funcion1("z56g") == "ERROR!!!<br>", "");
+			console.assert(funcion1("Z56P") == "ERROR!!!<br>", "");
+			console.assert(funcion1(7) == 7 + "  Es un número impar<br/>", "");
+			console.assert(funcion1(-795) == -795 + "  Es un número impar<br/>", "");
+			console.assert(funcion1(-8) == -8 + "  Es un número par<br/>", "");
+			console.assert(funcion1(1000) == 1000 + "  Es un número par<br/>", "");
+		</script>
+
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir un número:`))"
+		>
+			prompt
+		</button>
+	</body>
+</html>
