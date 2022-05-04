@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS 10 DEF</title>
+	</head>
+	<body>
+		<script>
+			function funcion1($texto1, $texto2) {
+				let $unir = ($texto1 + ";" + $texto2).replace(/ /g, "").toLowerCase();
+
+				let $numLetras = $unir.length;
+				document.write($unir + "=" + $numLetras + "<br />");
+
+				let final = $unir.split(";");
+
+				document.write(final[0] + final[1] + "=" + $numLetras);
+			}
+
+			console.assert(funcion1("", "") == "" + "" + 1, "");
+			// console.assert(funcion1("ab", "cd") == "ab   =" + "<br/>", " TEXTO");
+			// console.assert(funcion1("a45b") == "A45B<br />", "");
+			// console.assert(funcion1("4ab5") == "4AB5<br />", "");
+			// console.assert(funcion1("AbC") == "ABC<br />", "");
+			// console.assert(funcion1("ABC") == "ABC<br />", "");
+			// console.assert(funcion1(-4) == false + "<br>", "");
+			// console.assert(funcion1(4) == false + "<br>", "");
+		</script>
+
+		<p id="cosa"></p>
+		<br />
+		<button
+			onclick="document.getElementById(`cosa`).innerHTML+=funcion1(prompt(`Introducir texto1:`),prompt(`Introducir texto2:`))"
+		>
+			prompt
+		</button>
+	</body>
+</html>
