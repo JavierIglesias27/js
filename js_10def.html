@@ -8,25 +8,40 @@
 	</head>
 	<body>
 		<script>
+			/**
+			 * funcion1()
+			 * @$texto1 , $texto2  recibe el valor de la variable de la función
+			 * @$unir:uno dos valores elimanando espacios, convirtiendolo en minúsculas
+			 * @$numLetras: calcula el número de elementos que contiene $unir
+			 * @$final: lo convierte en array y elimina el ";" mediante el selector
+			 * creamos variables $union1,$union2 para simplificar el resultado
+			 * return:añadira=  $union1 + $union2
+
+			 **/
 			function funcion1($texto1, $texto2) {
 				let $unir = ($texto1 + ";" + $texto2).replace(/ /g, "").toLowerCase();
 
 				let $numLetras = $unir.length;
-				document.write($unir + "=" + $numLetras + "<br />");
 
-				let final = $unir.split(";");
+				let $final = $unir.split(";");
 
-				document.write(final[0] + final[1] + "=" + $numLetras);
+				let $union1 = $unir + "=" + $numLetras;
+
+				let $union2 = $final[0] + $final[1] + "=" + $numLetras;
+
+				return $union1 + "<br />" + $union2 + "<br />";
 			}
-
-			console.assert(funcion1("", "") == "" + "" + 1, "");
-			// console.assert(funcion1("ab", "cd") == "ab   =" + "<br/>", " TEXTO");
-			// console.assert(funcion1("a45b") == "A45B<br />", "");
-			// console.assert(funcion1("4ab5") == "4AB5<br />", "");
-			// console.assert(funcion1("AbC") == "ABC<br />", "");
-			// console.assert(funcion1("ABC") == "ABC<br />", "");
-			// console.assert(funcion1(-4) == false + "<br>", "");
-			// console.assert(funcion1(4) == false + "<br>", "");
+			/**
+			 * ! Zona Assert:
+			 * ! Test de que la funcion realiza la tarea requerida
+			 **/
+			console.assert(funcion1("", "") == ";=1<br />=1<br />", "");
+			console.assert(funcion1("a", "a") == "a;a=3<br />aa=3<br />", "");
+			console.assert(funcion1(-98, -98) == "-98;-98=7<br />-98-98=7<br />");
+			console.assert(
+				funcion1("55asd", "77csv") == "55asd;77csv=11<br />55asd77csv=11<br />",
+				""
+			);
 		</script>
 
 		<p id="cosa"></p>
