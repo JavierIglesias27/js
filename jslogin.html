@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Login</title>
+</head>
+<body>
+<center>
+    <h2>Manejando el objeto password...</h2>
+    <form name="miFormulario" action="javascript:informar('GET', 'sitio.html')">
+        Introduzca su usuario y clave...<br><br>
+        <table cellpadding="5">
+        <tbody>
+            <tr align="RIGHT">
+                 <td>usuario:</td>
+                 <td><input type="text" name="usuario" size="15"></td>
+            </tr>
+            <tr align="RIGHT">
+            <td>clave:</td>
+            <td><input type="password" name="password" size="15"></td>
+            </tr>
+        </tbody>
+        </table>
+        <br />
+        <input type="SUBMIT" name="botonEnviar" value="Enviar">
+        <input type="RESET" name="botonLimpiar" value="Limpiar">
+    </form>
+</center>
+<script>
+    function informar(method, url) {
+				let $usuario = document.getElementsByName("usuario")[0].value;
+                let $contrasena = document.getElementsByName("password")[0].value;
+                if ($usuario != "" && isNaN($usuario ) && $contrasena!="" ) {
+					alert ( "Bienvenido al sistema...\r" + "Usuario: "+$usuario + "\rContraseña: "+ $contrasena);
+
+                }else {
+					alert ("Usuario no autorizado...")
+                    let form = document.getElementById("miFormulario");
+					form.method = "GET";
+					form.action = url;
+					form.submit();
+				}				
+			
+			}
+</script>
+</body>
+</html>
