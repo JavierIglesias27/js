@@ -17,43 +17,43 @@ alert(info("En un lugar de la mancha..."));
         <script type="text/javascript">
 
             /**
-			 * funcion1()
-			 * @$number  recibe el valor de la variable de la función
-			 * Función que revisa el parámetro "$number"
-			 * devolverá el número comprendido entre 0 y 99999999 
-			 * return:añadira=  $number + letras [$number % 23]
-			 * en caso contrario te comunica error
-			 * return: false
+			 * info()
+			 * @$texto  recibe parametro que recibe la función
+			 * devolverá textos MAYUS/MINUS/MIXTO
+			 * return:ALERT()
 			 **/
             function info($texto){
 
                 let $final = $texto;  
-                
-                if($texto == $texto.toUpperCase()){
-                   $final = "TEXTO EN MAYUSCULAS:     " + $final ;
-                }
-                else if ($texto == $texto.toLowerCase()){
-                   $final = "Texto en minúsculas:      " + $final;
-                }
-                else{
-                   $final = "Es una mezcla de Mayúsculas y minúsculas: " + $final;
-                }
-                return $final;
+                    if($texto == $texto.toUpperCase()){
+
+                    console.log( "TEXTO EN MAYUSCULAS:     " + $final );
+                    return  "TEXTO EN MAYUSCULAS:     " + $final ;
+                    
+                    }else if ($texto == $texto.toLowerCase()){
+                    return "Texto en minúsculas:      " + $final;
+                    }
+                    else{
+                    return  "Es una mezcla de Mayúsculas y minúsculas: " + $final;
+                    }
+                    return $final;
             }
-            // alert(info("soy pequeño porque no creo en..."));
+           
 
             /**
 			 * ! Zona Assert:
 			 * ! Test de que la funcion realiza la tarea requerida
 			 **/
-			// console.assert(funcion1("") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
-            // console.assert(funcion1("-5") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
-            // console.assert(funcion1("78965412") == "78965412-H<br>", "");      
+			 console.assert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO") == "TEXTO EN MAYUSCULAS:     OVNI = OBJETO VOLADOR NO IDENTIFICADO", "");
+             console.assert(info(`soy pequeño porque no creo en...`) == "Texto en minúsculas:      soy pequeño porque no creo en...", "");
+             console.assert(info(`Soy Una mEzcla de TODO...`) == "Es una mezcla de Mayúsculas y minúsculas: Soy Una mEzcla de TODO...", "");
+
+            
     </script>
     <p id="cosa"></p>
     <br />
     <button
-        onclick="document.getElementById(`cosa`).innerHTML+=info(alert(`OVNI = OBJETO VOLADOR NO IDENTIFICADO`),alert(`En un lugar de la mancha...`),alert(`soy pequeño porque no creo en...`))"
+        onclick="alert(info(`OVNI = OBJETO VOLADOR NO IDENTIFICADO`));alert(info(`soy pequeño porque no creo en...`));alert(info(`Soy Una mEzcla de TODO...`))"
     >
         prompt
     </button>
