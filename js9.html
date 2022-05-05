@@ -40,9 +40,7 @@ alert(info("En un lugar de la mancha..."));
                 }
                 return $final;
             }
-            alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
-            alert(info("En un lugar de la mancha..."));
-            alert(info("soy pequeño porque no creo en..."));
+            // alert(info("soy pequeño porque no creo en..."));
 
             /**
 			 * ! Zona Assert:
@@ -52,5 +50,12 @@ alert(info("En un lugar de la mancha..."));
             // console.assert(funcion1("-5") == "ERROR!!!Introducir un valor en 0 y 99999999<br>", "");
             // console.assert(funcion1("78965412") == "78965412-H<br>", "");      
     </script>
+    <p id="cosa"></p>
+    <br />
+    <button
+        onclick="document.getElementById(`cosa`).innerHTML+=info(alert(`OVNI = OBJETO VOLADOR NO IDENTIFICADO`),alert(`En un lugar de la mancha...`),alert(`soy pequeño porque no creo en...`))"
+    >
+        prompt
+    </button>
     </body> 
 </html>
