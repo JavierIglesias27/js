@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS Ocultar</title>
+        
+    <script language="javascript">
+
+            function oculta_capa1()
+            {
+            capa1.style.visibility="hidden"
+            oculta1.style.visibility="visible"
+            }
+            function muestra_capa1()
+            {
+            capa1.style.visibility="visible"
+            oculta1.style.visibility="hidden"
+            }
+            function oculta_capa2()
+            {
+            capa2.style.visibility="hidden"
+            oculta2.style.visibility="visible"
+            }
+            function muestra_capa2()
+            {
+            capa2.style.visibility="visible"
+            oculta2.style.visibility="hidden"
+            }
+    </script>
+
+</head>
+    <body>
+   <H2>OCULTAR/APARECER CAJAS</H2>
+
+      
+        <button id="capa1" onmouseover=oculta_capa1() onmouseout=muestra_capa1()
+        style="
+            left: 360px;
+            width: 120px;
+            color: yellow;
+            position: absolute;
+            top: 100px;
+            height: 35px;
+            visibility: visible;
+            background-color: orange;">
+        Pasar xa desaparecer 1
+    </button>
+    <button id=oculta1 onmouseover=oculta_capa1() onmouseout=muestra_capa1() 
+        style="
+            left: 360px;
+            width: 120px;
+            color: black;
+            position: absolute;
+            top: 100px;
+            height: 35px;
+            visibility: hidden;
+            background-color: #FFFFFF;
+            border:none;
+       ">
+        revertir 1
+    </button>
+    <button id=capa2 onmouseover=muestra_capa2() onclick=oculta_capa2()
+        style="
+            left: 530px;
+            width: 120px;
+            color: yellow;
+            position: absolute;
+            top: 100px;
+            height: 35px;
+            visibility: visible;
+          background-color: blue;
+         
+       ">
+        click xa desaparecer 2
+    </button>
+    
+    <button id=oculta2  onclick=muestra_capa2() onmousover=oculta_capa2()
+        style="
+            left: 530px;
+            width: 120px;
+            color: black;
+            position: absolute;
+            top: 100px;
+            height: 35px;
+            visibility: hidden;
+            background-color: #FFFFFF;
+           ">
+            click xa aparecer 2
+    </button>
+       
+</body>
+</html>
