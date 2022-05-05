@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS form 1</title>
-</head>
-<body>
-    <form
-    id="miFormulario"
-    method="GET"
-    action="javascript:informar('sitio.html')">   
-    
-    <label>Introduce un número: </label>
-    <input type="num" name="number" autofocus/>
-    <input type="submit" />
-</form>
-<script>
-    function informar(url) {
-        let $numero = document.getElementsByName("number")[0].value;
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS form 1</title>
+	</head>
+	<body>
+		<form
+			id="miFormulario"
+			method="GET"
+			action="javascript:informar('GET' ,'sitio.html')"
+		>
+			<label>Introduce un número: </label>
+			<input type="num" name="number" autofocus />
+			<input type="submit" />
+		</form>
+		<script>
+			function informar(method, url) {
+				let $numero = document.getElementsByName("number")[0].value;
 
-        if ($numero == "" || isNaN($numero)  || $numero < 1 || $numero > 100) {
-            alert("Introduce un número entre 1 y 100");
-        } else {
-            alert("Gracias por su visita")
-            //let form = document.getElementById("miFormulario");
-            form.method = "GET";
-            form.action = url;
-            form.submit();
-        }
-    }
-    </script>
-</body>
+				if ($numero != "" && !isNaN($numero) && $numero > 0 && $numero < 100) {
+					alert("Gracias por su visita");
+				} else {
+					alert("Introduce un número entre 1 y 100");
+					form.method = "GET";
+					form.action = url;
+					form.submit();
+				}
+			}
+		</script>
+	</body>
 </html>
