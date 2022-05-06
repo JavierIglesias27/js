@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conversor €-ptas</title>
-       
-    <script language="javascript">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Conversor €-ptas</title>
 
-        function pesetas_euros()
-        {
-        let n=1/166.386
-        form.caja2.value=n * form.caja1.value
-        }
-        function euros_pesetas()
-        {
-        let n=166.386
-        form.caja2.value=n * form.caja1.value
-        }
-        function fun1() {
-            document.getElementById("boton").style.backgroundColor = "green";
-            }
-        function fun2() {
-            
-            document.getElementById("boton1").style.backgroundColor = "green"
-            
-        }
-        function fun3() {
+		<script language="javascript">
+			function pesetas_euros() {
+				let n = 1 / 166.386;
+				document.getElementById("caja2").value =
+					n * document.getElementById("caja1").value;
+			}
+			function euros_pesetas() {
+				let n = 166.386;
+				caja2.value = n * caja1.value;
+			}
+			function fun1() {
+				document.getElementById("boton").style.backgroundColor = "green";
+			}
+			function fun2() {
+				document.getElementById("boton1").style.backgroundColor = "green";
+			}
+			function fun3() {
 				document.getElementById("boton").style.backgroundColor = "red";
-				
+
 				document.getElementById("boton1").style.backgroundColor = "red";
-        }
-    </script>
-     <style>
-        fieldset{
-            width: 40%;
-        }
-        legend{
-            text-align: center;
-        }
-        
-        label {
-            margin:auto;
-            
-        }
-       
-        div{
-            width:30% ;
-            margin:auto;
-            border: 2px solid black;
-            text-align: center;
-            background-color: red;
-        }
+			}
+		</script>
+		<style>
+			fieldset {
+				width: 40%;
+			}
+			legend {
+				text-align: center;
+			}
 
-               
-    </style>
-</head>
-<body>
+			label {
+				margin: auto;
+			}
 
-    <form name="form" action="#" method="get" target="_blank">
-        <fieldset>
-        <legend>Conversión de €-ptas y ptas-€</legend>
-            
-            <label>Introduzca Cantidad:</label> 
-            <input type="text" name="caja1">
-            <br />
-            <br />
-            <div id= "boton" onclick=pesetas_euros()  onmouseover="fun1()"onmouseout="fun3()"> <b>Convertir pesetas a €</b> </div>
-            <br/>
+			div {
+				width: 30%;
+				margin: auto;
+				border: 2px solid black;
+				text-align: center;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Conversión de €-ptas y ptas-€</h1>
 
-            <div id= "boton1" onclick=euros_pesetas() onmouseover="fun2()" onmouseout="fun3()"> <b>Convertir € a pesetas</b> </div>
-            <br/>
+		<label>Introduzca Cantidad:</label>
+		<input type="text" id="caja1" />
+		<br />
+		<br />
+		<button
+			id="boton"
+			onclick="pesetas_euros()"
+			onmouseover="fun1()"
+			onmouseout="fun3()"
+		>
+			<b>Convertir pesetas a €</b>
+		</button>
+		<br />
 
-            <label>Resultado:</label>
-            <input TYPE="text" name="caja2">
+		<div
+			id="boton1"
+			onclick="euros_pesetas()"
+			onmouseover="fun2()"
+			onmouseout="fun3()"
+		>
+			<b>Convertir € a pesetas</b>
+		</div>
+		<br />
 
-        </fieldset>
-    </form>
-</body>
+		<label>Resultado:</label>
+		<input type="text" id="caja2" />
+	</body>
 </html>
