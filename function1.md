@@ -52,6 +52,8 @@
   p.e "abc" te contaría 12 para la a 34 para la b y 56 para c
   p.e si"aaaaa" sin soltar el boton serían solo 2
 
+`onkeydown` 'cuando presionas la tecla
+
 # ARRAYS
 
 - `let array = new Array();` este MEJOR es el nuevo--> se redimensiona solo Y SUMA ENTRE +1 Y +16
