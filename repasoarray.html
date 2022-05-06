@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>repaso array</title>
+	</head>
+	<body>
+		<script>
+			let posicion = 0;
+
+			const array = ["UNO", "DOS", "TRES", "Cuatro"];
+			const posicionesMax = array.length; //PARA Q TERMINE EN LA POSICION 2=JUAN SINO MARCA UNDEFINED
+			function funcioncosa(param) {
+				posicion = posicion + param;
+				if (posicion >= posicionesMax) {
+					console.log("OUTT");
+					posicion = 0;
+				}
+
+				if (posicion < 0) {
+					console.log("OUTT");
+					posicion = posicionesMax - 1;
+				}
+				console.log(posicion);
+				document.getElementById("laP").innerHTML = array[posicion];
+			}
+		</script>
+		<p id="laP"></p>
+		<button onclick="funcioncosa(+1)">+1</button>
+		<button onclick="funcioncosa(-1)">-1</button>
+		<script></script>
+	</body>
+</html>

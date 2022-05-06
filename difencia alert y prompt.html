@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>REPASO</title>
+	</head>
+	<body>
+		<!--FORMATO 1 DE PEDIR COSAS-->
+		<!--NOTA: SOLO USAMOS INNER CUANDO NO SE PUEDE PONE EL ATRIBUTO VALUE
+		<p>hola</p>aqui usaría innerHTML y xa tiene etiqueta de cierre-->
+		<!--<input> ataca directamente al value-->
+		<!--si quiero añadir un style al mismo input se puede-->
+		<!--RECOMENDACION hacer una funcion q contenga todoy llamarla-->
+		<!--
+		<button
+			onclick="document.getElementById('inputId').value",
+			onclick="document.getElementById('inputId').style"
+			;
+		>
+			eje
+		</button>
+	-->
+
+		<input type="text" id="inputId" value="asd" />
+		<button onclick="name1(document.getElementById('inputId').value)">
+			eje
+		</button>
+		<script>
+			function name1(params) {
+				let total, var1, var2, param;
+				console.log(params);
+			}
+		</script>
+		<!--FORMATO DOS DE PEDIR COSAS que haga un promt() y me lo printee en u alert()-->
+
+		<script></script>
+		<!--ojo al ALERT(), no se pueden pasar parametros separados "," -->
+		<!-- aqui en el mismo alert me ejecuta los dos textos-->
+		<button
+			onclick="alert(prompt('acepta xa ejecutar alert')+ prompt('acepta xa ejecutar alert'))"
+		>
+			promt
+		</button>
+		<!-- AQUI EN EL MISMO ALERT() PASAN LOS DOS TEXTO XO MEDIANTE FUNCION-->
+		<script>
+			function funcionx(param1, param2) {
+				alert(param1 + param2);
+			}
+		</script>
+		<button
+			onclick="funcion(prompt('acepta xa ejecutar alert'), prompt('acepta xa ejecutar alert'))"
+		>
+			promt
+		</button>
+		<!-- AQUI mediante funcion tmb se pasa los dos textos en 1 alert()  -->
+		<script>
+			function funciond(param1) {
+				alert(param1);
+			}
+		</script>
+		<button
+			onclick="funcion(prompt('acepta xa ejecutar alert')+ prompt('acepta xa ejecutar alert'))"
+		>
+			promt
+		</button>
+		<!--como guardar cosas en un alert-->
+		<!--alert() como funcion no guarda datos!!!-->
+		<!--prompt() si guarda x si solo -->
+		<!--la funcion alert() no tiene return xa guardar cosas-->
+		<script>
+			function namef(param1) {
+				alert(param1);
+				return param1;
+			}
+			let cosa = nameF("asdf");
+			alert(cosa);
+		</script>
+		<!-- el prompt al estar dentro de un funcion no guarda x eso hay q pasarle el return-->
+		<!-- si el prompt esta fuera de la funcion si que guarda-->
+		<script>
+			function namef(param1) {
+				return prompt(param1);
+			}
+			let cosa1 = nameF("asdf");
+			alert(cosa1);
+		</script>
+	</body>
+</html>
