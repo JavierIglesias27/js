@@ -8,17 +8,7 @@
 	</head>
 	<body>
 		<script>
-			/**
-			 * funcion1()
-			 * @$number  parametro que pasamos a la funcion
-			 * Revisa el parámetro "$number"
-			 * devolverá el número comprendido entre 0 y 99999999
-			 * return:añadira=  $number + letras [$number % 23]
-			 * en caso contrario te comunica error
-			 * return: false
-			 **/
-			function funcion1($number) {
-				let letras = [
+				const $letrasDni = [
 					"T",
 					"R",
 					"W",
@@ -44,6 +34,17 @@
 					"E",
 					"T",
 				];
+			/**
+			 * funcion1()
+			 * @$number  parametro que pasamos a la funcion
+			 * Revisa el parámetro "$number"
+			 * devolverá el número comprendido entre 0 y 99999999
+			 * return:añadira=  $number + letras [$number % 23]
+			 * en caso contrario te comunica error
+			 * return: false
+			 **/
+			function funcion1($number) {
+			
 
 				if (
 					$number != "" &&
@@ -51,7 +52,7 @@
 					$number > 0 &&
 					$number < 99999999
 				) {
-					let $dni = $number + "-" + letras[$number % 23];
+					let $dni = $number + "-" + $letrasDni[$number % 23];
 					return $dni + "<br>";
 				} else {
 					return "ERROR!!!Introducir un valor en 0 y 99999999<br>";
