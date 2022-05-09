@@ -48,7 +48,7 @@
 			<script>
 				function aLaFuncionNombre(texto) {
 					//.replace(/  /g, "")
-					let totalPalabras = texto.trim().split(" ");
+					let totalPalabras = texto.trim(/ +/g, "").replace().split(" ");
 					console.log(totalPalabras);
 					if (
 						totalPalabras.length == 3 &&
@@ -63,7 +63,7 @@
 							checkbutton();
 						} else {
 							//los apellidos son iguales
-							//formulario.nobreYApellidos.style.backgroundColor = "red";
+							formulario.nobreYApellidos.style.backgroundColor = "red";
 							input2 = false;
 							checkbutton();
 						}
@@ -71,7 +71,7 @@
 						input2 = false;
 						checkbutton();
 						//incorrecto
-						//formulario.nobreYApellidos.style.backgroundColor = "red";
+						formulario.nobreYApellidos.style.backgroundColor = "red";
 					}
 				}
 			</script>
@@ -99,9 +99,11 @@
 						checkbutton();
 					}
 				}
-
-				//formulario.salidaFormateada.value = textoSalida;
 			</script>
+			<br />
+			<br />
+			<label for="email">Email:</label>
+			<input type="mail" name="email" />
 			<br />
 			<br />
 			<input type="button" value="Enviar" id="campoButton" disabled />
