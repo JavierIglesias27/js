@@ -22,11 +22,11 @@
 
 				if ($numero != "" && !isNaN($numero) && $numero > 0 && $numero < 100) {
 					alert("Gracias por su visita");
-				} else {
-					alert("Introduce un número entre 1 y 100");
 					form.method = "GET";
 					form.action = url;
 					form.submit();
+				} else {
+					alert("Introduce un número entre 1 y 100");
 				}
 			}
 		</script>
