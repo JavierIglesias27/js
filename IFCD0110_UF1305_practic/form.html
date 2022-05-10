@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Javier Iglesias Romero" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./form.css" />
+		<script defer src="./form.js"></script>
+		<title>IFCD0110-UF1305</title>
+		<style>
+			.corregir {
+				border: 2px solid red;
+				border-radius: 4px;
+				background-color: #ff7575;
+			}
+			.correcte {
+				border: 2px solid green;
+				border-radius: 4px;
+				background-color: greenyellow;
+			}
+		</style>
+
+		<script>
+			let $input1 = false;
+			$input2 = false;
+			$input3 = false;
+			$input4=false;
+			$input5= false;
+
+			function checkbutton() {
+				if ($input1 && $input2 && $input3 && $input4 && $input5) {
+					formulario.campoButton.disabled = false;
+				} else {
+					formulario.campoButton.disabled = true;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>UF1305 Form</h2>
+			</div>
+			<div class="container">
+				<form id="formulario" action="/action_page.php" method="GET">
+					<div class="row">
+						<div class="col-25">
+							<label for="fname">Nom</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="text"
+								id="fname"
+								name="firstname"
+								placeholder="Nom"
+								class="corregir"
+								onkeyup="aLaFuncionNombre1(this.value)"
+							/>
+							<p class="labelError" style="visibility: visible">
+								Introducir un o dos noms
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="lname" hidden>Cognoms</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="text"
+								id="lname"
+								name="lastname"
+								onkeyup="funcionCognoms(this.value)"
+								placeholder="Cognom1 Cognom2 ..."
+								class="correcte"
+							/>
+							<p class="labelError" style="visibility: hidden">
+								*Introduir mínim dos cognoms
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="email">Email</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="correu@email.com"
+								onkeyup="validarEmail(this.value)"
+							/>
+							<p class="labelError" style="visibility: hidden">
+								*Explica ací l'error
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="password">Contrasenya</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="password"
+								id="password"
+								name="password"
+								placeholder="Contrasenya"
+								onkeyup="validarPassword(this.value)"
+							/>
+							<p class="align_right" style="color: red">Molt segur</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="dni">DNI:</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="text"
+								id="dni"
+								name="dni"
+								placeholder="Format de DNI: 12345678Z"
+								class="corregir"
+								onkeyup="funcionDni(this.value)"
+							/>
+							<p class="labelError" style="visibility: visible">
+								*Introducir Dni con letra
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-25">
+							<label for="missatge">Missatge</label>
+						</div>
+						<div class="col-75">
+							<textarea
+								id="missatge"
+								name="missatge"
+								placeholder="Escriu el missatge aquí. Màxim 600 caràcters"
+								style="height: 200px"
+								maxlength="600"
+								onkeyup="addEventListener(this.text)"
+							></textarea>
+							<p class="align_right">
+								<b id="form_count_chars_b" style="color: red"></b>
+							</p>
+						</div>
+						
+					</div>
+					<br />
+
+					<div class="row">
+						<div class="col-25">
+							<label for="preu">Ciutats:</label>
+						</div>
+						<div class="col-75">
+							<label for="checkbox_estambul"
+								><input
+									type="checkbox"
+									id="checkbox_estambul"
+									value="estambul"
+								/>
+								Estambul</label
+							>
+							<label for="checkbox_ubud"
+								><input type="checkbox" id="cbox1" value="ubud" /> Ubud</label
+							>
+							<label for="checkbox_kyoto"
+								><input type="checkbox" id="cbox1" value="kyoto" /> Kyoto</label
+							>
+							<label for="checkbox_oaxaca"
+								><input type="checkbox" id="cbox1" value="oaxaca" />
+								Oaxaca</label
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="preu_total">Preu total:</label>
+						</div>
+						<div class="col-75">
+							<p><b>0</b> €</p>
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="acords_i_condicions">Acords i condicions :</label>
+						</div>
+						<div class="col-75">
+							<input
+								type="checkbox"
+								name="acords_i_condicions"
+								value="yes"
+								onclick="alert('Se aceptan terminos y condiciones')"
+								required
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<input
+							type="submit"
+							value="Comprar"
+							id="campoButton"
+							disabled="disabled"
+							onclick="alert('Todo correcto')"
+						/>
+					</div>
+					<br />
+				</form>
+				<div class="row">
+					<button onclick="window.print()" class="print">Imprimeix</button>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<p><b>author</b>: Javier Iglesias Romero</p>
+			<p><a href="mailto:jiglesro7@gmail.com">jiglesro7@gmail.com</a></p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 10/05/2022</p>
+		</footer>
+	</body>
+</html>

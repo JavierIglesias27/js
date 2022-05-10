@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Javier Iglesias Romero" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./carrousel.css" />
+		<title>IFCD0110-UF1305</title>
+		<script defer src="./carrousel.js"></script>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>UF1305 1</h2>
+			</div>
+			<div class="center" style="border: 2px solid black; padding: 10px">
+				<img
+					src="./carousel/céline.jpg"
+					id="imagen"
+					alt="imatge no existent"
+					title="títol d'imatge no existent"
+					width="300"
+					height="300"
+				/>
+				<p>Imatge número: <b id="imatge_num"></b></p>
+			</div>
+			<div class="center">
+				<button onclick="funcioncontar(-1)">Back <b>-1</b></button>
+				<button onclick="funcioncontar(+1)">Next <b>+1</b></button>
+			</div>
+			<div class="center">
+				<button onclick="funcioncontar(0)">Start Over <b>0</b></button>
+			</div>
+		</main>
+		<footer>
+			<p><b>author</b>: Javier Iglesias Romero</p>
+			<p><a href="mailto:jiglesro7@gmail.com">jiglesro7@gmail.com</a></p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 10/05/2022</p>
+		</footer>
+	</body>
+</html>
