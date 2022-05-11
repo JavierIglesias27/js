@@ -1,10 +1,10 @@
 let $posicion = 0;
 const $arrayFotos = [
-	"céline.jpg".replace(/^\w/, (c) => c.toUpperCase()),
-	"enrique-hoyos.jpg".replace(/^\w/, (c) => c.toUpperCase()),
-	"shad-meeg.jpg".replace(/^\w/, (c) => c.toUpperCase()),
-	"tatiana.jpg".replace(/^\w/, (c) => c.toUpperCase()),
-	"empty.jpg".replace(/^\w/, (c) => c.toUpperCase()),
+	"céline.jpg",
+	"enrique-hoyos.jpg",
+	"shad-meeg.jpg",
+	"tatiana.jpg",
+	"empty.jpg",
 ];
 
 const $posicionesArray = $arrayFotos.length;
@@ -24,6 +24,8 @@ function funcioncontar($number) {
 	}
 	imagen.src = "./carousel/" + $arrayFotos[$posicion];
 	imagen.alt = $arrayFotos[$posicion].split(".")[0];
-	imagen.title = $arrayFotos[$posicion].split(".")[0];
+	imagen.title = $arrayFotos[$posicion]
+		.split(".")[0]
+		.replace(/^\w/, (c) => c.toUpperCase());
 	document.getElementById("imatge_num").innerHTML = $posicion;
 }

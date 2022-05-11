@@ -28,8 +28,8 @@
 			let $input1 = false;
 			$input2 = false;
 			$input3 = false;
-			$input4=false;
-			$input5= false;
+			$input4 = false;
+			$input5 = false;
 
 			function checkbutton() {
 				if ($input1 && $input2 && $input3 && $input4 && $input5) {
@@ -60,7 +60,7 @@
 								class="corregir"
 								onkeyup="aLaFuncionNombre1(this.value)"
 							/>
-							<p class="labelError" style="visibility: visible">
+							<p class="labelError" id="NombreError">
 								Introducir un o dos noms
 							</p>
 						</div>
@@ -145,13 +145,13 @@
 								placeholder="Escriu el missatge aquí. Màxim 600 caràcters"
 								style="height: 200px"
 								maxlength="600"
+								minlength="5"
 								onkeyup="addEventListener(this.text)"
 							></textarea>
 							<p class="align_right">
 								<b id="form_count_chars_b" style="color: red"></b>
 							</p>
 						</div>
-						
 					</div>
 					<br />
 
@@ -187,7 +187,6 @@
 						<div class="col-75">
 							<p><b>0</b> €</p>
 						</div>
-						
 					</div>
 					<div class="row">
 						<div class="col-25">
@@ -209,7 +208,7 @@
 							value="Comprar"
 							id="campoButton"
 							disabled="disabled"
-							onclick="alert('Todo correcto')"
+							onclick="alert('Confirmar informacion pulsa aceptar')"
 						/>
 					</div>
 					<br />
