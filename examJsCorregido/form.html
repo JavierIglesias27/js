@@ -2,7 +2,7 @@
 <html lang="ca">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="author" content="Javier Iglesias Romero" />
+		<meta name="author" content="Nom Cognom1 Cognom2" />
 		<meta
 			name="description"
 			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
@@ -10,7 +10,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>IFCD0110-UF1305</title>
 		<link rel="stylesheet" href="./form.css" />
-		<script defer src="./form.js"></script>
 		<style>
 			.corregir {
 				border: 2px solid red;
@@ -23,22 +22,11 @@
 				background-color: greenyellow;
 			}
 		</style>
-
-		<script>
-			let $input1 = false;
-			$input2 = false;
-			$input3 = false;
-			$input4 = false;
-			$input5 = false;
-
-			function checkbutton() {
-				if ($input1 && $input2 && $input3 && $input4 && $input5) {
-					formulario.campoButton.disabled = false;
-				} else {
-					formulario.campoButton.disabled = true;
-				}
-			}
-		</script>
+		<script defer src="./form2.js"></script>
+		<script defer src="./formUtil.js"></script>
+		<script defer src="./formEmail.js"></script>
+		<script defer src="./formPassword.js"></script>
+		<script defer src="./formDni.js"></script>
 	</head>
 	<body>
 		<main>
@@ -46,7 +34,7 @@
 				<h2>UF1305 Form</h2>
 			</div>
 			<div class="container">
-				<form id="formulario" action="/action_page.php" method="GET">
+				<form action="/action_page.php" method="GET">
 					<div class="row">
 						<div class="col-25">
 							<label for="fname">Nom</label>
@@ -57,12 +45,14 @@
 								id="fname"
 								name="firstname"
 								placeholder="Nom"
-								onkeyup="funcionNombre1(this.value)"
+								onkeyup="checkNom(this,'textoErrorNombre')"
 							/>
-							<!--nota si le quito la clase corregir se queda todo en blanco
-								class="corregir"  -->
-							<p class="labelError" id="NombreError">
-								Introducir un o dos noms
+							<p
+								id="textoErrorNombre"
+								class="labelError"
+								style="visibility: hidden"
+							>
+								*Explica ací l'error
 							</p>
 						</div>
 					</div>
@@ -75,12 +65,15 @@
 								type="text"
 								id="lname"
 								name="lastname"
-								onkeyup="funcionCognoms(this.value)"
 								placeholder="Cognom1 Cognom2 ..."
-								class="correcte"
+								onkeyup="checkComgnoms(this,'textoErrorCognoms')"
 							/>
-							<p class="labelError" style="visibility: hidden">
-								*Introduir mínim dos cognoms
+							<p
+								id="textoErrorCognoms"
+								class="labelError"
+								style="visibility: hidden"
+							>
+								*Explica ací l'error
 							</p>
 						</div>
 					</div>
@@ -94,9 +87,13 @@
 								id="email"
 								name="email"
 								placeholder="correu@email.com"
-								onkeyup="validarEmail(this.value)"
+								onkeyup="ValidateEmail(this,'textoErrorEmail')"
 							/>
-							<p class="labelError" style="visibility: hidden">
+							<p
+								id="textoErrorEmail"
+								class="labelError"
+								style="visibility: hidden"
+							>
 								*Explica ací l'error
 							</p>
 						</div>
@@ -109,11 +106,12 @@
 							<input
 								type="password"
 								id="password"
+								id="textoErrorPassword"
 								name="password"
 								placeholder="Contrasenya"
-								onkeyup="validarPassword(this.value)"
+								onkeyup="ValidatePassword(this,'textoErrorPassword')"
 							/>
-							<p class="align_right" style="color: red">Molt segur</p>
+							<p class="align_right" style="color: red">res segur</p>
 						</div>
 					</div>
 					<div class="row">
@@ -124,13 +122,14 @@
 							<input
 								type="text"
 								id="dni"
+								id="campoFalla"
 								name="dni"
 								placeholder="Format de DNI: 12345678Z"
 								class="corregir"
-								onkeyup="funcionDni(this.value)"
+								onkeyup="ValidateDNI(this,'campoFalla')"
 							/>
 							<p class="labelError" style="visibility: visible">
-								*Introducir Dni con letra
+								*Explica ací l'error
 							</p>
 						</div>
 					</div>
@@ -145,12 +144,9 @@
 								name="missatge"
 								placeholder="Escriu el missatge aquí. Màxim 600 caràcters"
 								style="height: 200px"
-								maxlength="600"
-								minlength="5"
-								onkeyup="addEventListener(this.text)"
 							></textarea>
 							<p class="align_right">
-								<b id="form_count_chars_b" style="color: red"></b>
+								<b id="form_count_chars_b" style="color: red">0</b>/650
 							</p>
 						</div>
 					</div>
@@ -165,28 +161,63 @@
 								><input
 									type="checkbox"
 									id="checkbox_estambul"
-									value="estambul"
+									value="300"
+									onclick="if(this.checked){sumar(300)}else{sumar(-300)}"
 								/>
 								Estambul</label
 							>
 							<label for="checkbox_ubud"
-								><input type="checkbox" id="cbox1" value="ubud" /> Ubud</label
+								><input
+									type="checkbox"
+									id="cbox1"
+									value="75"
+									onclick="if(this.checked){sumar(75)}else{sumar(-75)}"
+								/>
+								Ubud</label
 							>
 							<label for="checkbox_kyoto"
-								><input type="checkbox" id="cbox1" value="kyoto" /> Kyoto</label
+								><input
+									type="checkbox"
+									id="cbox1"
+									value="150"
+									onclick="if(this.checked){sumar(150)}else{sumar(-150)}"
+								/>
+								Kyoto</label
 							>
 							<label for="checkbox_oaxaca"
-								><input type="checkbox" id="cbox1" value="oaxaca" />
+								><input
+									type="checkbox"
+									id="cbox1"
+									value="200"
+									onclick="calcular(this.checked,this.value, 'precioCambiar')"
+								/>
 								Oaxaca</label
 							>
 						</div>
 					</div>
+					<script>
+						valor = 0;
+						function sumar(num) {
+							valor += num;
+							document.getElementById("precioCambiar").innerHTML = valor;
+						}
+						function calcular(checked, valor, nameChange) {
+							valor = parseFloat(valor);
+							let objeto = document.getElementById("nameChange");
+							let numero = parseFloat(objeto.innerHTML);
+							if (checked) {
+								numero += valor;
+							} else {
+								numero -= valor;
+							}
+						}
+					</script>
 					<div class="row">
 						<div class="col-25">
 							<label for="preu_total">Preu total:</label>
 						</div>
 						<div class="col-75">
-							<p><b>0</b> €</p>
+							<p><b id="precioCambiar">0</b> €</p>
 						</div>
 					</div>
 					<div class="row">
@@ -198,34 +229,27 @@
 								type="checkbox"
 								name="acords_i_condicions"
 								value="yes"
-								onclick="alert('Se aceptan terminos y condiciones')"
 								required
 							/>
 						</div>
 					</div>
 					<div class="row">
-						<input
-							type="submit"
-							value="Comprar"
-							id="campoButton"
-							disabled="disabled"
-							onclick="alert('Confirmar informacion pulsa aceptar')"
-						/>
+						<input type="submit" value="Comprar" disabled="disabled" />
 					</div>
 					<br />
 				</form>
 				<div class="row">
-					<button onclick="window.print()" class="print">Imprimeix</button>
+					<button class="print">Imprimeix</button>
 				</div>
 			</div>
 		</main>
 		<footer>
-			<p><b>author</b>: Javier Iglesias Romero</p>
-			<p><a href="mailto:jiglesro7@gmail.com">jiglesro7@gmail.com</a></p>
+			<p><b>author</b>: Nom Cognom1 Cognom2</p>
+			<p><a href="mailto:elmeu@mail.com">elmeu@mail.com</a></p>
 			<p>
 				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
 			</p>
-			<p><b>data</b>: 10/05/2022</p>
+			<p><b>data</b>: 00/00/2022</p>
 		</footer>
 	</body>
 </html>

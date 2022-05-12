@@ -1,10 +1,11 @@
 /**
- * aLaFuncionNombre1()
- * condiciona a escribir minimo de letras
+ * FuncionNombre1()
+ * condiciona a escribir minimo dos letras y puedes tener un nombre compuesto
+ * y el nombre no
  * caso contrario error
  **/
 
-function aLaFuncionNombre1(texto1) {
+function funcionNombre1(texto1) {
 	let $totalPalabras1 = texto1.trim(/ +/g, "").replace().split(" ");
 	console.log($totalPalabras1);
 
@@ -37,8 +38,8 @@ function aLaFuncionNombre1(texto1) {
 }
 
 /**
- * aLaFuncionCognoms()
- * condiciona a escribir minimo dos  o tres apellidos  y tres letras
+ * FuncionCognoms()
+ * condiciona a escribir minimo dos  y tres letras
  * condicionandolos a que todos sean diferentes
  * caso contrario error
  **/
@@ -47,20 +48,13 @@ function funcionCognoms($texto) {
 	let $totalPalabras = $texto.trim(/ +/g, "").replace().split(" ");
 	console.log($totalPalabras);
 	if (
-		($totalPalabras.length == 2 &&
-			$totalPalabras[0].length >= 3 &&
-			$totalPalabras[1].length >= 3) ||
-		($totalPalabras.length == 3 &&
-			$totalPalabras[0].length >= 3 &&
-			$totalPalabras[1].length >= 3 &&
-			$totalPalabras[2].length >= 3)
+		$totalPalabras.length >= 2 &&
+		$totalPalabras[0].length >= 3 &&
+		$totalPalabras[1].length >= 3
 	) {
 		console.log("OK");
 
-		if (
-			$totalPalabras[0] != $totalPalabras[1] &&
-			$totalPalabras[1] != $totalPalabras[2]
-		) {
+		if ($totalPalabras[0] != $totalPalabras[1]) {
 			document.getElementsByTagName("input")[1].classList.remove("corregir");
 			document.getElementsByTagName("input")[1].classList.add("correcte");
 
