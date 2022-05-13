@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=
+    ., initial-scale=1.0"
+		/>
+		<title>Teoria arrays</title>
+	</head>
+	<body>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		<p id="demo5"></p>
+		<p id="demo6"></p>
+		<p id="demo7"></p>
+		<p id="demo8"></p>
+		<p id="demo9"></p>
+		<p id="demo10"></p>
+		<p id="demo11"></p>
+		<p id="demo12"></p>
+		<p id="demo13"></p>
+		<p id="demo14"></p>
+		<p id="demo15"></p>
+		<script>
+			const fruits = ["banana", "orange", "apple", "mango"];
+			/*toString--> lo convierte a texto y lo printea x la pantalla*/
+			document.getElementById("demo").innerHTML = fruits.toString();
+			/*join--> xa encadenarlas con ysustituyr las comas por *- * p.e*/
+			document.getElementById("demo1").innerHTML = fruits.join(" *- ");
+			/*.pop--> te elimina objetos de la derecha (final array) */
+			fruits.pop();
+			document.getElementById("demo2").innerHTML = fruits.join(" * ");
+			/*Introduce los objetos de la derecha array (final array) */
+			fruits.push("kiwi");
+			document.getElementById("demo3").innerHTML = fruits.join(",");
+			/*quita  objetos del lado izquierdo (principio array)*/
+			fruits.shift();
+			document.getElementById("demo4").innerHTML = fruits.join("-");
+			/*añade objetos  lado izquierdo (principio array)*/
+			fruits.unshift("lemon");
+			document.getElementById("demo5").innerHTML = fruits.join("");
+			/*me añade el objeto en la posicion al final*/
+			fruits[fruits.length] = "apple";
+			document.getElementById("demo6").innerHTML = fruits.join(", ");
+			/*me añade el objeto en la posicion 2 del array*/
+			fruits[2] = "apple";
+			document.getElementById("demo7").innerHTML = fruits.join(", ");
+			/*elimina la posicion 0 del array*/
+			delete fruits[0];
+			document.getElementById("demo8").innerHTML = fruits.join(", ");
+
+			/*Ordenar TEXTO*/
+			const orden = ["A", "B", "C", , "AB", "AA"];
+			/*orden ascendente*/
+			orden.sort();
+			document.getElementById("demo9").innerHTML = orden.toString();
+			/*orden al reves*/
+			orden.reverse();
+			document.getElementById("demo10").innerHTML = orden.toString();
+
+			/**ORDENAR NUMEROS*/
+
+			const numero = [1, 4, 5, 2, 3, 10];
+
+			numero.sort();
+			document.getElementById("demo11").innerHTML = numero.toString();
+
+			/*orden al reves*/
+			numero.reverse();
+			document.getElementById("demo12").innerHTML = numero.toString();
+
+			/*ORDENAR TEXTO Y NUMERO*/
+
+			const numLetra = [1, 4, "aa", 2, 3, "b", 10];
+
+			numLetra.sort();
+			document.getElementById("demo13").innerHTML = numLetra.toString();
+
+			/*orden al reves*/
+			numLetra.reverse();
+			document.getElementById("demo14").innerHTML = numLetra.toString();
+
+			/*ORDENAMOS MEDIANTE FUNCIONY COMPARADORES PROPIOS*/
+
+			const numeros = [1, 4, 32, 2, 3, -45.5, 10, 10.5, 1.1, 40, 40.5, 65.3];
+			let arrayLen = numeros.length;
+			for (let i = 0; i < arrayLen; i++) {
+				for (let j = 0; j < arrayLen; j++) {
+					if (j + 1 !== arrayLen) {
+						if (numeros[j] > numeros[j + 1]) {
+							let element2 = numeros[j + 1];
+							numeros[j + 1] = numeros[j];
+							numeros[j] = element2;
+						}
+					}
+				}
+			}
+			console.log(numeros);
+		</script>
+	</body>
+</html>
