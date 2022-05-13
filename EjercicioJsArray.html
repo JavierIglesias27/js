@@ -87,21 +87,58 @@
 			document.getElementById("demo14").innerHTML = numLetra.toString();
 
 			/*ORDENAMOS MEDIANTE FUNCIONY COMPARADORES PROPIOS*/
+			const numeros = [4, 3, 5, 1, 2, 11, 10, 10.5];
+			let numerosOrdenados = ordenarNumeros(numeros);
+			//document.getElementById("demo1").innerHTML = numerosOrdenados.toString();
 
-			const numeros = [1, 4, 32, 2, 3, -45.5, 10, 10.5, 1.1, 40, 40.5, 65.3];
-			let arrayLen = numeros.length;
-			for (let i = 0; i < arrayLen; i++) {
-				for (let j = 0; j < arrayLen; j++) {
-					if (j + 1 !== arrayLen) {
-						if (numeros[j] > numeros[j + 1]) {
-							let element2 = numeros[j + 1];
-							numeros[j + 1] = numeros[j];
-							numeros[j] = element2;
+			function ordenarNumeros(lista) {
+				let copiaLista = [].concat(lista);
+				let arrayDev = []; //return
+
+				while (copiaLista.length > 1) {
+					let temporal = lista[0];
+
+					for (let i = 0; i < copiaLista.length; i++) {
+						if (temporal > copiaLista[i]) {
+							temporal = copiaLista[i];
 						}
 					}
+					console.log(temporal);
+					arrayDev.push(temporal);
+					console.log(arrayDev);
+					let salidaIndexOf = copiaLista.indexOf(temporal);
+					console.log(salidaIndexOf);
+
+					if (salidaIndexOf > 0) {
+						copiaLista.splice(salidaIndexOf, 1);
+					} else {
+						copiaLista.shift();
+					}
+					console.log(copiaLista);
+					console.log("");
+					debugger;
 				}
+				//comparatorNumber(a,b)
+				//return arrayDev;
 			}
-			console.log(numeros);
+			// function comparatorNumber(a, b) {
+			//  return a - b;
+			// }
+
+			// const numeros = [1, 4, 32, 2, 3, -45.5, 10, 10.5, 1.1, 40, 40.5, 65.3];
+			// let arrayLen = numeros.length;
+			// for (let i = 0; i < arrayLen; i++) {
+			// 	for (let j = 0; j < arrayLen; j++) {
+			// 		if (j + 1 !== arrayLen) {
+			// 			if (numeros[j] > numeros[j + 1]) {
+			// 				let element2 = numeros[j + 1];
+			// 				numeros[j + 1] = numeros[j];
+			// 				numeros[j] = element2;
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// console.log(numeros);
 		</script>
 	</body>
 </html>

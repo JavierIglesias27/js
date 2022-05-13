@@ -82,14 +82,14 @@
 
   ````
 
-- `quita objetos del lado izquierdo (principio array)`
+- `deja se existir la posicion como tal del lado izquierdo (principio array)`
 
   ````fruits.shift();
   document.getElementById("demo4").innerHTML = fruits.join("-");```
 
   ````
 
-- `añade objetos lado izquierdo (principio array)`
+- `deja se existir la posicion lado izquierdo (principio array)`
 
   ```fruits.unshift("lemon");
       document.getElementById("demo5").innerHTML = fruits.join("");
@@ -107,7 +107,7 @@
   document.getElementById("demo7").innerHTML = fruits.join(", "); ```
   ````
 
-- `elimina la posicion 0 del array`
+- `elimina el contenido de la posicion 0 del array, pero la posicion sigue existiendo`
 
 ```
   delete fruits[0];
@@ -140,7 +140,7 @@
 # ORDENAR Arrays SORT/REVERSE--> ORDENA CARACTERES UNICODE
 
 - Creamos array
-  ` const orden = ["A", "B", "C", , "AB", "AA"]; `
+  `const orden = ["A", "B", "C", , "AB", "AA"];`
 - orden ascendente
   ```
   		orden.sort();
@@ -193,4 +193,50 @@
 ```
 			numLetra.reverse();
 			document.getElementById("demo14").innerHTML = numLetra.toString();
+```
+
+# cookies
+
+- mirr si estan bloquedas enel navegador y hacer
+
+```
+if (navigator.cookieEnabled){
+    se pueden crear cookies xq no esta bloqueadas
+}
+else {
+      alert("coockies esatn bloquedas ene l navegador")}
+```
+
+# crear un acookie
+
+- lenguaje en que se carga la web
+
+```
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = navigator.language;
+</script>
+```
+
+- navegador conectado a internet? false=NO
+
+```
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = navigator.onLine;
+</script>
+
+```
+
+- comprobar si el java esta enabled=false
+
+```
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = navigator.javaEnabled();
+</script>
+
 ```
