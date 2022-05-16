@@ -75,7 +75,7 @@
 		<br />
 		<br />
 		<button
-			onclick="document.getElementById('preg1').style.visibility='visible'; document.getElementById('fecha').style.visibility='visible'"
+			onclick="document.getElementById('preg1').style.visibility='visible'; document.getElementById('fecha').style.visibility='visible'; document.getElementById('cantidades').style.visibility='visible'"
 		>
 			boton 1 Crear Cookie
 		</button>
@@ -84,17 +84,46 @@
 				<input type="text" placeholder="nameCookie" id="nameCookie" />
 				<input type="text" placeholder="nameValue" id="nameValue" />
 			</div>
-			<button id="BotonSelFecha">Seleccionar fecha</button>
-			<button id="BotonSelDia">Seleccionar Dia</button>
+			
 		</div>
+		<br />
 		<div id="fecha" style="visibility: hidden">
 			<input id="inputDate" type="date" />
-			<br />
+			<br/>
+			<br/>
 			<button
 				onclick="alert(document.getElementById('nameCookie').value + document.getElementById('nameValue').value + (document.getElementById('inputDate').value))"
 			>
-				CREAR
+				Seleccionar cantidades
+				</button>
+		</div>
+		<div id ="cantidades" style="visibility: hidden" >
+
+			<input type="text" placeholder="Dias" id="dias" />
+			<input type="text" placeholder="Meses" id="meses" />
+			<input type="text" placeholder="Años" id="anos" />
+
+			<br />
+			<br />
+			<button
+			onclick="alert(document.getElementById('nameCookie').value + document.getElementById('nameValue').value + (document.getElementById('anos').value*365)+(document.getElementById('meses').value)+(document.getElementById('dias').value))"
+		>
+			Seleccionar Fecha
 			</button>
 		</div>
+			<!--dado un cname saber si existe-->
+			<button onclick="alert(getCookie(prompt('Introduzca nombre de la cookie:')))">BOTON 2 detecta si existe Cookie</button>
+
+			<br />
+			<br />
+			<button onclick="checkCookie()">BOTON 3 leer Cookie</button>
+			<br />
+			<br />
+	
+			<button onclick="">BOTON 4 Modificar cookie</button>
+			<br />
+			<br />
+	
+			<button onclick="removeCookie()">BOTON 5 Borrar Cookie</button>
 	</body>
 </html>
