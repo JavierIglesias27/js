@@ -45,10 +45,10 @@ function ValidatePassword(campo, nombreCampoError) {
 				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
 			}
 			if (
-				letra1 == letra1.contains(/[!@#\$%\^\&*\)\(+=._-]/) ||
-				letra2 == letra2.contains(/[!@#\$%\^\&*\)\(+=._-]/) ||
-				letra3 == letra3.contains(/[!@#\$%\^\&*\)\(+=._-]/) ||
-				letra4 == letra4.contains(/[!@#\$%\^\&*\)\(+=._-]/)
+				letra1 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra1) ||
+				letra2 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra2) ||
+				letra3 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra3) ||
+				letra4 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra4)
 			) {
 				//true
 				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
@@ -94,18 +94,6 @@ function ValidatePassword(campo, nombreCampoError) {
 				!isNan(letra6) ||
 				!isNan(letra7) ||
 				!isNan(letra8)
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				//false
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-			if (
-				letra5 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra5) ||
-				letra6 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra6) ||
-				letra7 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra7) ||
-				letra8 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra8)
 			) {
 				//true
 				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);

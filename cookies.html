@@ -9,19 +9,25 @@
 	<body>
 		<script>
 			/*PREGUNTAR  SIEMPRE SI LAS COOKIES ESTAN BLOQUEADAS O NO*/
-			if (navigator.cookieEnabled) {
-				alert("se pueden crear cookies xq no esta bloqueadas");
-			} else {
-				alert("coockies esatn bloquedas en e l navegador");
-			}
+
 			//boton1=
 			// crear cookie
 			//seleccionar durante tiempo existirá la cookie(1 dia, 2 dias)
 			// seleccionar una fecha
-			//BOTON2-- comprobar si existe
+
 			//BOTON3--leer contenido
 			//BOTON4--modificar cookie
 			// BOTON5--borrar cookie
+
+			//boton 0 Check habibilitada o no la cookie en la maquina
+			function CheckcookieEnabled() {
+				if (navigator.cookieEnabled) {
+					alert("se pueden crear cookies xq no esta bloqueadas");
+				} else {
+					alert("coockies estan bloquedas en el navegador");
+				}
+			}
+
 			function setCookie(cname, cvalue, exdays) {
 				const d = new Date();
 				d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
@@ -29,6 +35,9 @@
 				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 			}
 			/*poner siempre path con / xa q no de error a la hora de encontrar la ubicacion*/
+
+			//BOTON2-- comprobar si existe
+			/*detecta si existe una cookie, devuelve true/false*/
 
 			function getCookie(cname) {
 				let name = cname + "=";
@@ -57,21 +66,65 @@
 					}
 				}
 			}
+			function removeCookie(cname) {
+				setCookie(cname, "", -1);
+			}
 		</script>
 
-		<button onclick="checkCookie()">presss</button>
+		<button onclick="CheckcookieEnabled()">BOTON 0 Enable/disabled</button>
 		<br />
+		<br />
+
 		<br />
 		<button
 			onclick="document.getElementById(`pregunta1`).style.visibility='visible'"
 		>
-			presss
+			BOTON 1 CREAR COOKIE
 		</button>
+
 		<br />
 		<br />
 		<div id="pregunta1" style="visibility: hidden">
-			<button>Select una fecha</button>
-			<button>Select cantidad dias</button>
+			<input type="text" placeholder="NameCookie" id="nameCookie" />
+			<input type="text" placeholder="ValueCookie" id="valueCookie" />
+			<button
+				onclick="document.getElementById(`fecha`).style.visibility='visible'"
+			>
+				Select una fecha
+			</button>
+			<div id="fecha">
+				<input type="date" style="visibility: hidden" />
+			</div>
+			<button>Introducir cantidades</button>
+
+			<input type="text" placeholder="Dias" id="dias" />
+			<input type="text" placeholder="Meses" id="meses" />
+			<input type="text" placeholder="Años" id="anos" />
+
+			<br />
+			<br />
+			<button
+				onclick="alert(setCookie(document.getElementById(`nameCookie`).value,document.getElementById(`valueCookie`).value ,document.getElementById(`anos`).value*365 + document.getElementById(`meses`).value * 30 + document.getElementById(`dias`)))"
+			>
+				Enviar datos
+			</button>
 		</div>
+
+		<br />
+		<br />
+		<!--dado un cname saber si existe-->
+		<button onclick="getCookie()">BOTON 2 detecta si existe Cookie</button>
+
+		<br />
+		<br />
+		<button onclick="checkCookie()">BOTON 3 leer Cookie</button>
+		<br />
+		<br />
+
+		<button onclick="">BOTON 4 Modificar cookie Cookie</button>
+		<br />
+		<br />
+
+		<button onclick="removeCookie()">BOTON 5 Borrar Cookie</button>
 	</body>
 </html>
