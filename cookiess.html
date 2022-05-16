@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function CheckcookieEnabled() {
+				if (navigator.cookieEnabled) {
+					alert("se pueden crear cookies xq no esta bloqueadas");
+				} else {
+					alert("coockies estan bloquedas en el navegador");
+				}
+			}
+            function setCookie(cname, cvalue, exdays) {
+                const d = new Date();
+                d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+                let expires = "expires=" + d.toUTCString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(";");
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == " ") {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            function checkCookie() {
+                let user = getCookie("nameUser");
+                if (user != "") {
+                    alert("Welcome again " + user);
+                } else {
+                    user = prompt("Please enter your name:", "");
+                    if (user != "" && user != null) {
+                        setCookie("nameUser", user, 30);
+                    }
+                }
+            }
+            function removeCookie(cname) {
+				setCookie(cname, "", -1);
+			}
+        </script>
+    </head>
+
+    <body onload="">
+        <div style="border:4px solid  red;">
+            <button onclick="CheckcookieEnabled()">BOTON 0 Enable/disabled</button>
+            <br />
+            <br />    
+        </div>
+      <div style="border:4px solid  red;margin-top: 20px;">
+                <button onclick="document.getElementById('preg1').style.visibility='visible'; document.getElementById('fecha').style.visibility='visible'; document.getElementById('cantidades').style.visibility='visible'">BOTON 1 CREAR cookie</button>
+                <div id="preg1" style="visibility: hidden;">
+                    <div>
+                        <br />
+                        <input type="text" placeholder="nameCookie" id="nameCookie" />
+                        <input type="text" placeholder="nameValue" id="nameValue" />
+                    </div>
+                </div>
+                <br />
+                <div id="fecha" style="visibility: hidden; display:inline">
+                    <button
+                        onclick="alert(document.getElementById('nameCookie').value + document.getElementById('nameValue').value + (document.getElementById('inputDate').value))"
+                    >
+                        Seleccionar Fecha
+                        </button>
+                    <input id="inputDate" type="date" />
+                    <br/>
+                    <br/>
+                    
+                </div>
+                <div id ="cantidades" style="visibility: hidden" >
+                    <button
+                    onclick="alert(document.getElementById('nameCookie').value + document.getElementById('nameValue').value + (document.getElementById('anos').value*365)+(document.getElementById('meses').value)+(document.getElementById('dias').value))"
+                    >
+                    Seleccionar Cantidades
+                    </button>
+                    <input type="text" placeholder="Dias" id="dias" />
+                    <input type="text" placeholder="Meses" id="meses" />
+                    <input type="text" placeholder="Anos" id="anos" />
+                    <br />
+                    <br />
+                </div>
+        </div>
+        <div style="border:4px solid  red;margin-top: 20px;" >
+			<button onclick="alert(getCookie(prompt('Introduzca nombre de la cookie:')))">BOTON 2 detecta si existe Cookie</button>
+            <br />
+            <br />
+        </div>
+        <div style="border:4px solid  red;margin-top: 20px;">
+            <button onclick="checkCookie()">BOTON 3 LEER COOKIE</button>
+            <br />
+            <br />
+        </div>
+        <div style="border:4px solid  red;margin-top: 20px;">
+            <button onclick="">BOTON 4 Modificar cookie</button>
+            <br />
+            <br />
+        </div>
+	    <div style="border:4px solid  red;margin-top: 20px;">
+            <button onclick="removeCookie()">BOTON 5 Borrar Cookie</button>
+            <br />
+            <br />
+        </div>
+
+        <div style="border:4px solid  red;margin-top: 20px;">
+            <label>Guarda las cookies </label>
+            <br />
+            <select id="selector" name="" id="" style="width:30%;"></select>
+        </div>
+        <script>
+            select = document.getElementById("selector");
+            listCookies();
+            function listCookies() {
+                var theCookies = document.cookie.split(";");
+                for (var i = 1; i <= theCookies.length; i++) {
+                    var opt = document.createElement("option");
+                    opt.value = theCookies[i - 1];
+                    opt.innerHTML = theCookies[i - 1].split("=")[0];
+                    select.appendChild(opt);
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
