@@ -223,9 +223,9 @@ let coches= ["BMW","Ferrari","Audi"]
 ` for(condicion){ejecución}`
 
 ```
-let $cantidad = $car.matriculas.length;
-document.write("NUMERO ELEMENTOS ARRAY: " + $cantidad);
-document.write("<br />");
+	let $cantidad = $car.matriculas.length;
+	document.write("NUMERO ELEMENTOS ARRAY: " + $cantidad);
+	document.write("<br />");
 
 	for (let $i = 0; $i < $cantidad; $i++) {
 	document.write($car.matriculas[$i] + "<br />");
@@ -235,21 +235,60 @@ document.write("<br />");
 `WHILE`
 
 ```
-let $cantidad1 = $car.matriculas.length;
-let i = 0;
-while (i < $cantidad1)
-{ document.write($car.matriculas[i] + "<br />"); i++; }
+	let $cantidad1 = $car.matriculas.length;
+	let i = 0;
+	while (i < $cantidad1)
+	{ document.write($car.matriculas[i] + "<br />"); i++; }
 
 ```
 
 `DO WHILE `
 `se ejecuta una vez y hasta q no se cumpla no pasa`
-let numero ;
-do{
-numero= prompt("Introduce un número");
-}
-while(isNaN(numero))
-document.write(nume
+
+```
+	let numero ;
+	do{
+	numero= prompt("Introduce un número");
+	}
+	while(isNaN(numero))
+	document.write(numero)
+```
+
+`WHILE`
+
+```
+while()
+for
+forin
+forOut
+foreach
+
+```
+
+`SWICHT`
+
+```
+swicht ($Letra)
+		case typeOf "Number": console.log("eres un numero");
+			break;
+		case typeOf "string":console.log("eres un texto");
+			break;
+		default: console.log("no ers ni numero ni letra");
+
+```
+
+`TRY`
+
+```
+	try{ pones lo que quieres ejecutar p.e bucle}	-->si ejecuta se caba el problema, si explota pasa al catch
+	catch(error de document.read DR
+			type error!!
+			type unk() unknow -->no sabe s xq falla	)
+			{ console.log("error mirarr xqq")} si falla el try entrar al catch,
+
+	finally{console.log("okkk" )}
+
+```
 
 # tipos de condiciones de los bucles
 
