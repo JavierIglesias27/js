@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>teoria Addlistenerevent</title>
+		<style>
+			.nextbutton {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--convertir  ls botonoes es listener-->
+		<button class="nextbutton">AAAAA</button>
+		<button class="nextbutton">BBBBBB</button>
+		<button id="botonc">CCCC</button>
+		<button id="botond">ddddd</button>
+
+		<script>
+			let buttons =
+				document.querySelectorAll(
+					".nextbutton"
+				); /*aqui seleciono TODOS  los q tenganla clase nextbutton*/
+			console.log(buttons);
+			/*este console.log me da una lista de objetos contenidos en un array y tienen que salir los botnes*/
+			/*recorremos el array y añadimos los addeventlistener y podemos poner los botones q queramos */
+			for (let i = 0; i < buttons.length; i++) {
+				buttons[i].addEventListener("click", llamarFuncion);
+			}
+			/*una vez creada la funcion se eliminan los onclicks de la etiqueta button*/
+
+			// otra manera de selcionar etiquetas
+			// let buttons1 =
+			// 	document.querySelecto(
+			// 		"button"
+			// 	); /*aqui seleciono a etiqueta button pero solo la primero*/
+			function llamarFuncion() {
+				alert("hola que tal");
+			}
+			/*con este solo sirve xa un boton*/
+			document
+				.getElementById("botonc")
+				.addEventListener("click", llamarFuncion);
+			/*sacar boton c a una variable*/
+
+			let botonc = document.getElementById("botonc");
+			botonc.addEventListener("click", llamarFuncion);
+			botonc.addEventListener("mouseover", llamarFuncion);
+
+			/*podemos crear a una funcion en linea para el botonc
+			 */
+			botonc.addEventListener("mouseover", function () {
+				document.getElementById("botonc").style.backgroundColor = "blue";
+			});
+			/*poner las de un style*/
+			botond.addEventListener("mouseout", function () {
+				document.getElementById("botond").style =
+					"background: yellow; color:blue";
+			});
+		</script>
+	</body>
+</html>
