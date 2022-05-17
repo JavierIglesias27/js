@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head><meta charset="UTF-8" />
+		<meta name="author" content="Nom Cognom1 Cognom2" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EJERCICIO COOKIES</title>
+		<script defer src="./funcionesCookiesBody.js"></script>
+		
 		<script>
 			function CheckcookieEnabled() {
 				if (navigator.cookieEnabled) {
@@ -15,6 +24,8 @@
 				let expires = "expires=" + d.toUTCString();
 				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 			}
+		
+		
 			function detectaCookie(cname) {
 				if (cname != "") {
 					let name = cname + "=";
@@ -27,19 +38,19 @@
 						}
 						if (c.indexOf(name) == 0) {
 							return (
-								"SI EXISTE" + "\n valor:  " + c.substring(name.length, c.length)
+								"La cookie:     " + cname + "  :SI EXISTE" 
 							);
 						}
 					}
 					return "";
 				} else {
 					console.log("esta vacio");
-					return "NO Existe la";
+					return "La cookie introducida NO existe";
 				}
 			}
 
 			function getCookie(cname) {
-				console.log(cname);
+				//console.log(cname);
 				let name = cname.trim() + "=";
 				let decodedCookie = decodeURIComponent(document.cookie);
 				let ca = decodedCookie.split(";");
@@ -49,10 +60,11 @@
 						c = c.substring(1);
 					}
 					if (c.indexOf(name) == 0) {
-						return c.substring(name.length, c.length);
+						return( "\nNombre Cookie: " + cname+"\nNombre Value:  " + c.substring(name.length, c.length));
+						 
 					}
 				}
-				return "";
+				return "La cookie introducida NO existe";
 			}
 
 			function checkCookie() {
@@ -67,8 +79,14 @@
 				}
 			}
 			function removeCookie(cname) {
+				if(cname!="" && cname!=null){
 				setCookie(cname, "", -1);
+				return "Cookie eliminada correctamente"
+			}else{
+				return "La cookie NO existe y no puede ser eliminada"
 			}
+		}
+		
 		</script>
 	</head>
 
@@ -80,10 +98,17 @@
 		</div>
 		<div style="border: 4px solid red; margin-top: 20px">
 			<button
-				onclick="document.getElementById('preg1').style.visibility='visible'; document.getElementById('fecha').style.visibility='visible'; document.getElementById('cantidades').style.visibility='visible'"
+				onclick="funCrearCookie()"
 			>
 				BOTON 1 CREAR cookie
 			</button>
+			<script>
+				function funCrearCookie() {
+					document.getElementById('preg1').style.visibility='visible'; 
+					document.getElementById('fecha').style.visibility='visible'; 
+					document.getElementById('cantidades').style.visibility='visible'
+				}
+			</script>
 			<div id="preg1" style="visibility: hidden">
 				<div>
 					<br />
@@ -134,62 +159,64 @@
 			<button onclick="alert(getCookie(prompt('Nombre cookie')),listCookies())">
 				BOTON 3 LEER COOKIE
 			</button>
+			
 			<br />
 			<br />
 		</div>
 		<div style="border: 4px solid blue; margin-top: 20px">
-			<button onclick="fun1()">BOTON 4 MODIFICAR cookie</button>
+			<button onclick="funModificarCookie()">BOTON 4 MODIFICAR cookie</button>
 			<script>
-				function fun1() {
+				function funModificarCookie() {
 					let var1 = document.getElementById("selector").value;
 
 					document.getElementById("preg2").style.visibility = "visible";
 					document.getElementById("fecha1").style.visibility = "visible";
 					document.getElementById("cantidades1").style.visibility = "visible";
-					console.log(getCookie(var1));
-					document.getElementById("lll").value = var1;
+					//console.log(getCookie(var1));
+					document.getElementById("nombreCookie").value = var1;
+					
 				}
 			</script>
 			<div id="preg2" style="visibility: hidden">
 				<div>
 					<br />
-					<input type="text" placeholder="llll" id="nameCookie" />
-					<input type="text" placeholder="nameValue" id="nameValue" />
+					<input type="text" placeholder="nombreCookie" id="nombreCookie" />
+					<input type="text" placeholder="nombreValue" id="nombreValue" />
 				</div>
 			</div>
 			<br />
 			<div id="fecha1" style="visibility: hidden; display: inline">
 				<button
-					onclick="console.log(document.getElementById('nameCookie').value) ;
-                    console.log( document.getElementById('nameValue').value);
-                    console.log (document.getElementById('inputDate').value);
-                    setCookie(document.getElementById('nameCookie').value , document.getElementById('nameValue').value ,document.getElementById('inputDate').value )"
+					onclick="console.log(document.getElementById('nombreCookie').value) ;
+                    console.log( document.getElementById('nombreValue').value);
+                    console.log (document.getElementById('inputDate1').value);
+                    setCookie(document.getElementById('nombreCookie').value , document.getElementById('nombreValue').value ,document.getElementById('inputDate1').value )"
 				>
 					Enviar Fecha
 				</button>
-				<input id="inputDate" type="date" />
+				<input id="inputDate1" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades1" style="visibility: hidden">
 				<button
-					onclick="console.log(document.getElementById('nameCookie').value);
-                    console.log( document.getElementById('nameValue').value) ;
-                    console.log((document.getElementById('anos').value*365)+(document.getElementById('meses').value)+(document.getElementById('dias').value))
-                    setCookie(document.getElementById('nameCookie').value,document.getElementById('nameValue').value,(document.getElementById('anos').value*365)+(document.getElementById('meses').value*31)+(document.getElementById('dias').value));listCookies();"
+					onclick="console.log(document.getElementById('nombreCookie').value);
+                    console.log( document.getElementById('nombreValue').value) ;
+                    console.log((document.getElementById('anos1').value*365)+(document.getElementById('meses1').value)+(document.getElementById('dias1').value))
+                    setCookie(document.getElementById('nombreCookie').value,document.getElementById('nombreValue').value,(document.getElementById('anos1').value*365)+(document.getElementById('meses1').value*31)+(document.getElementById('dias1').value));listCookies();"
 				>
 					Enviar Cantidades
 				</button>
-				<input type="text" placeholder="Dias" id="dias" />
-				<input type="text" placeholder="Meses" id="meses" />
-				<input type="text" placeholder="Anos" id="anos" />
+				<input type="text" placeholder="Dias" id="dias1" />
+				<input type="text" placeholder="Meses" id="meses1" />
+				<input type="text" placeholder="Anos" id="anos1" />
 				<br />
 				<br />
 			</div>
 		</div>
 		<div style="border: 4px solid red; margin-top: 20px">
 			<button
-				onclick="(removeCookie(prompt('nombre a eliminar:'),listCookies()))"
+				onclick="alert(removeCookie(prompt('nombre a eliminar:'),listCookies()))"
 			>
 				BOTON 5 Borrar Cookie
 			</button>
