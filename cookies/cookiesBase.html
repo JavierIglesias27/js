@@ -8,7 +8,7 @@
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>EJERCICIO COOKIES</title>
-		<script defer src="./funcionesCookiesBody.js"></script>
+		<!-- <script defer src="./funcionesCookiesBody.js"></script> -->
 		
 		<script>
 			function CheckcookieEnabled() {
@@ -118,27 +118,45 @@
 			</div>
 			<br />
 			<div id="fecha" style="visibility: hidden; display: inline">
-				<button
-					onclick="console.log(document.getElementById('nameCookie').value) ;
-                    console.log( document.getElementById('nameValue').value);
-                    console.log (document.getElementById('inputDate').value)
-                    setCookie(document.getElementById('nameCookie').value , document.getElementById('nameValue').value ,document.getElementById('inputDate').value )"
-				>
-					Enviar Fecha
+				<button onclick="FunConsoleInputDate(), funInputDate()">
+					Enviar Date
 				</button>
+				<script>
+					function funInputDate() {
+						setCookie(
+						document.getElementById('nameCookie').value ,
+						document.getElementById('nameValue').value ,
+						document.getElementById('inputDate').value )
+					}
+					function FunConsoleInputDate() {
+						console.log(document.getElementById('nameCookie').value) ;
+						console.log( document.getElementById('nameValue').value);
+						console.log (document.getElementById('inputDate').value)
+					}
+				</script>
 				<input id="inputDate" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades" style="visibility: hidden">
 				<button
-					onclick="console.log(document.getElementById('nameCookie').value);
-                    console.log( document.getElementById('nameValue').value) ;
-                    console.log((document.getElementById('anos').value*365)+(document.getElementById('meses').value)+(document.getElementById('dias').value))
-                    setCookie(document.getElementById('nameCookie').value,document.getElementById('nameValue').value,(document.getElementById('anos').value*365)+(document.getElementById('meses').value*30)+(document.getElementById('dias').value));listCookies();"
+					onclick="funInputCantidades(),funConsoleInputCantidades()"
 				>
 					Enviar Cantidades
 				</button>
+				<script>
+					function funInputCantidades() {
+						setCookie(document.getElementById('nameCookie').value,
+						document.getElementById('nameValue').value,
+						(document.getElementById('anos').value*365)+(document.getElementById('meses').value*30)+(document.getElementById('dias').value));listCookies();
+					}
+					function funConsoleInputCantidades(){
+
+					console.log(document.getElementById('nameCookie').value);
+                    console.log( document.getElementById('nameValue').value) ;
+                    console.log((document.getElementById('anos').value*365)+(document.getElementById('meses').value)+(document.getElementById('dias').value))
+					}
+				</script>
 				<input type="text" placeholder="Dias" id="dias" />
 				<input type="text" placeholder="Meses" id="meses" />
 				<input type="text" placeholder="Anos" id="anos" />
@@ -148,18 +166,27 @@
 		</div>
 		<div style="border: 4px solid red; margin-top: 20px">
 			<button
-				onclick="alert(detectaCookie(prompt('Introduzca nombre de la cookie:'),listCookies()))"
+				onclick="funDetectaCookie()"
 			>
-				BOTON 2 detecta si existe Cookie
+				BOTON 2 Detecta existe Cookie
 			</button>
+			<script>
+				function funDetectaCookie() {
+					alert(detectaCookie(prompt('Introduzca nombre de la cookie:'),listCookies()))
+				}
+			</script>
 			<br />
 			<br />
 		</div>
 		<div style="border: 4px solid red; margin-top: 20px">
-			<button onclick="alert(getCookie(prompt('Nombre cookie')),listCookies())">
+			<button onclick="funLeerCookies()">
 				BOTON 3 LEER COOKIE
 			</button>
-			
+			<script>
+				function funLeerCookies() {
+					alert(getCookie(prompt('Nombre cookie')),listCookies())
+				}
+			</script>
 			<br />
 			<br />
 		</div>
@@ -187,26 +214,42 @@
 			<br />
 			<div id="fecha1" style="visibility: hidden; display: inline">
 				<button
-					onclick="console.log(document.getElementById('nombreCookie').value) ;
-                    console.log( document.getElementById('nombreValue').value);
-                    console.log (document.getElementById('inputDate1').value);
-                    setCookie(document.getElementById('nombreCookie').value , document.getElementById('nombreValue').value ,document.getElementById('inputDate1').value )"
-				>
-					Enviar Fecha
+					onclick="funModificarDate1(), funConsoleModifificarDate1()">
+					Modificar Date1
 				</button>
+
+				<script>
+					function funModificarDate1() {
+						setCookie(document.getElementById('nombreCookie').value , document.getElementById('nombreValue').value ,document.getElementById('inputDate1').value )
+					}
+					function funConsoleModifificarDate1() {
+						console.log(document.getElementById('nombreCookie').value) ;
+						console.log( document.getElementById('nombreValue').value);
+						console.log (document.getElementById('inputDate1').value);
+					}
+
+				</script>
 				<input id="inputDate1" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades1" style="visibility: hidden">
 				<button
-					onclick="console.log(document.getElementById('nombreCookie').value);
-                    console.log( document.getElementById('nombreValue').value) ;
-                    console.log((document.getElementById('anos1').value*365)+(document.getElementById('meses1').value)+(document.getElementById('dias1').value))
-                    setCookie(document.getElementById('nombreCookie').value,document.getElementById('nombreValue').value,(document.getElementById('anos1').value*365)+(document.getElementById('meses1').value*31)+(document.getElementById('dias1').value));listCookies();"
+					onclick="funModificarCantidad1(), funConsoleModificarCantidad1()"
 				>
-					Enviar Cantidades
+					Modificar Cantidad 1
 				</button>
+				<script>
+					function funModificarCantidad1() {
+						setCookie(document.getElementById('nombreCookie').value,document.getElementById('nombreValue').value,(document.getElementById('anos1').value*365)+(document.getElementById('meses1').value*31)+(document.getElementById('dias1').value));listCookies();
+					}
+					function funConsoleModificarCantidad1() {
+						console.log(document.getElementById('nombreCookie').value);
+                    	console.log( document.getElementById('nombreValue').value) ;
+                    	console.log((document.getElementById('anos1').value*365)+(document.getElementById('meses1').value)+(document.getElementById('dias1').value))
+
+					}
+				</script>
 				<input type="text" placeholder="Dias" id="dias1" />
 				<input type="text" placeholder="Meses" id="meses1" />
 				<input type="text" placeholder="Anos" id="anos1" />
@@ -216,10 +259,15 @@
 		</div>
 		<div style="border: 4px solid red; margin-top: 20px">
 			<button
-				onclick="alert(removeCookie(prompt('nombre a eliminar:'),listCookies()))"
+				onclick="funBorrarCookie()"
 			>
 				BOTON 5 Borrar Cookie
 			</button>
+			<script>
+				function funBorrarCookie() {
+					alert(removeCookie(prompt('nombre a eliminar:'),listCookies()))
+				}
+			</script>
 			<br />
 			<br />
 		</div>
