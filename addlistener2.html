@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AddEventListener---> CHILD</title>
+	</head>
+	<body>
+		<script>
+			/*otra forma de selecionar un etiqueta*/
+			let i;
+			let body = document.getElementsByTagName("body")[0];
+
+			for (let i = 0; i < 20; i++) {
+				/*aqui creamos 20 botones/ inputs/div/p*/
+				let buttons = document.createElement("button");
+				/*aqui le cambiamos el nombre al boton*/
+				buttons.innerHTML = "button" + i;
+				/*podemos añadirle id="botones"  a todos los botones*/
+				buttons.id = "botones" + i;
+				/*con append child cogemos los botones y los introducimos en el body*/
+				body.appendChild(buttons);
+				/**añadimos  addlistener a los botones creados y creamos una funcion*/
+				// buttons.addEventListener("click", function () {
+				// 	/*este alert nos dice el nombre q tinene el boton*/
+				// 	alert(this.innerHTML);
+				// });
+				buttons.addEventListener("click", function () {
+					llamarFuncion(buttons.id);
+				});
+			}
+			/*funcion abstracta la q no tiene escrita function MEJOR NO USARLA*/
+			// buttons.addEventListener("click",  ()=>{
+			// 		/*este alert nos dice el nombre q tinene el boton*/
+			// 		alert(this.innerHTML);
+
+			/*CREAMOS FUNCION EXTERNA y aplicamos switch*/
+			function llamarFuncion(params) {
+				console.log(params, "ha entrado en switch");
+				switch (params) {
+					case "botones1":
+						console.log("OK boton 1");
+						break;
+					case "botones5":
+						console.log("OK boton 5");
+						break;
+					case "botones6":
+						console.log("OK boton 6");
+						break;
+					default:
+						console.log("OK otros");
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>
