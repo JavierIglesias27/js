@@ -34,7 +34,7 @@
 			<br />
 		</div>
 		<div class="red">
-			<button onclick="funCrearCookie()">BOTON 1 CREAR cookie</button>
+			<button id="funCrearCookie">BOTON 1 CREAR cookie</button>
 
 			<div id="preg1" style="visibility: hidden">
 				<div>
@@ -45,17 +45,13 @@
 			</div>
 			<br />
 			<div id="fecha" style="visibility: hidden; display: inline">
-				<button onclick="FunConsoleInputDate(), funInputDate()">
-					Enviar Date
-				</button>
+				<button id="funInputDate">Enviar Date</button>
 				<input id="inputDate" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades" style="visibility: hidden">
-				<button onclick="funInputCantidades(),funConsoleInputCantidades()">
-					Enviar Cantidades
-				</button>
+				<button id="funInputCantidades">Enviar Cantidades</button>
 				<input type="text" placeholder="Dias" id="dias" />
 				<input type="text" placeholder="Meses" id="meses" />
 				<input type="text" placeholder="Anos" id="anos" />
@@ -64,19 +60,17 @@
 			</div>
 		</div>
 		<div class="red">
-			<button onclick="funDetectaCookie()">
-				BOTON 2 Detecta existe Cookie
-			</button>
+			<button id="funDetectaCookie">BOTON 2 Detecta existe Cookie</button>
 			<br />
 			<br />
 		</div>
 		<div class="red">
-			<button onclick="funLeerCookies()">BOTON 3 LEER COOKIE</button>
+			<button id="funLeerCookies">BOTON 3 LEER COOKIE</button>
 			<br />
 			<br />
 		</div>
 		<div class="blue">
-			<button onclick="funModificarCookie()">BOTON 4 MODIFICAR COOKIE</button>
+			<button id="funModificarCookie">BOTON 4 MODIFICAR COOKIE</button>
 
 			<div id="preg2" style="visibility: hidden">
 				<div>
@@ -87,9 +81,13 @@
 			</div>
 			<br />
 			<div id="fecha1" style="visibility: hidden; display: inline">
-				<button onclick="funModificarDate1(), funConsoleModifificarDate1()">
+				<button
+					id=""
+					onclick="funModificarDate1(), funConsoleModifificarDate1()"
+				>
 					Modificar Date1
 				</button>
+
 				<input id="inputDate1" type="date" />
 				<br />
 				<br />

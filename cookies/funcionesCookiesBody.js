@@ -1,26 +1,31 @@
 /*BOTON 1 CREAR COOKIES */
 
+document
+	.getElementById("funCrearCookie")
+	.addEventListener("click", funCrearCookie);
+
 function funCrearCookie() {
 	document.getElementById("preg1").style.visibility = "visible";
 	document.getElementById("fecha").style.visibility = "visible";
 	document.getElementById("cantidades").style.visibility = "visible";
 }
 /*INPUT DATE */
-
+document.getElementById("funInputDate").addEventListener("click", funInputDate);
 function funInputDate() {
 	setCookie(
 		document.getElementById("nameCookie").value,
 		document.getElementById("nameValue").value,
 		document.getElementById("inputDate").value
 	);
-}
-function FunConsoleInputDate() {
 	console.log(document.getElementById("nameCookie").value);
 	console.log(document.getElementById("nameValue").value);
 	console.log(document.getElementById("inputDate").value);
 }
-/*INPUT CANTIDADES */
 
+/*INPUT CANTIDADES */
+document
+	.getElementById("funInputCantidades")
+	.addEventListener("click", funInputCantidades);
 function funInputCantidades() {
 	setCookie(
 		document.getElementById("nameCookie").value,
@@ -29,9 +34,6 @@ function funInputCantidades() {
 			document.getElementById("meses").value * 30 +
 			document.getElementById("dias").value
 	);
-	listCookies();
-}
-function funConsoleInputCantidades() {
 	console.log(document.getElementById("nameCookie").value);
 	console.log(document.getElementById("nameValue").value);
 	console.log(
@@ -39,22 +41,30 @@ function funConsoleInputCantidades() {
 			document.getElementById("meses").value +
 			document.getElementById("dias").value
 	);
+	listCookies();
 }
-/*DETECTA COOKIES */
 
+/*DETECTA COOKIES */
+document
+	.getElementById("funDetectaCookie")
+	.addEventListener("click", funDetectaCookie);
 function funDetectaCookie() {
 	alert(
 		detectaCookie(prompt("Introduzca nombre de la cookie:"), listCookies())
 	);
 }
 /*LEER COOKIES */
-
+document
+	.getElementById("funLeerCookies")
+	.addEventListener("click", funLeerCookies);
 function funLeerCookies() {
 	//alert(getCookieLeer(prompt("Nombre cookie")), listCookies());
 	alert(document.getElementById("selector").value);
 }
 /*MODIFICAR COOKIE */
-
+document
+	.getElementById("funModificarCookie")
+	.addEventListener("click", funModificarCookie);
 function funModificarCookie() {
 	let var1 = document.getElementById("selector").value;
 	let var2 = getCookie(var1);
