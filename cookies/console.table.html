@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			console.table(["objeto1", "objeto2", "objeto3"]);
+			console.log("este es el LOG" + document.cookie); /*xa leer la cookies*/
+
+			console.table(document.cookie.split(";").map((s) => s.trim().split("=")));
+
+			let car1 = { name: "Honda", modelo: "civic" };
+			let car2 = { name: "Seat", modelo: "ibiza" };
+			console.table([car1, car2]);
+			/*car 1 le quiero separar h nda*/
+			/*aparece un array de dos posiciones*/
+			console.table([car1.name.split("o")]);
+			/*añadir a modelo ++ al final*/
+			console.table([car1.modelo + "+++"]);
+
+			/*creamos un array lo recorremos*/
+			let car3 = { name: "volswagen", modelo: "golf" };
+			let car4 = { name: "simca", modelo: "milllll" };
+			let array = [car3, car4];
+			for (let i = 0; i < array.length; i++) {
+				console.log("recorrer array" + array[i]);
+			}
+			/*usamos console table xa q se vea mejor y NO usamos el bucle FOR*/
+			console.table(array);
+
+			/*CONSOLE.TIME() Y CONSOLE TIMEEND()*/
+			/*Lo que tarda en ejecutar entre consoletime y consoletimEnd*/
+			console.time();
+			for (let i = 0; i < array.length; i++) {
+				//some code
+			}
+			console.timeEnd();
+
+			/*se puede ejecuatr entre etiquetas y ver el tiempo ejecucion*/
+			console.time();
+			for (i = 0; i < 10; i++) {
+				console.table([car3, car4]);
+			}
+
+			console.timeEnd();
+		</script>
+	</body>
+</html>
