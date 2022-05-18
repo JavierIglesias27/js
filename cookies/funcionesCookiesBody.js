@@ -76,44 +76,49 @@ function funModificarCookie() {
 	document.getElementById("nombreValue").value = var2;
 }
 /*MODIFICAR COOKIE DATE1 */
-
+document
+	.getElementById("funModificarDate1")
+	.addEventListener("click", funModificarDate1);
 function funModificarDate1() {
 	setCookie(
 		document.getElementById("nombreCookie").value,
 		document.getElementById("nombreValue").value,
 		document.getElementById("inputDate1").value
 	);
-}
-function funConsoleModifificarDate1() {
 	console.log(document.getElementById("nombreCookie").value);
 	console.log(document.getElementById("nombreValue").value);
 	console.log(document.getElementById("inputDate1").value);
 }
-/*MODIFICAR COOKIE CANTIDAD 1 */
 
+/*MODIFICAR COOKIE CANTIDAD 1 */
+document
+	.getElementById("funModificarCantidad1")
+	.addEventListener("click", funModificarCantidad1);
 function funModificarCantidad1() {
 	setCookie(
 		document.getElementById("nombreCookie").value,
 		document.getElementById("nombreValue").value,
 		document.getElementById("anos1").value * 365 +
-			document.getElementById("meses1").value * 31 +
-			document.getElementById("dias1").value
+		document.getElementById("meses1").value * 31 +
+		document.getElementById("dias1").value
 	);
-	listCookies();
-}
-function funConsoleModificarCantidad1() {
 	console.log(document.getElementById("nombreCookie").value);
 	console.log(document.getElementById("nombreValue").value);
 	console.log(
-		document.getElementById("anos1").value * 365 +
-			document.getElementById("meses1").value +
-			document.getElementById("dias1").value
+	document.getElementById("anos1").value * 365 +
+	document.getElementById("meses1").value +
+	document.getElementById("dias1").value
 	);
+	
 }
-/*BORRAR COOKIES */
 
+/*BORRAR COOKIES */
+document
+	.getElementById("funBorrarCookie")
+	.addEventListener("click", funBorrarCookie);
 function funBorrarCookie() {
-	alert(removeCookie(prompt("nombre a eliminar:"), listCookies()));
+	//alert(removeCookie(prompt("nombre a eliminar:"), listCookies()));
+	alert(removeCookie(document.getElementById("selector").value, listCookies()));
 }
 
 /*DESPLEGABE LISTCOOKIES */
