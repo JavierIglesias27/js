@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head><meta charset="UTF-8" />
+	<head>
+		<meta charset="UTF-8" />
 		<meta name="author" content="Nom Cognom1 Cognom2" />
 		<meta
 			name="description"
@@ -10,15 +11,18 @@
 		<title>EJERCICIO COOKIES</title>
 		<script defer src="./funcionesCookiesHead.js"></script>
 		<script defer src="./funcionesCookiesBody.js"></script>
-		
+
 		<style>
-			.red{
-				border: 4px solid red;
-				margin-top: 20px
+			body {
+				background-color: grey;
 			}
-			.blue{
+			.red {
+				border: 4px solid red;
+				margin-top: 20px;
+			}
+			.blue {
 				border: 4px solid blue;
-				margin-top: 20px
+				margin-top: 20px;
 			}
 		</style>
 	</head>
@@ -31,7 +35,7 @@
 		</div>
 		<div class="red">
 			<button onclick="funCrearCookie()">BOTON 1 CREAR cookie</button>
-			
+
 			<div id="preg1" style="visibility: hidden">
 				<div>
 					<br />
@@ -41,7 +45,9 @@
 			</div>
 			<br />
 			<div id="fecha" style="visibility: hidden; display: inline">
-				<button onclick="FunConsoleInputDate(), funInputDate()">Enviar Date</button>
+				<button onclick="FunConsoleInputDate(), funInputDate()">
+					Enviar Date
+				</button>
 				<input id="inputDate" type="date" />
 				<br />
 				<br />
@@ -71,7 +77,7 @@
 		</div>
 		<div class="blue">
 			<button onclick="funModificarCookie()">BOTON 4 MODIFICAR COOKIE</button>
-	
+
 			<div id="preg2" style="visibility: hidden">
 				<div>
 					<br />
@@ -81,15 +87,20 @@
 			</div>
 			<br />
 			<div id="fecha1" style="visibility: hidden; display: inline">
-				<button onclick="funModificarDate1(), funConsoleModifificarDate1()">Modificar Date1</button>
+				<button onclick="funModificarDate1(), funConsoleModifificarDate1()">
+					Modificar Date1
+				</button>
 				<input id="inputDate1" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades1" style="visibility: hidden">
+				<button
+					onclick="funModificarCantidad1(), funConsoleModificarCantidad1()"
+				>
+					Modificar Cantidad 1
+				</button>
 
-				<button onclick="funModificarCantidad1(), funConsoleModificarCantidad1()">Modificar Cantidad 1</button>
-			
 				<input type="text" placeholder="Dias" id="dias1" />
 				<input type="text" placeholder="Meses" id="meses1" />
 				<input type="text" placeholder="Anos" id="anos1" />

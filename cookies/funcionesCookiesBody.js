@@ -50,7 +50,8 @@ function funDetectaCookie() {
 /*LEER COOKIES */
 
 function funLeerCookies() {
-	alert(getCookieLeer(prompt("Nombre cookie")), listCookies());
+	//alert(getCookieLeer(prompt("Nombre cookie")), listCookies());
+	alert(document.getElementById("selector").value);
 }
 /*MODIFICAR COOKIE */
 
@@ -111,6 +112,7 @@ select = document.getElementById("selector");
 listCookies();
 function listCookies() {
 	var theCookies = document.cookie.split(";");
+	select.innerHTML = ""; /*vacia la lista selector */
 	for (var i = 1; i <= theCookies.length; i++) {
 		var opt = document.createElement("option");
 		opt.value = theCookies[i - 1].split("=")[0];

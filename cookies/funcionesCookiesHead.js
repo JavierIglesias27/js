@@ -10,28 +10,27 @@ function setCookie(cname, cvalue, exdays) {
 	const d = new Date();
 	d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
 	let expires = "expires=" + d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	document.cookie =
+		encodeURIComponent(cname) +
+		"=" +
+		encodeURIComponent(cvalue) +
+		";" +
+		expires +
+		";path=/";
 }
 
 function detectaCookie(cname) {
-	if (cname != "") {
-		let name = cname + "=";
-		let decodedCookie = decodeURIComponent(document.cookie);
-		let ca = decodedCookie.split(";");
-		for (let i = 0; i < ca.length; i++) {
-			let c = ca[i];
-			while (c.charAt(0) == " ") {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return "La cookie:     " + cname + "  :SI EXISTE";
-			}
+	let name = cname + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(";");
+	for (let i = 0; i < ca.length; i++) {
+		let c = ca[i];
+		c = c.trim();
+		if (c.indexOf(name) == 0) {
+			return "La cookie:     " + cname + "  :SI EXISTE";
 		}
-		return "";
-	} else {
-		console.log("esta vacio");
-		return "La cookie introducida NO existe";
 	}
+	return "NO Existe";
 }
 
 function getCookie(cname) {
@@ -56,9 +55,8 @@ function getCookieLeer(cname) {
 	let ca = decodedCookie.split(";");
 	for (let i = 0; i < ca.length; i++) {
 		let c = ca[i];
-		while (c.charAt(0) == " ") {
-			c = c.substring(1);
-		}
+		c = c.trim();
+		/* c.indexOF name comparar que c sea igual a name y devuelve lo*/
 		if (c.indexOf(name) == 0) {
 			return (
 				"\nNombre Cookie: " +
@@ -83,11 +81,10 @@ function checkCookie() {
 	}
 }
 function removeCookie(cname) {
-	let user = getCookie("nameUser");
-	if (cname != "" && cname != null && user != "") {
+	if (cname != "" && cname != null) {
 		setCookie(cname, "", -1);
 		return "Cookie eliminada correctamente";
 	} else {
-		return "La cookie NO existe y no puede ser eliminada";
+		return "La cookie NO  puede ser eliminada";
 	}
 }
