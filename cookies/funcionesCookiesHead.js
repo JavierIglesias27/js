@@ -83,7 +83,8 @@ function checkCookie() {
 	}
 }
 function removeCookie(cname) {
-	if (cname != "" && cname != null) {
+	let user = getCookie("nameUser");
+	if (cname != "" && cname != null && user != "") {
 		setCookie(cname, "", -1);
 		return "Cookie eliminada correctamente";
 	} else {
