@@ -253,6 +253,26 @@
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-25">
+							<label for="opciones">desplegable :</label>
+						</div>
+						<div class="col-75">
+							<select id="opciones" name="opciones">
+								<option value="">- Selecciona un valor -</option>
+								<option value="1">Primer valor</option>
+								<option value="2">Segundo valor</option>
+								<option value="3">Tercer valor</option>
+							  </select>
+						</div>
+						<script>
+							indice = document.getElementById("opciones").selectedIndex;
+							if( indice == null || indice == 0 ) {
+							return "OKKKKKKK";
+							}
+						</script>
+					</div>
+					<div>
+					<div class="row">
 						<input type="submit" value="Comprar" disabled="disabled" />
 					</div>
 					<br />
