@@ -27,6 +27,8 @@
 		<script defer src="./formEmail.js"></script>
 		<script defer src="./formPassword.js"></script>
 		<script defer src="./formDni.js"></script>
+		<script defer src="./formPhone.js"></script>
+		<script defer src="./formBox.js"></script>
 	</head>
 	<body>
 		<main>
@@ -96,6 +98,21 @@
 							>
 								*Explica ací l'error
 							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-25">
+							<label for="email">Telefono</label>
+						</div>
+						<div class="col-75">
+							<input
+							style="width:100%"
+								type="tel"
+								id="phone"
+								name="phone"
+								placeholder="telefono"
+								onkeyup="ValidatePhone(this,'textoErrorPhone')"
+							/>
 						</div>
 					</div>
 					<div class="row">
@@ -226,9 +243,11 @@
 						</div>
 						<div class="col-75">
 							<input
+								id="box"
 								type="checkbox"
 								name="acords_i_condicions"
 								value="yes"
+								onclick="ValidateCheck(this.checked)"
 								required
 							/>
 						</div>

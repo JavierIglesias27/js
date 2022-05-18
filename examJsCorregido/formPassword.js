@@ -1,112 +1,61 @@
 function ValidatePassword(campo, nombreCampoError) {
-	let texto = campo.value.trim().replace(" ", "");
-	let largoTexto = texto.length;
-	if (largoTexto > 3) {
-		if (largoTexto < 8) {
-			let letra1 = texto.slice(0, 1);
-			let letra2 = texto.slice(1, 2);
-			let letra3 = texto.slice(2, 3);
-			let letra4 = texto.slice(3, 4);
+    let campoValor = campo.value;
+    let texto = campoValor.trim().replaceAll(" ", "");
+    let largoTexto = texto.length;
+    if (largoTexto > 3) {
+        if (largoTexto < 8) {
+            //7a4
+            if (letras(texto)) {
+                cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
+            } else {
+                cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
+            }
+        } else if (largoTexto < 12) {
+            //11a8
+           
+            let bloque1 = texto.slice(4);
+            let bloque2 = texto.slice(4, 8);
+        } else {
+            //inf a 12
+            let bloque1 = texto.slice(4);
+            let bloque2 = texto.slice(4, 8);
+            let bloque3 = texto.slice(8, 12);
+        }
+    } else {
+        cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
+    }
+}
+//cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
 
-			if (
-				letra1 == letra1.toUpperCase() ||
-				letra2 == letra2.toUpperCase() ||
-				letra3 == letra3.toUpperCase() ||
-				letra4 == letra4.toUpperCase()
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-
-			if (
-				letra1 == letra1.toLowerCase() ||
-				letra2 == letra2.toLowerCase() ||
-				letra3 == letra3.toLowerCase() ||
-				letra4 == letra4.toLowerCase()
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-
-			if (
-				!isNan(letra1) ||
-				!isNan(letra2) ||
-				!isNan(letra3) ||
-				!isNan(letra4)
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				//false
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-			if (
-				letra1 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra1) ||
-				letra2 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra2) ||
-				letra3 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra3) ||
-				letra4 == /[!@#\$%\^\&*\)\(+=._-]/.includes(letra4)
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				//false
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-		} else if (largoTexto < 12) {
-			let bloque1 = texto.slice(4);
-			let bloque2 = texto.slice(4, 8);
-
-			let letra5 = texto.slice(4, 5);
-			let letra6 = texto.slice(5, 6);
-			let letra7 = texto.slice(6, 7);
-			let letra8 = texto.slice(7, 8);
-
-			if (
-				letra5 == letra5.toUpperCase() ||
-				letra6 == letra6.toUpperCase() ||
-				letra7 == letra7.toUpperCase() ||
-				letra8 == letra8.toUpperCase()
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-
-			if (
-				letra5 == letra5.toLowerCase() ||
-				letra6 == letra6.toLowerCase() ||
-				letra7 == letra7.toLowerCase() ||
-				letra8 == letra8.toLowerCase()
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-
-			if (
-				!isNan(letra5) ||
-				!isNan(letra6) ||
-				!isNan(letra7) ||
-				!isNan(letra8)
-			) {
-				//true
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, true);
-			} else {
-				//false
-				cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-			}
-		} else {
-			let bloque1 = largo.texto.slice(4);
-			let bloque2 = largo.texto.slice(4, 8);
-			let bloque3 = largo.texto.slice(8, 12);
-		}
-	} else {
-		cambiarCorrectoIncorrecto(campo, nombreCampoError, false);
-	}
+const mayuscula = /[A-Z]/;
+const minuscula = /[a-z]/;
+const numero = /[0-9]/;
+const caracter = /[!@#\$%\^\&*\)\(+=._-]/;
+//letras("Aa0@");
+function letras(texto) {
+    let var1 = false;
+    let var2 = false;
+    let var3 = false;
+    let var4 = false;
+    if (mayuscula.test(texto)) {
+        console.log("mayusucula");
+        var1 = true;
+    }
+    if (minuscula.test(texto)) {
+        console.log("minuscula");
+        var2 = true;
+    }
+    if (numero.test(texto)) {
+        console.log("numero");
+        var3 = true;
+    }
+    if (caracter.test(texto)) {
+        console.log("caracter");
+        var4 = true;
+    }
+    if (var1 && var2 && var3 && var4) {
+        console.log("PASO TRUE");
+        return true;
+    }
+    return false;
 }
