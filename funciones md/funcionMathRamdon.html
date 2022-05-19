@@ -18,7 +18,7 @@
 
 		<script>
 			function generarRandom(min, max) {
-				let x = Math.floor(Math.random() * (max - min) + min);
+				let x = Math.floor(Math.random() * (max + 1 - min) + min);
 				document.getElementById("demo").innerHTML = "Numero generado es: " + x;
 			}
 			generarRandom(200, 900);
@@ -45,6 +45,26 @@
 			}
 			generarRandomAlfanumerico(2);
 		</script>
+		<h1>otra funcion random alfanumericoMayusminus</h1>
+		<p id="demo2"></p>
+
+		<script>
+			function generarRandomAlfanumericoMayus(character) {
+				let characters =
+					"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+				let result = "";
+
+				let length = 10; // Customize the length here.
+
+				for (let i = length; i > 0; --i)
+					result +=
+						characters[Math.round(Math.random() * (characters.length - 1))];
+
+				console.log(result);
+				document.getElementById("demo2").innerHTML = result;
+			}
+			generarRandomAlfanumericoMayus(4);
+		</script>
 	</body>
-	<!--aldir lo del mail-->
 </html>

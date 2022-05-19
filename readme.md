@@ -79,6 +79,10 @@ Para lanzar las comprobaciones, contenido del div, variables q contengan texto..
 
 - `console.info("INFOOOO");`
 
+-`console.count()` cuentacada vuelta q da el bucle
+
+-`console.trace()`te marca donde esta el codigo q ejecuta
+
 - `console.warn("WARNNNNNNN");`
 
 - `\n salto de linea(carro) `
