@@ -23,5 +23,28 @@
 			}
 			generarRandom(200, 900);
 		</script>
+
+		<h1>otra funcion random alfanumerico</h1>
+		<p id="demo1"></p>
+		<script>
+			function generarRandomAlfanumerico(character) {
+				character;
+				var characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+				var result = "";
+
+				var charactersLength = characters.length;
+
+				for (var i = 0; i < 5; i++) {
+					result += characters.charAt(
+						Math.floor(Math.random() * charactersLength)
+					);
+				}
+
+				document.getElementById("demo1").innerHTML = result;
+			}
+			generarRandomAlfanumerico(2);
+		</script>
 	</body>
+	<!--aldir lo del mail-->
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JSON</title>
+	</head>
+	<body>
+		<h2>
+			Convert a JavaScript object into a JSON string, and send it to the server.
+		</h2>
+		<p id="demo"></p>
+		<script>
+			/*OBJETO TRANSFORMADO A JSON*/ /*GENERA OBJETO DE TEXTO*/
+			var myObj = { name: "John", age: 31, city: "New York" };
+			var myJSON = JSON.stringify(myObj);
+			console.log(myJSON);
+			/*OBJETO TRANSFORMADO A JAVA*/
+			var string = JSON.parse(myJSON);
+			console.log(string);
+		</script>
+
+		<!-- <script>
+			var myObj = { name: "John", age: 31, city: "New York" };
+			var myJSON = JSON.stringify(myObj);
+			//document.getElementById("demo").innerHTML = myJSON;
+			//HAY Q PONER LA URL DELANTE XA ACCEDER A W3SCHOOL
+			window.location =
+				"https://www.w3schools.com/jsref/demo_json.php?x=" + myJSON;
+		</script> -->
+		<!--
+            `stringify`
+convierte esto:
+        var myObj = { name: "John", age: 31, city: "New York" };
+            en:
+            "{name:`john`, age: 31, city: "New York"}"
+
+            parse()
+            convierte texto:
+            "{name:`john`, age: 31, city: "New York"}"
+
+            a objeto:
+            var myObj = { name: "John", age: 31, city: "New York" };
+
+        -->
+	</body>
+</html>

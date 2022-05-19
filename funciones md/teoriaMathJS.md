@@ -7,9 +7,9 @@
 
 `math.asin(0.5)` devuelve entre 0 y 165
 
-`Math.ceil(x)` valor redondeado al numero superior
+`Math.ceil(x)` valor redondeado al numero superior 2.1 me devuelve 3
 
-`Math.floor()`valor redondeado al numero inferior
+`Math.floor()`valor redondeado al numero inferior p.e 2.9 redondea a 2
 
 `Math.max()` devuelve el mayor entre dos numeros
 
@@ -29,4 +29,22 @@
 
 ```
         Math.floor((Math.random() * 100) + 1);
+```
+
+`Math.round()` rendondea la numero entero mas cercano
+
+`Math.trunc()` trunc te elimina todo los decimales
+
+```
+ Math.trunc(-8.76);
+
+ devuelve -8
+```
+
+`Math.abs()` me devuelve solo numeros absolutos es decir positivos
+
+```
+ Math.abs(Math.trunc(-8.76));
+
+ devuelve +8
 ```
