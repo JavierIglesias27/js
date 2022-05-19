@@ -1,0 +1,90 @@
+<!--
+libreria
+cree un tabla
+ un boton + xa añadir informacion
+boton - xa eliminar libros
+10 libros  titulo,autor,edicion, precio, tematica[drama, suspense, terror]
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width: 100%">
+			<tr>
+				<th>titulo</th>
+				<th>autor</th>
+				<th>edicion</th>
+				<th>precio</th>
+				<th>tematica</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+		<script>
+			let listaLibro = [];
+			let listaAutor = [];
+			let listEdicion = [];
+			let listPrecio = [];
+			let listaTematica = [];
+			class Libro {
+				constructor(titulo, autor, edicion, tematica, precio) {
+					this.titulo = titulo;
+					listaLibro.push(this);
+					this.autor = autor;
+					listaAutor.push(this);
+					this.edicion = Libro.generarRandomAlfanumerico();
+					listEdicion.push(this);
+					this.precio = Libro.generarPrecio();
+					listaTematica.push(this);
+					this.tematica = Libro.generarRandomAlfanumerico();
+					listaTematica.push(this);
+				}
+				static generarPrecio() {
+					return Math.floor(Math.random() * (9999 + 1 - 1000) + 1000);
+				}
+				static generarRandomAlfanumerico(character) {
+					character;
+					var characters =
+						"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+					var result = "";
+
+					var charactersLength = characters.length;
+
+					for (var i = 0; i < 10; i++) {
+						result += characters.charAt(
+							Math.floor(Math.random() * charactersLength)
+						);
+					}
+
+					return result;
+				}
+			}
+			new Libro("libro1", "autor1");
+			new Libro("libro2", "autor2");
+			new Libro("libro3", "autor3");
+			new Libro("libro4", "autor4");
+			new Libro("libro5", "autor5");
+			new Libro("libro6", "autor6");
+			new Libro("libro7", "autor7");
+			new Libro("libro8", "autor8");
+			new Libro("libro9", "autor9");
+			new Libro("libro10", "autor10");
+
+			console.table(listaLibro);
+		</script>
+	</body>
+</html>
