@@ -12,29 +12,34 @@ boton - xa eliminar libros
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<script defer src="./tabla.js"></script>
 		<style>
-			table,
-			th,
-			td {
-				border: 1px solid black;
+			table{
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			th, td{
+				padding: 10px 20px;
+				border: 1px solid #000;
 			}
 		</style>
 	</head>
-	<body>
-		<table style="width: 100%">
-			<tr>
-				<th>titulo</th>
-				<th>autor</th>
-				<th>edicion</th>
-				<th>precio</th>
-				<th>tematica</th>
-			</tr>
-			<tr>
-				<td></td>
-			</tr>
-		</table>
+	<body id="body">
+		
+		<!-- <button onclick="insertarLibro()">AÑADIR</button> -->
+		<!-- <button onclick="funborrar()">BORRAR</button> -->
+
 
 		<script>
+
+
+			// function insertarLibro() {
+			// 	const node = document.createElement("table");
+			// 	node.innerHTML = "water";
+			// 	document.getElementById("tabla").appendChild(node);
+			// }
+			
+		
 			let listaLibro = [];
 			let listaAutor = [];
 			let listEdicion = [];
