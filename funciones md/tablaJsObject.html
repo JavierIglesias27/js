@@ -24,10 +24,31 @@ boton - xa eliminar libros
 				padding: 10px 20px;
 				border: 1px solid #000;
 			}
+			form{
+				margin-bottom: 20px;
+			}
+			legend{
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body id="body">
-		<!-- <button onclick="insertarLibro()">AÑADIR</button> -->
-		<!-- <button onclick="funborrar()">BORRAR</button> -->
+		
+		<form>
+			<fieldset>
+				<legend>AGREGAR LIBROS</legend>
+				<label>Titulo</label>
+				<input type="text">
+				<label>Autor</label>
+				<input type="text">
+				<label>Edicion</label>
+				<input type="text">
+				<label>Precio</label>
+				<input type="text">
+				<label>Tematica</label>
+				<input type="text">
+				<input type="submit"value="Agregar"></input>			
+			</fieldset>
+		</form>
 	</body>
 </html>

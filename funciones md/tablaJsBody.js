@@ -35,13 +35,17 @@ class Libro {
 		row_2_data_4.innerHTML = Libro.generarPrecio();
 		let row_2_data_5 = document.createElement("td");
 		row_2_data_5.innerHTML = this.generarTematica();
+		let row_2_data_6 = document.createElement("button");
+		row_2_data_6.innerHTML = "remove";
 
 		row_2.appendChild(row_2_data_1);
 		row_2.appendChild(row_2_data_2);
 		row_2.appendChild(row_2_data_3);
 		row_2.appendChild(row_2_data_4);
 		row_2.appendChild(row_2_data_5);
+		row_2.appendChild(row_2_data_6);
 		tbody.appendChild(row_2);
+
 		console.log(tbody);
 	}
 	static generarPrecio() {
