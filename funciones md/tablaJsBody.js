@@ -85,6 +85,17 @@ new Libro("libro8", "autor8");
 new Libro("libro9", "autor9");
 new Libro("libro10", "autor10");
 
+document.getElementById("Agregar").addEventListener('click',modificar )
+function modificar() {
+	new Libro(
+		document.getElementById('input_Titulo').value,
+		document.getElementById('input_Autor').value,
+		document.getElementById('input_Edicion').value,
+		document.getElementById('input_precio').value,
+		document.getElementById('input_Tematica').value)
+	
+}
+
 console.table(listaLibro);
 /*Acceder a la tabla y buscar los parametros */
 console.log(listaLibro[0].autor);
