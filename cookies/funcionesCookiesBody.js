@@ -59,7 +59,11 @@ document
 	.addEventListener("click", funLeerCookies);
 function funLeerCookies() {
 	//alert(getCookieLeer(prompt("Nombre cookie")), listCookies());
-	alert(document.getElementById("selector").value);
+	alert(
+		document.getElementById("selector").value +
+			"  " +
+			getCookie(document.getElementById("selector").value)
+	);
 }
 /*MODIFICAR COOKIE */
 document
@@ -99,17 +103,16 @@ function funModificarCantidad1() {
 		document.getElementById("nombreCookie").value,
 		document.getElementById("nombreValue").value,
 		document.getElementById("anos1").value * 365 +
-		document.getElementById("meses1").value * 31 +
-		document.getElementById("dias1").value
+			document.getElementById("meses1").value * 31 +
+			document.getElementById("dias1").value
 	);
 	console.log(document.getElementById("nombreCookie").value);
 	console.log(document.getElementById("nombreValue").value);
 	console.log(
-	document.getElementById("anos1").value * 365 +
-	document.getElementById("meses1").value +
-	document.getElementById("dias1").value
+		document.getElementById("anos1").value * 365 +
+			document.getElementById("meses1").value +
+			document.getElementById("dias1").value
 	);
-	
 }
 
 /*BORRAR COOKIES */
@@ -130,8 +133,9 @@ function listCookies() {
 	select.innerHTML = ""; /*vacia la lista selector */
 	for (var i = 1; i <= theCookies.length; i++) {
 		var opt = document.createElement("option");
-		opt.value = theCookies[i - 1].split("=")[0];
-		opt.innerHTML = theCookies[i - 1].split("=")[0];
+		let split = theCookies[i - 1].split("=")[0].trim();
+		opt.value = split;
+		opt.innerHTML = split;
 		select.appendChild(opt);
 	}
 }
