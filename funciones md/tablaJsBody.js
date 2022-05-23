@@ -78,14 +78,25 @@ class Libro {
 
 		return result;
 	}
-	generarTematica() {
+	pintarTematicaLinea() {
 		let acumulador = "";
 		for (var i = 0; i < this.tematica.length; i++) {
 			acumulador += this.tematica[i] + ", ";
 		}
 		return acumulador.slice(0, -2);
 	}
+	// console.table(listaLibro);
+	toJSON() {
+		return JSON.stringify({
+			titulo: this.titulo,
+			autor: this.autor,
+			edicion: this.edicion,
+			precio: this.precio,
+			tematica: this.pintarTematicaLinea(),
+		});
+	}
 }
+
 new Libro("libro1", "autor1", "azteca", ["hola", "adios"], 75);
 new Libro("libro2", "autor2", "dioses", ["mango", "pera"], 75);
 new Libro("libro3", "autor3");
@@ -108,10 +119,16 @@ function modificar() {
 	);
 }
 
-console.table(listaLibro);
 /* el array de console table */
 /*ordenar mediante sort */
 /*Acceder a la tabla y buscar los parametros */
-console.log(listaLibro[0].autor);
-console.log(listaLibro[1].tematica);
-console.log(listaLibro[4].edicion);
+// console.log(listaLibro[0].autor);
+// console.log(listaLibro[1].tematica);
+// console.log(listaLibro[4].edicion);
+// console.log(listaLibro);
+console.table([
+	JSON.parse(listaLibro[0].toJSON()),
+	JSON.parse(listaLibro[1].toJSON()),
+]);
+console.log(listaLibro[0]);
+//console.assert(JSON.parse(listaLibro[0]) == JSON.parse(listaLibro[0].toJSON()));
