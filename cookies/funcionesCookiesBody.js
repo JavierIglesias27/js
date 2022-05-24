@@ -35,11 +35,12 @@ function funInputCantidades() {
 	let anos = new Number(document.getElementById("anos").value * 365);
 	let meses = new Number(document.getElementById("meses").value * 30);
 	let dias = new Number(document.getElementById("dias").value);
+	let suma = anos + meses + dias;
 
 	setCookie(
 		document.getElementById("nameCookie").value,
 		document.getElementById("nameValue").value,
-		anos + meses + dias
+		suma
 	);
 	console.log(document.getElementById("nameCookie").value);
 	console.log(document.getElementById("nameValue").value);
@@ -105,11 +106,12 @@ function funModificarCantidad1() {
 	let anos = new Number(document.getElementById("anos1").value * 365);
 	let meses = new Number(document.getElementById("meses1").value * 30);
 	let dias = new Number(document.getElementById("dias1").value);
+	let suma1 = anos + meses + dias;
 
 	setCookie(
 		document.getElementById("nombreCookie").value,
 		document.getElementById("nombreValue").value,
-		anos + meses + dias
+		suma1
 	);
 	console.log(document.getElementById("nombreCookie").value);
 	console.log(document.getElementById("nombreValue").value);
