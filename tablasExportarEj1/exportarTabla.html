@@ -5,34 +5,51 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Exportar tabla CSV</title>
+		<style>
+			table,
+			td,
+			th,
+			tbody {
+				border: 2px solid black;
+			}
+		</style>
 	</head>
 	<body>
+		<table id="tableData"></table>
 		<script>
 			var mainObj = [
 				{
 					name: "Kapil",
 					age: 21,
 					status: "Active",
+					price: 25,
 				},
 				{
 					name: "John",
 					age: 28,
 					status: "Inactive",
+					price: 35,
 				},
 				{
 					name: "Deos",
 					age: 18,
 					status: "Active",
+					price: 85,
 				},
 			];
-			var k = "<tbody>";
+			var k = "<tbody id='tblStocks'> ";
 			for (i = 0; i < mainObj.length; i++) {
 				k += "<tr>";
 				k += "<td>" + mainObj[i].name + "</td>";
 				k += "<td>" + mainObj[i].age + "</td>";
 				k += "<td>" + mainObj[i].status + "</td>";
+				k += "<td>" + mainObj[i].price + "</td>";
 				k += "</tr>";
 			}
+			k += "<tr><td style='text-align:center'colspan=4> ASD</td></tr>";
+			k +=
+				"<tr><td style='text-align:center'colspan=3>TOTAL</td><td>85</td></tr>";
+
 			k += "</tbody>";
 			document.getElementById("tableData").innerHTML = k;
 
@@ -43,15 +60,40 @@
 				/* Declaring array variable */
 				var rows = [];
 
-				//iterate through rows of table
+				//iterate through rows inputDatecellof table
 				for (var i = 0, row; (row = table.rows[i]); i++) {
 					//rows would be accessed using the "row" variable assigned in the for loop
-					//Get each cell value/column from the row
-					column1 = row.cells[0].innerText;
-					column2 = row.cells[1].innerText;
-					column3 = row.cells[2].innerText;
+					//Get each cells value/column from the row
+					if (row.cells.length == 1) {
+						column1 = row.cells[0].innerText;
+					} else {
+						column2 = "";
+						column3 = "";
+						column4 = "";
+					}
+					if (row.cells.length == 2) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+					} else {
+						column3 = "";
+						column4 = "";
+					}
+					if (row.cells.length == 3) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
+					} else {
+						column4 = "";
+					}
+					if (row.cells.length == 4) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
+						column4 = row.cells[3].innerText;
+					}
+
 					/* add a new records in the array */
-					rows.push([column1, column2, column3]);
+					rows.push([column1, column2, column3, column4]);
 				}
 				csvContent = "data:text/csv;charset=utf-8,";
 				/* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
@@ -72,6 +114,5 @@
 		</script>
 
 		<button onclick="exportData()">CLICK</button>
-		<table id="tableData"></table>
 	</body>
 </html>
