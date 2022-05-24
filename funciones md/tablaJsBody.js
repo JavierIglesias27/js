@@ -7,11 +7,11 @@ class Libro {
 		titulo = "",
 		autor = "",
 		edicion = Libro.generarRandomAlfanumerico(),
+		precio = Libro.generarPrecio(),
 		tematica = [
 			Libro.generarRandomAlfanumerico(),
 			Libro.generarRandomAlfanumerico(),
-		],
-		precio = Libro.generarPrecio()
+		]
 	) {
 		this.titulo = titulo;
 
