@@ -12,10 +12,15 @@ function funCrearCookie() {
 /*INPUT DATE */
 document.getElementById("funInputDate").addEventListener("click", funInputDate);
 function funInputDate() {
+	let dias = document.getElementById("inputDate").value;
+	let resto = new Date(dias) - new Date();
+	let campo = resto / 1000 / 60 / 60 / 24;
+	console.log(Math.ceil(campo));
+
 	setCookie(
 		document.getElementById("nameCookie").value,
 		document.getElementById("nameValue").value,
-		document.getElementById("inputDate").value
+		campo
 	);
 	console.log(document.getElementById("nameCookie").value);
 	console.log(document.getElementById("nameValue").value);
@@ -27,20 +32,18 @@ document
 	.getElementById("funInputCantidades")
 	.addEventListener("click", funInputCantidades);
 function funInputCantidades() {
+	let anos = new Number(document.getElementById("anos").value * 365);
+	let meses = new Number(document.getElementById("meses").value * 30);
+	let dias = new Number(document.getElementById("dias").value);
+
 	setCookie(
 		document.getElementById("nameCookie").value,
 		document.getElementById("nameValue").value,
-		document.getElementById("anos").value * 365 +
-			document.getElementById("meses").value * 30 +
-			document.getElementById("dias").value
+		anos + meses + dias
 	);
 	console.log(document.getElementById("nameCookie").value);
 	console.log(document.getElementById("nameValue").value);
-	console.log(
-		document.getElementById("anos").value * 365 +
-			document.getElementById("meses").value +
-			document.getElementById("dias").value
-	);
+	console.log(anos + meses + dias);
 	listCookies();
 }
 
@@ -99,20 +102,18 @@ document
 	.getElementById("funModificarCantidad1")
 	.addEventListener("click", funModificarCantidad1);
 function funModificarCantidad1() {
+	let anos = new Number(document.getElementById("anos1").value * 365);
+	let meses = new Number(document.getElementById("meses1").value * 30);
+	let dias = new Number(document.getElementById("dias1").value);
+
 	setCookie(
 		document.getElementById("nombreCookie").value,
 		document.getElementById("nombreValue").value,
-		document.getElementById("anos1").value * 365 +
-			document.getElementById("meses1").value * 31 +
-			document.getElementById("dias1").value
+		anos + meses + dias
 	);
 	console.log(document.getElementById("nombreCookie").value);
 	console.log(document.getElementById("nombreValue").value);
-	console.log(
-		document.getElementById("anos1").value * 365 +
-			document.getElementById("meses1").value +
-			document.getElementById("dias1").value
-	);
+	console.log(anos + meses + dias);
 }
 
 /*BORRAR COOKIES */

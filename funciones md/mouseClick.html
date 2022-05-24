@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MOUSES CLICK</title>
+	</head>
+	<body>
+		<!--https://javascript.info/mouse-events-basics-->
+		<script>
+			// te dice donde esta el mouse del cliente en la pantalla
+			//Coordinates: clientX/Y, pageX/Y
+		</script>
+		<!--xa saber tamaño pantalla windows.-->
+		<!-- mirarlo en w3sc -->
+		<input
+			style="width: 180%; height: 400px"
+			onmousemove="this.value=event.clientX+':'+event.clientY"
+			value="Mouse over me"
+		/>
+		<!-- alert q indica q has de hacer doble clicl -->
+		<span ondblclick="alert('dblclick')">Double-click me</span>
+
+		<!--bloquear la salida de la pestaña-->
+	</body>
+</html>
