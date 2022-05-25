@@ -5,8 +5,35 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			th,
+			td {
+				padding: 10px 20px;
+				border: 1px solid #000;
+			}
+			
+			
+		</style>
 	</head>
 	<body>
+		<fieldset>
+			<legend>AGREGAR LIBROS</legend>
+			<label>Titulo</label>
+			<input id="input_Titulo" type="text" />
+			<label>Autor</label>
+			<input id="input_Autor" type="text" />
+			<label>Edicion</label>
+			<input id="input_Edicion" type="text" />
+			<label>Precio</label>
+			<input id="input_precio" type="text" />
+			<label>Tematica</label>
+			<input id="input_Tematica" type="text" />
+			<button id="Agregar">Agregar</button>
+		</fieldset>
 		<script>
 			//let listadelistas = [];
 			class Libreria {
@@ -15,12 +42,30 @@
 					this.listaDeLibros = [];
 
 					let thSN = document.createElement("th");
-					thSN.innerHTML = "SN";
-					let thNombre = document.createElement("th");
-					thNombre.innerHTML = "Nombre";
+					thSN.innerHTML = "SerialNumber";
+					let thTitulo = document.createElement("th");
+					thTitulo.innerHTML = "Titulo";
+
+					let thAutor = document.createElement("th");
+					thAutor.innerHTML = "Autor";
+					
+					let thEdicion = document.createElement("th");
+					thEdicion.innerHTML = "Edicion";
+
+					let thPrecio = document.createElement("th");
+					thPrecio.innerHTML = "Precio";
+
+					let thTematica = document.createElement("th");
+					thTematica.innerHTML = "Tematica";
+
 					let tr = document.createElement("tr");
 					tr.appendChild(thSN);
-					tr.appendChild(thNombre);
+					tr.appendChild(thTitulo);
+					tr.appendChild(thAutor);
+					tr.appendChild(thEdicion);
+					tr.appendChild(thPrecio);
+					tr.appendChild(thTematica);
+
 					let headTable = document.createElement("thead");
 					headTable.appendChild(tr);
 
@@ -32,7 +77,7 @@
 					table.appendChild(headTable);
 					table.appendChild(tbody);
 
-					//
+					
 					document.getElementsByTagName("body")[0].appendChild(table);
 				}
 				addLibro(libro) {
@@ -41,42 +86,80 @@
 
 					let td_sn = document.createElement("td");
 					td_sn.innerHTML = libro.sn;
-					let td_nombre = document.createElement("td");
 
-					td_nombre.innerHTML = libro.titulo;
+					let td_titulo = document.createElement("td");
+					td_titulo.innerHTML = libro.titulo;
+
+					let td_autor = document.createElement("td");
+					td_autor.innerHTML = libro.autor;
+
+					let td_edicion = document.createElement("td");
+					td_edicion.innerHTML = libro.edicion;
+
+					let td_precio = document.createElement("td");
+					td_precio.innerHTML = libro.precio;
+
+					let td_tematica = document.createElement("td");
+					td_tematica.innerHTML = libro.tematica;
+
+
 					let tr = document.createElement("tr");
 					tr.id = this.nombre + "_" + libro.sn;
 					tr.appendChild(td_sn);
-					tr.appendChild(td_nombre);
+					tr.appendChild(td_titulo);
+					tr.appendChild(td_autor);
+					tr.appendChild(td_edicion);
+					tr.appendChild(td_precio);
+					tr.appendChild(td_tematica);
 
 					tbody.appendChild(tr);
 				}
 				removeLibro(libro) {
 					this.listaDeLibros.splice(this.listaDeLibros.indexOf(libro), 1);
-					document.getElementById(this.nombre + "_" + libro.sn).remove();
+					// document.getElementById(this.nombre + "_" + libro.sn).remove();
+					// document.getElementById(this.nombre + "_" + libro.titulo).remove();
+					// document.getElementById(this.nombre + "_" + libro.autor).remove();
+					// document.getElementById(this.nombre + "_" + libro.edicion).remove();
+					// document.getElementById(this.nombre + "_" + libro.precio).remove();
+					// document.getElementById(this.nombre + "_" + libro.tematica).remove();
+					
+
+
 				}
 			}
 			class Libro {
-				constructor(sn, titulo) {
+				constructor(sn, titulo,autor, edicion, precio,tematica) {
 					this.sn = sn;
 					this.titulo = titulo;
+					this.autor = autor;
+					this.edicion = edicion;
+					this.precio = precio;
+					this.tematica = tematica;
 				}
+				
+			
 			}
 			let libreria1 = new Libreria("libreria1");
 			let libreria2 = new Libreria("libreria2");
-			let libro1 = new Libro("123", "title1");
-			let libro2 = new Libro("234", "title2");
-			let libro3 = new Libro("356", "title3");
+			let libro1 = new Libro("123", "title1","autor1","edicion1",95,"accion");
+			let libro2 = new Libro("345", "title2","autor2","edicion2",45,"terror");
+			let libro3 = new Libro("356", "title3","autor3","edicion3",12,"humor");
+			let libro4 = new Libro("789", "title4","autor4","edicion4",12,"marvel");
+			let libro5 = new Libro("1011", "title5","autor5","edicion5",44,"otros");
+			let libro6 = new Libro("1012", "title6","autor6","edicion6",25,"otros");
+			let libro7 = new Libro("1013", "title7","autor7","edicion7",75,"genial");
+
 			libreria1.addLibro(libro1);
 			libreria1.addLibro(libro2);
 			libreria1.addLibro(libro3);
-			libreria2.addLibro(libro1);
-			libreria2.addLibro(libro2);
-			libreria2.addLibro(libro3);
-			libreria2.removeLibro(libro3);
+			libreria2.addLibro(libro4);
+			libreria2.addLibro(libro5);
+			libreria2.addLibro(libro7);
+			libreria2.removeLibro(libro6);
 
 			console.log(libreria1);
 			console.log(libreria2);
+
 		</script>
 	</body>
 </html>
