@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ORDENAR ARRAY</title>
+	</head>
+	<body>
+		<script>
+			// const array = [5, 8, 1, 12, 4, 0, 2, 11, 111, -3, -25, 80];
+			//const array = [-80, 45, 5, -96, 9999];
+			const array = [5.5, -4.5, 5, -96.8, -9999];
+
+			console.log(array);
+
+			function ordenar(array) {
+				let copiaArray = [].concat(array);
+				let arraySalida = [];
+
+				while (copiaArray.length > 1) {
+					let temporal = copiaArray[0];
+
+					for (let i = 0; i < copiaArray.length; i++) {
+						if (temporal < copiaArray[i]) {
+							temporal = copiaArray[i];
+							console.log(copiaArray[i]);
+						}
+					}
+					console.warn(temporal);
+					arraySalida.push(temporal);
+					//console.log(copiaArray);
+					//console.log("posicion=" + copiaArray.indexOf(temporal));
+					copiaArray.splice(copiaArray.indexOf(temporal), 1);
+					console.log(copiaArray);
+					//debugger; //break;
+				}
+				arraySalida.push(copiaArray[0]);
+				return arraySalida;
+			}
+			//
+			console.log(ordenar(array));
+		</script>
+	</body>
+</html>
