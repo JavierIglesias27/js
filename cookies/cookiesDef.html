@@ -29,7 +29,9 @@
 
 	<body>
 		<div class="red">
-			<button onclick="CheckcookieEnabled()">BOTON 0 Enable/disabled</button>
+			<button onclick="alert(CheckcookieEnabled())">
+				BOTON 0 Enable/disabled
+			</button>
 			<br />
 			<br />
 		</div>
@@ -81,23 +83,14 @@
 			</div>
 			<br />
 			<div id="fecha1" style="visibility: hidden; display: inline">
-				<button
-					id="funModificarDate1"
-					
-				>
-					Modificar Date1
-				</button>
+				<button id="funModificarDate1">Modificar Date1</button>
 
 				<input id="inputDate1" type="date" />
 				<br />
 				<br />
 			</div>
 			<div id="cantidades1" style="visibility: hidden">
-				<button
-					id="funModificarCantidad1"
-				>
-					Modificar Cantidad 1
-				</button>
+				<button id="funModificarCantidad1">Modificar Cantidad 1</button>
 
 				<input type="text" placeholder="Dias" id="dias1" />
 				<input type="text" placeholder="Meses" id="meses1" />

@@ -1,10 +1,13 @@
 function CheckcookieEnabled() {
 	if (navigator.cookieEnabled) {
-		alert("se pueden crear cookies xq no esta bloqueadas");
+		return "se pueden crear cookies xq no esta bloqueadas";
 	} else {
-		alert("coockies estan bloquedas en el navegador");
+		return "coockies estan bloquedas en el navegador";
 	}
 }
+console.assert(
+	CheckcookieEnabled() == "se pueden crear cookies xq no esta bloqueadas"
+);
 
 function setCookie(cname, cvalue, exdays) {
 	const d = new Date();
@@ -17,6 +20,7 @@ function setCookie(cname, cvalue, exdays) {
 		";" +
 		expires +
 		";path=/";
+	return cname;
 }
 
 function detectaCookie(cname) {
@@ -32,6 +36,10 @@ function detectaCookie(cname) {
 	}
 	return "NO Existe";
 }
+console.assert(
+	detectaCookie(setCookie("cname", "cvalue", 1)) ==
+		"La cookie:     " + "cname" + "  :SI EXISTE"
+);
 
 function getCookie(cname) {
 	let name = cname.trim() + "=";
@@ -58,16 +66,15 @@ function getCookieLeer(cname) {
 		c = c.trim();
 		/* c.indexOF name comparar que c sea igual a name y devuelve lo*/
 		if (c.indexOf(name) == 0) {
-			return (
-				"\nNombre Cookie: " +
-				cname +
-				"\nNombre Value:  " +
-				c.substring(name.length, c.length)
-			);
+			return "Nombre Cookie: " + cname;
+			// +	"\nNombre Value:  " +
+			// 	c.substring(name.length, c.length)
 		}
 	}
 	return "La cookie introducida NO existe";
 }
+
+console.assert(getCookieLeer("cname") == "Nombre Cookie: " + "cname");
 
 function checkCookie() {
 	let user = getCookie("nameUser");
@@ -88,3 +95,4 @@ function removeCookie(cname) {
 		return "La cookie NO  puede ser eliminada";
 	}
 }
+console.assert(detectaCookie(removeCookie("cname")) == "NO Existe");
