@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Nom Cognom1 Cognom2" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EJERCICIO COOKIES</title>
+		<script defer src="./funcionesCookiesHead.js"></script> 
+		<script defer src="./funcionJsBody.js"></script>
+		
+
+		<style>
+			body {
+				background-color: grey;
+			}
+			.red {
+				border: 4px solid red;
+				margin-top: 20px;
+			}
+			.blue {
+				border: 4px solid blue;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="red">
+			<button id="botonHabilitaCookie">BOTON 0 Enable/disabled</button>
+			<br />
+			<br />
+		</div>
+		<div class="red">
+			<button id="botonCrearCookie">BOTON 1 CREAR cookie</button>
+
+			<div id="preg1" style="visibility: hidden">
+				<div>
+					<br />
+					<input type="text" placeholder="nameCookie" id="nameCookie"/>
+					<input type="text" placeholder="nameValue" id="nameValue"/>
+				</div>
+			</div>
+			<br />
+			<div id="fecha" style="visibility: hidden; display: inline">
+				<button id="funInputDate">Enviar Date</button>
+				<input id="inputDate" type="date" />
+				<br />
+				<br />
+			</div>
+			<div id="cantidades" style="visibility: hidden">
+				<button id="funInputCantidades">Enviar Cantidades</button>
+				<input type="text" placeholder="Dias" id="dias"/>
+				<input type="text" placeholder="Meses" id="meses" />
+				<input type="text" placeholder="Anos"id="anos" />
+				<br />
+				<br />
+			</div>
+		</div>
+		<div class="red">
+			<button ID="funDetectaCookie">BOTON 2 Detecta existe Cookie</button>
+			<br />
+			<br />
+		</div>
+		<div class="red">
+			<button id="funLeerCookies">BOTON 3 LEER COOKIE</button>
+			<br />
+			<br />
+		</div>
+		<div class="blue">
+			<button id="funModificarCookie">BOTON 4 MODIFICAR COOKIE</button>
+
+			<div id="preg2" style="visibility: hidden">
+				<div>
+					<br />
+					<input type="text" placeholder="nombreCookie" id="nombreCookie"/>
+					<input type="text" placeholder="nombreValue" id="nombreValue"/>
+				</div>
+			</div>
+			<br />
+			<div id="fecha1" style="visibility: hidden; display: inline">
+				<button
+					id="funModificarDate1"	
+				>
+					Modificar Date1
+				</button>
+
+				<input  id="inputDate1" type="date" />
+				<br />
+				<br />
+			</div>
+			<div id="cantidad1"style="visibility: hidden">
+				<button
+					id="funModificarCantidad1"
+				>
+					Modificar Cantidad 1
+				</button>
+
+				<input type="text" placeholder="Dias" id="dias1"/>
+				<input type="text" placeholder="Meses" id="meses1"/>
+				<input type="text" placeholder="Anos"  id="anos1"/>
+				<br />
+				<br />
+			</div>
+		</div>
+		<div class="red">
+			<button id="funBorrarCookie">BOTON 5 BORRAR COOKIES</button>
+			<br />
+			<br />
+		</div>
+
+		<div class="red">
+			<label>Guarda las cookies </label>
+			<br />
+			<br />
+			<select id="selector" name="selector" style="width: 30%"></select>
+		</div>
+	</body>
+</html>
