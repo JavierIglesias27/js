@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ORDENAR ARRAY OBJETOS</title>
+	</head>
+	<body>
+		<script>
+			// const arrayObjetos = [
+			// 	{ nombre: "Juan", edad: 15 },
+			// 	{ nombre: "Pedro", edad: 65 },
+			// 	{ nombre: "Andres", edad: 45 },
+			// ];
+
+			// console.log(arrayObjetos);
+			//ordeno por nombre
+			// let sorted = arrayObjetos.sort((a, b) => {
+			// 	if (a.nombre < b.nombre) {
+			// 		return -1;
+			// 	}
+			// 	if (a.nombre > b.nombre) {
+			// 		return 1;
+			// 	}
+			// 	return 0;
+			// });
+
+			// console.log(sorted);
+
+			//ordeno por edad
+			// let sorted1 = arrayObjetos.sort((a, b) => {
+			// 	if (a.edad < b.edad) {
+			// 		return -1;
+			// 	}
+			// 	if (a.edad > b.edad) {
+			// 		return 1;
+			// 	}
+			// 	return 0;
+			// });
+
+			// console.log(sorted1);
+
+			const arrayObjetos = [
+				{ nombre: "Juan", edad: 16 },
+				{ nombre: "Pepe", edad: 15 },
+				{ nombre: "Pepe", edad: 17 },
+				{ nombre: "Pepe", edad: 14 },
+			];
+			console.log(arrayObjetos);
+
+			let sorted = arrayObjetos.sort((a, b) => {
+				if (a.nombre < b.nombre) {
+					return -1;
+				}
+				if (a.nombre > b.nombre) {
+					return 1;
+				}
+				//nombre es ==
+				if (a.edad < b.edad) {
+					return -1;
+				}
+				if (a.edad > b.edad) {
+					return 1;
+				}
+				return 0;
+			});
+			console.log(sorted);
+		</script>
+	</body>
+</html>
