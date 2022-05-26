@@ -107,7 +107,6 @@ function generarIdentificadorAlfanumerico(cantidad = 8) {
 	for (var i = 0; i < cantidad; i++) {
 		result += characters.charAt(Math.floor(Math.random() * charactersLength));
 	}
-	//todo:comprobar q el result no existe en la lista
 	return result;
 }
 //testing
@@ -121,5 +120,7 @@ new Producto("acd", "lllKKKmn", -12.2);
 new Producto("acd", "lllKKKmn", -222.8);
 new Producto("acd", "lllKKKmn", -120.8);
 
-// console.assert();
-//listaProductes = []; sirve para vaciar la lista
+console.assert(generarIdentificadorAlfanumerico().length == 8);
+console.assert(generarIdentificadorAlfanumerico(3).length == 3);
+
+//listaProductes = []; //sirve para vaciar la lista
