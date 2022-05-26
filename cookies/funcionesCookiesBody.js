@@ -129,7 +129,7 @@ function funBorrarCookie() {
 
 /*DESPLEGABE LISTCOOKIES */
 
-select = document.getElementById("selector");
+const select = document.getElementById("selector");
 listCookies();
 function listCookies() {
 	var theCookies = document.cookie.split(";");
