@@ -47,16 +47,6 @@ function funInputCantidades() {
 	console.log(anos + meses + dias);
 	listCookies();
 }
-
-/*DETECTA COOKIES */
-document
-	.getElementById("funDetectaCookie")
-	.addEventListener("click", funDetectaCookie);
-function funDetectaCookie() {
-	alert(
-		detectaCookie(prompt("Introduzca nombre de la cookie:"), listCookies())
-	);
-}
 /*LEER COOKIES */
 document
 	.getElementById("funLeerCookies")
@@ -72,7 +62,7 @@ document
 	.getElementById("funModificarCookie")
 	.addEventListener("click", funModificarCookie);
 function funModificarCookie() {
-	let var1 = document.getElementById("selector").value;
+	let var1 = document.getElementById("llistaGaletes").value;
 	let var2 = getCookie(var1);
 	document.getElementById("preg1").style.visibility = "visible";
 	document.getElementById("fecha").style.visibility = "visible";
@@ -87,13 +77,14 @@ document
 	.getElementById("funBorrarCookie")
 	.addEventListener("click", funBorrarCookie);
 function funBorrarCookie() {
-	//alert(removeCookie(prompt("nombre a eliminar:"), listCookies()));
-	alert(removeCookie(document.getElementById("selector").value, listCookies()));
+	alert(
+		removeCookie(document.getElementById("llistaGaletes").value, listCookies())
+	);
 }
 
 /*DESPLEGABE LISTCOOKIES */
 
-select = document.getElementById("selector");
+select = document.getElementById("llistaGaletes");
 listCookies();
 function listCookies() {
 	var theCookies = document.cookie.split(";");
