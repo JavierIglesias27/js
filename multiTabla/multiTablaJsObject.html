@@ -1,3 +1,4 @@
+<!--CREAR UNA TABLA CON TIENDAS, TOTAL=QUE SUME RESULTADO= Y QUE TE PONGA EL RPECIO MAS CARO ROJO,EN AMARILLO MEDIO Y Y VERDE OK-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -15,11 +16,10 @@
 				padding: 10px 20px;
 				border: 1px solid #000;
 			}
-			fieldset{
+			fieldset {
 				margin-bottom: 20px;
 				text-align: center;
 			}
-			
 		</style>
 	</head>
 	<body>
@@ -51,7 +51,7 @@
 
 					let thAutor = document.createElement("th");
 					thAutor.innerHTML = "Autor";
-					
+
 					let thEdicion = document.createElement("th");
 					thEdicion.innerHTML = "Edicion";
 
@@ -80,7 +80,6 @@
 					table.appendChild(headTable);
 					table.appendChild(tbody);
 
-					
 					document.getElementsByTagName("body")[0].appendChild(table);
 				}
 				addLibro(libro) {
@@ -105,7 +104,6 @@
 					let td_tematica = document.createElement("td");
 					td_tematica.innerHTML = libro.tematica;
 
-
 					let tr = document.createElement("tr");
 					tr.id = this.nombre + "_" + libro.sn;
 					tr.appendChild(td_sn);
@@ -125,13 +123,10 @@
 					// document.getElementById(this.nombre + "_" + libro.edicion).remove();
 					// document.getElementById(this.nombre + "_" + libro.precio).remove();
 					// document.getElementById(this.nombre + "_" + libro.tematica).remove();
-					
-
-
 				}
 			}
 			class Libro {
-				constructor(sn, titulo,autor, edicion, precio,tematica) {
+				constructor(sn, titulo, autor, edicion, precio, tematica) {
 					this.sn = sn;
 					this.titulo = titulo;
 					this.autor = autor;
@@ -139,18 +134,65 @@
 					this.precio = precio;
 					this.tematica = tematica;
 				}
-				
-			
 			}
 			let libreria1 = new Libreria("libreria1");
 			let libreria2 = new Libreria("libreria2");
-			let libro1 = new Libro("123", "title1","autor1","edicion1",95,"accion");
-			let libro2 = new Libro("345", "title2","autor2","edicion2",45,"terror");
-			let libro3 = new Libro("356", "title3","autor3","edicion3",12,"humor");
-			let libro4 = new Libro("789", "title4","autor4","edicion4",12,"marvel");
-			let libro5 = new Libro("1011", "title5","autor5","edicion5",44,"otros");
-			let libro6 = new Libro("1012", "title6","autor6","edicion6",25,"otros");
-			let libro7 = new Libro("1013", "title7","autor7","edicion7",75,"genial");
+			let libro1 = new Libro(
+				"123",
+				"title1",
+				"autor1",
+				"edicion1",
+				95,
+				"accion"
+			);
+			let libro2 = new Libro(
+				"345",
+				"title2",
+				"autor2",
+				"edicion2",
+				45,
+				"terror"
+			);
+			let libro3 = new Libro(
+				"356",
+				"title3",
+				"autor3",
+				"edicion3",
+				12,
+				"humor"
+			);
+			let libro4 = new Libro(
+				"789",
+				"title4",
+				"autor4",
+				"edicion4",
+				12,
+				"marvel"
+			);
+			let libro5 = new Libro(
+				"1011",
+				"title5",
+				"autor5",
+				"edicion5",
+				44,
+				"otros"
+			);
+			let libro6 = new Libro(
+				"1012",
+				"title6",
+				"autor6",
+				"edicion6",
+				25,
+				"otros"
+			);
+			let libro7 = new Libro(
+				"1013",
+				"title7",
+				"autor7",
+				"edicion7",
+				75,
+				"genial"
+			);
 
 			libreria1.addLibro(libro1);
 			libreria1.addLibro(libro2);
@@ -162,7 +204,6 @@
 
 			console.log(libreria1);
 			console.log(libreria2);
-
 		</script>
 	</body>
 </html>
