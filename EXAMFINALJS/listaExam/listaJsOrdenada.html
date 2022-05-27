@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lista JS</title>
+		
+		
+	</head>
+	<body>
+		<h1">LISTA DESORDENADA</h1>
+	<script>
+		
+	function init() {
+		let ol = document.createElement("ol");
+		let li1 = document.createElement("li");
+		let li1Texto = document.createTextNode("Llista imbricada, posició:1");
+		li1.appendChild(li1Texto);
+		
+		let li2 = document.createElement("li");
+		let li2Texto = document.createTextNode("Llista imbricada, posició:2");
+		li2.appendChild(li2Texto);
+
+		let li3 = document.createElement("li");
+		let li3Texto = document.createTextNode("Llista imbricada, posició:3");
+		li3.appendChild(li3Texto);
+		
+
+		let li4 = document.createElement("li");
+		let li4Texto = document.createTextNode("Llista imbricada, posició:4");
+		li4.appendChild(li4Texto);
+
+		let li5 = document.createElement("li");
+		let li5Texto = document.createTextNode("Llista imbricada, posició:5");
+		li5.appendChild(li5Texto);
+
+		ol.appendChild(li1);
+ 		ol.appendChild(li2);
+		ol.appendChild(li3);
+		ol.appendChild(li4);
+		ol.appendChild(li5);
+
+		document.body.appendChild(ol);
+
+
+		}
+		window.onload = init;
+
+	</script>
+
+		
+	</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exportar tabla CSV</title>
+		<style>
+			table {
+				width: 100%;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<table id="tableData"></table>
+		<script>
+			var mainObj = [
+				{
+					Empreses: "Muntatges Juarez",
+					Numcomanda: 2159854,
+					Peça: "Tub Alum. Gris 08054",
+					Quantitat: 100000,
+                    PreuUnitat:0.94
+
+				},
+				{
+					Empreses: "Gestos C.Tarragona",
+					Numcomanda: 2159853,
+					Peça: "Llosa Niquel 45872",
+					Quantitat: 130000,
+                    PreuUnitat:428.00
+
+				},
+                {
+					Empreses: "Serrallers fortes S.A",
+					Numcomanda: 2159852,
+					Peça: "Clau Dor. 356-a-401",
+					Quantitat: 3100000,
+                    PreuUnitat:0.13
+
+				},
+			];
+			var k = "<tbody id='tblStocks'> ";
+                k += "<tr>";
+                k += "<th>Empreses</th>"
+                k += "<th>Num.comanda</th>";
+                k += "<th>Peça</th>";
+                k += "<th>Quantitat</th>";
+                k += "<th>Preu/Unitat</th>";
+                k += "</tr>";
+			for (i = 0; i < mainObj.length; i++) {
+				k += "<tr>";
+				k += "<td>" + mainObj[i].Empreses + "</td>";
+				k += "<td>" + mainObj[i].Numcomanda + "</td>";
+				k += "<td>" + mainObj[i].Peça + "</td>";
+				k += "<td>" + mainObj[i].Quantitat + "</td>";
+                k += "<td>" + mainObj[i].PreuUnitat + "</td>";
+				k += "</tr>";
+			}
+		
+			k +=
+				"<tr><th style='text-align:center'colspan=4>TOTAL</th><th>56.137.000€</th></tr>";
+
+			k += "</tbody>";
+			document.getElementById("tableData").innerHTML = k;
+
+			function exportData() {
+				/* Get the HTML data using Element by Id */
+				var table = document.getElementById("tblStocks");
+
+				/* Declaring array variable */
+				var rows = [];
+
+				//iterate through rows inputDatecellof table
+				for (var i = 0, row; (row = table.rows[i]); i++) {
+					//rows would be accessed using the "row" variable assigned in the for loop
+					//Get each cells value/column from the row
+					column1 = "";
+					column2 = "";
+					column3 = "";
+					column4 = "";
+					column5 = "";
+					
+					if (row.cells.length == 1) {
+						column1 = row.cells[0].innerText;
+					} 
+					if (row.cells.length == 2) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+					} 
+					if (row.cells.length == 3) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
+					}
+					if (row.cells.length == 4) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
+						column4 = row.cells[3].innerText;
+					}
+                    
+                    if (row.cells.length == 5) {
+						column1 = row.cells[0].innerText;
+						column2 = row.cells[1].innerText;
+						column3 = row.cells[2].innerText;
+						column4 = row.cells[3].innerText;
+                        column5 = row.cells[4].innerText;
+					}
+                   
+
+					/* add a new records in the array */
+					rows.push([column1, column2, column3, column4,column5]);
+				}
+				csvContent = "data:text/csv;charset=utf-8,";
+				/* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+				rows.forEach(function (rowArray) {
+					row = rowArray.join(",");
+					csvContent += row + "\r\n";
+				});
+
+				/* create a hidden <a> DOM node and set its download attribute */
+				var encodedUri = encodeURI(csvContent);
+				var link = document.createElement("a");
+				link.setAttribute("href", encodedUri);
+				link.setAttribute("download", "Stock_Price_Report.csv");
+				document.body.appendChild(link);
+				/* download the data file named "Stock_Price_Report.csv" */
+				link.click();
+			}
+		</script>
+
+		<button onclick="exportData()">CLICK</button>
+	</body>
+</html>
