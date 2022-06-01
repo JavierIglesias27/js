@@ -57,6 +57,16 @@
 			}
 
 			window.addEventListener("click", funMouseClick);
+
+			document.addEventListener("mouseleave", (event) => {
+				if (
+					event.clientX <= 0 ||
+					(event.clientX >= 0) | (event.clientY <= 0) ||
+					event.clientY >= 0
+				) {
+					console.log("fuera pantalla");
+				}
+			});
 		</script>
 	</body>
 </html>

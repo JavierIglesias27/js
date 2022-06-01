@@ -40,14 +40,19 @@
 			button1.onclick = function (event) {
 				if (event.shiftKey && event.altKey) {
 					alert("AltKey + ShiftKey+ Click");
+					return;
 				} else if (event.shiftKey && event.ctrlKey) {
 					alert("CtrlKey + ShiftKey+ Click");
+					return;
 				} else if (event.altKey) {
 					alert("AltKey+ Click");
+					return;
 				} else if (event.ctrlKey) {
 					alert("CtrlKey + Click");
+					return;
 				} else if (event.shiftKey) {
 					alert("ShiftKey+ Click");
+					return;
 				}
 			};
 			let button = document.querySelector("#button");
@@ -68,6 +73,7 @@
 							break;
 						default:
 							log.textContent = `Unknown button code: ${e.button}`;
+							break;
 					}
 				}
 			}

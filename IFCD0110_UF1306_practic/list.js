@@ -22,7 +22,7 @@ function mostrarTablaOrdenadaNombre() {
 	let listaProductesDup = [].concat(listaProductes);
 	listaProductesDup.sort((a, b) => {
 		if (a.nom > b.nom) {
-			return +1;
+			return 1;
 		}
 		if (a.nom < b.nom) {
 			return -1;
@@ -39,7 +39,7 @@ function mostrarTablaOrdenadaIdentificador() {
 	let listaProductesDup2 = [].concat(listaProductes);
 	listaProductesDup2.sort((a, b) => {
 		if (a.identificador > b.identificador) {
-			return +1;
+			return 1;
 		}
 		if (a.identificador < b.identificador) {
 			return -1;
@@ -55,9 +55,16 @@ function mostrarTablaOrdenadaPrecio() {
 	let listaProductesDup3 = [].concat(listaProductes);
 	listaProductesDup3.sort((a, b) => {
 		if (a.preu > b.preu) {
-			return +1;
+			return 1;
 		}
 		if (a.preu < b.preu) {
+			return -1;
+		}
+		//aqui le digo q si el rprecio es igual ordene x id
+		if (a.identificador > b.identificador) {
+			return 1;
+		}
+		if (a.identificador < b.identificador) {
 			return -1;
 		}
 		return 0;
@@ -109,6 +116,26 @@ function generarIdentificadorAlfanumerico(cantidad = 8) {
 	}
 	return result;
 }
+//introducir datos masivos
+//nombre1, iu1:precio1;nombre2,iu2:precio2
+function funcionMasiva(valor) {
+	let lista = valor.split(";");
+
+	for (let i = 0; i < lista.length; i++) {
+		let temp = lista[i];
+
+		let uno = temp.split(":");
+		let nombreIU = uno[0];
+		let precio = temp[1];
+
+		let cosas = nombreIU.split(",");
+		let nombre = cosas[0];
+		let iu = cosas[1];
+
+		console.log(nombre + " " + iu + " " + precio);
+		new Producto(nombre, iu, precio);
+	}
+}
 //testing
 new Producto("abc", "zzzZZZzz", 122);
 new Producto("zxs", "bbBBBBbb", 3);
@@ -119,6 +146,7 @@ new Producto("acd", "lllKKKmn", -12);
 new Producto("acd", "lllKKKmn", -12.2);
 new Producto("acd", "lllKKKmn", -222.8);
 new Producto("acd", "lllKKKmn", -120.8);
+new Producto("acd", "lllKKKmn", "12");
 
 console.assert(generarIdentificadorAlfanumerico().length == 8);
 console.assert(generarIdentificadorAlfanumerico(3).length == 3);
