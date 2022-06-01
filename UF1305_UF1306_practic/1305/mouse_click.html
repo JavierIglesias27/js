@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Javier Iglesias Romero" />
+		<meta
+			name="description"
+			content="CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110) UF1305"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+
+		<title>IFCD0110-UF1305</title>
+	</head>
+	<body>
+		<main>
+			<div class="center">
+				<h2>Mouse CLICK</h2>
+			</div>
+			<div class="container">
+				<button id="button1">Test button</button>
+			</div>
+			<div class="container">
+				<button id="button" oncontextmenu="event.preventDefault();">
+					Click here with your mouse...
+				</button>
+				<p id="log"></p>
+			</div>
+		</main>
+
+		<footer>
+			<p><b>author</b>: Javier Iglesias Romero</p>
+			<p><a href="mailto:jiglesro7@gmail.com">jiglesro7@gmail.com</a></p>
+			<p>
+				<b>nom del curs</b>: CONFECCIÓ I PUBLICACIÓ DE PÀGINES WEB (IFCD0110)
+			</p>
+			<p><b>data</b>: 31/05/2022</p>
+		</footer>
+		<script>
+			button1.onclick = function (event) {
+				if (event.shiftKey && event.altKey) {
+					alert("AltKey + ShiftKey+ Click");
+				} else if (event.shiftKey && event.ctrlKey) {
+					alert("CtrlKey + ShiftKey+ Click");
+				} else if (event.altKey) {
+					alert("AltKey+ Click");
+				} else if (event.ctrlKey) {
+					alert("CtrlKey + Click");
+				} else if (event.shiftKey) {
+					alert("ShiftKey+ Click");
+				}
+			};
+			let button = document.querySelector("#button");
+			let log = document.querySelector("#log");
+			button.addEventListener("mouseup", logMouseButton);
+
+			function logMouseButton(e) {
+				if (typeof e === "object") {
+					switch (e.button) {
+						case 0:
+							log.textContent = "Left button clicked.";
+							break;
+						case 1:
+							log.textContent = "Middle button clicked.";
+							break;
+						case 2:
+							log.textContent = "Right button clicked.";
+							break;
+						default:
+							log.textContent = `Unknown button code: ${e.button}`;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
